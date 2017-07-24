@@ -3469,3 +3469,351 @@ Migrating to AddCurrentStationIdToTrain (20170719194836)
   [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."current_station_id" = ? LIMIT ?[0m  [["current_station_id", 1], ["LIMIT", 11]]
   [1m[36mRailwayStation Load (0.1ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" ORDER BY "railway_stations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "trains"."id" FROM "trains" WHERE "trains"."current_station_id" = ?[0m  [["current_station_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+  [1m[36mRailwayStation Load (0.1ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" ORDER BY "railway_stations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2017-07-24 13:01:21 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/sinky/.rvm/gems/ruby-2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/sinky/.rvm/gems/ruby-2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (10.1ms)
+Completed 200 OK in 48ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/railway_station" for 127.0.0.1 at 2017-07-24 13:01:36 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/railway_station"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/railway_stations" for 127.0.0.1 at 2017-07-24 13:01:39 -0700
+Processing by RailwayStationsController#index as HTML
+  Rendering railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.5ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered railway_stations/index.html.erb within layouts/application (252.5ms)
+Completed 500 Internal Server Error in 286ms (ActiveRecord: 9.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `listing' for #<#<Class:0x00000003483e58>:0x007fb454a37ae0>):
+    12: 
+    13:   <tbody>
+    14:   <% @railway_stations.each do |railway_station| %>
+    15:       <%= render listing %>
+    16:   <% end %>
+    17:   </tbody>
+    18: </table>
+  
+app/views/railway_stations/index.html.erb:15:in `block in _app_views_railway_stations_index_html_erb__1513832349580398204_70206245397500'
+app/views/railway_stations/index.html.erb:14:in `_app_views_railway_stations_index_html_erb__1513832349580398204_70206245397500'
+Started GET "/railway_stations" for 127.0.0.1 at 2017-07-24 13:04:29 -0700
+Processing by RailwayStationsController#index as HTML
+  Rendering railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.4ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered railway_stations/_railway_station.html.erb (1.3ms)
+  Rendered railway_stations/_railway_station.html.erb (1.0ms)
+  Rendered railway_stations/_railway_station.html.erb (0.7ms)
+  Rendered railway_stations/_railway_station.html.erb (0.5ms)
+  Rendered railway_stations/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 1835ms (Views: 1832.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-07-24 13:06:55 -0700
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (2.5ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/_train.html.erb (1.1ms)
+  Rendered trains/index.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 84ms (Views: 66.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/trains/3/edit" for 127.0.0.1 at 2017-07-24 13:06:59 -0700
+Processing by TrainsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/edit.html.erb within layouts/application
+  Rendered trains/_form.html.erb (63.6ms)
+  Rendered trains/edit.html.erb within layouts/application (64.7ms)
+Completed 200 OK in 212ms (Views: 119.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/trains/3" for 127.0.0.1 at 2017-07-24 13:07:01 -0700
+Processing by TrainsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"miPo04Q7tfi5FOIZwnvXMsj6Lwou66HRS3ZgD+v406UphphffVfpQWJ5h3g2RzxcWukWZMB2+bNconMLn66pYA==", "train"=>{"number"=>"124"}, "commit"=>"Update Train", "id"=>"3"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "trains" SET "number" = ?, "updated_at" = ? WHERE "trains"."id" = ?[0m  [["number", 124], ["updated_at", "2017-07-24 20:07:01.316048"], ["id", 3]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/trains/3
+Completed 302 Found in 71ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-24 13:07:01 -0700
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  Rendered trains/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 66ms (Views: 64.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-07-24 13:07:02 -0700
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (0.8ms)
+  Rendered trains/_train.html.erb (0.3ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 41ms (Views: 40.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-07-24 13:14:25 -0700
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (11.7ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (1.9ms)
+  Rendered trains/_train.html.erb (0.3ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/index.html.erb within layouts/application (105.7ms)
+Completed 500 Internal Server Error in 753ms (ActiveRecord: 11.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `footer' for #<#<Class:0x007fb454e5d660>:0x000000037943e0>):
+    10: 
+    11: <body>
+    12: <%= yield %>
+    13: <%= render footer %>
+    14: </body>
+    15: 
+    16: </html>
+  
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___1288530862443059666_28794940'
+Started GET "/trains" for 127.0.0.1 at 2017-07-24 13:14:41 -0700
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (0.7ms)
+  Rendered trains/_train.html.erb (0.3ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial trains/_footer, application/_footer with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/sinky/ruby/ror_samurai_2/app/views"
+):
+    10: 
+    11: <body>
+    12: <%= yield %>
+    13: <%= render 'footer' %>
+    14: </body>
+    15: 
+    16: </html>
+  
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___1288530862443059666_70206216483480'
+Started GET "/trains" for 127.0.0.1 at 2017-07-24 13:14:59 -0700
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (1.2ms)
+  Rendered trains/_train.html.erb (0.7ms)
+  Rendered trains/_train.html.erb (0.3ms)
+  Rendered trains/index.html.erb within layouts/application (14.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 49ms (Views: 46.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-07-24 13:15:35 -0700
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (0.8ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial trains/_footer, application/_footer with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/sinky/ruby/ror_samurai_2/app/views"
+):
+    10: 
+    11: <body>
+    12: <%= yield %>
+    13: <%= render 'footer' %>
+    14: </body>
+    15: 
+    16: </html>
+  
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___1288530862443059666_70206218238300'
+Started GET "/trains" for 127.0.0.1 at 2017-07-24 13:20:30 -0700
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (48.6ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (10.2ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/index.html.erb within layouts/application (84.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 427ms (Views: 322.6ms | ActiveRecord: 48.6ms)
+
+
+Started GET "/www.thinknetica.com" for 127.0.0.1 at 2017-07-24 13:20:34 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/www.thinknetica.com"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/trains" for 127.0.0.1 at 2017-07-24 13:21:23 -0700
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (0.9ms)
+  Rendered trains/_train.html.erb (1.1ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/index.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-07-24 13:21:47 -0700
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (1.7ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/index.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/www.thinknetica.com" for 127.0.0.1 at 2017-07-24 13:21:49 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/www.thinknetica.com"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/trains" for 127.0.0.1 at 2017-07-24 13:22:46 -0700
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.4ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (1.5ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/_train.html.erb (2.9ms)
+  Rendered trains/index.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.4ms)
+
+
