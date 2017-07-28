@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'wagon/index'
+
+  get 'wagon/edit'
+
+  get 'wagon/new'
+
+  get 'wagon/show'
+
   get 'users/index'
 
   get 'tickets/index'

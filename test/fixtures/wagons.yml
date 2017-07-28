@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  traind_id: 1
+  wagon_type: 1
+  up_seats: 1
+  down_seats: 1
+
+two:
+  traind_id: 1
+  wagon_type: 1
+  up_seats: 1
+  down_seats: 1

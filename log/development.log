@@ -5404,3 +5404,669 @@ Processing by RoutesController#index as HTML
 Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 0.2ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWagons (20170727133138)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "wagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "traind_id" integer, "wagon_type" integer, "up_seats" integer, "down_seats" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727133138"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWagonType (20170727133702)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "wagon_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "wagon_type" varchar)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727133702"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameWagonTypeToWagonTypeIdAtWagons (20170727135403)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameWagonTypeToWagonTypeIdAtWagons (20170727135403)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "traind_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT NULL, "down_seats" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "awagons" ("id","traind_id","wagon_type_id","up_seats","down_seats","created_at","updated_at")
+                     SELECT "id","traind_id","wagon_type","up_seats","down_seats","created_at","updated_at" FROM "wagons"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "wagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "wagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "traind_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT NULL, "down_seats" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "wagons" ("id","traind_id","wagon_type_id","up_seats","down_seats","created_at","updated_at")
+                     SELECT "id","traind_id","wagon_type_id","up_seats","down_seats","created_at","updated_at" FROM "awagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "awagons"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727135403"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameTraindIdToTrainId (20170727144850)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT NULL, "down_seats" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "awagons" ("id","train_id","wagon_type_id","up_seats","down_seats","created_at","updated_at")
+                     SELECT "id","traind_id","wagon_type_id","up_seats","down_seats","created_at","updated_at" FROM "wagons"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "wagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "wagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT NULL, "down_seats" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "wagons" ("id","train_id","wagon_type_id","up_seats","down_seats","created_at","updated_at")
+                     SELECT "id","train_id","wagon_type_id","up_seats","down_seats","created_at","updated_at" FROM "awagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "awagons"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727144850"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["train_id", 2], ["created_at", "2017-07-27 14:52:57.110258"], ["updated_at", "2017-07-27 14:52:57.110258"]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWagonType Load (0.6ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.5ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameWagonTypeAtWagonTypes (20170727150448)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awagon_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "awagon_types" ("id","title")
+                     SELECT "id","wagon_type" FROM "wagon_types"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "wagon_types"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "wagon_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "wagon_types" ("id","title")
+                     SELECT "id","title" FROM "awagon_types"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "awagon_types"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727150448"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" ORDER BY "wagons"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" ORDER BY "wagons"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.3ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" ORDER BY "wagons"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" ORDER BY "wagons"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" ORDER BY "wagons"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[33mUPDATE "wagons" SET "up_seats" = ?, "updated_at" = ? WHERE "wagons"."id" = ?[0m  [["up_seats", 10], ["updated_at", "2017-07-27 15:18:51.555054"], ["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "wagon_types" SET "id" = ? WHERE "wagon_types"."id" = ?[0m  [["id", nil], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "wagon_types" SET "id" = ? WHERE "wagon_types"."id" = ?[0m  [["id", nil], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mWagonType Load (0.8ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "wagon_types" SET "id" = ? WHERE "wagon_types"."id" = ?[0m  [["id", nil], ["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" ORDER BY "wagons"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "wagon_types" SET "id" = ? WHERE "wagon_types"."id" = ?[0m  [["id", nil], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "wagon_types" SET "id" = ? WHERE "wagon_types"."id" = ?[0m  [["id", nil], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" ORDER BY "wagons"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.4ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (1.7ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.3ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["train_id", 3], ["created_at", "2017-07-27 15:48:59.803173"], ["updated_at", "2017-07-27 15:48:59.803173"]]
+  [1m[35mSQL (3.1ms)[0m  [1m[33mUPDATE "wagon_types" SET "id" = ? WHERE "wagon_types"."id" = ?[0m  [["id", 2], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["train_id", 3], ["created_at", "2017-07-27 15:49:10.796293"], ["updated_at", "2017-07-27 15:49:10.796293"]]
+  [1m[35mSQL (1.9ms)[0m  [1m[33mUPDATE "wagon_types" SET "id" = ? WHERE "wagon_types"."id" = ?[0m  [["id", 2], ["id", 1]]
+  [1m[35m (8.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["train_id", 3], ["created_at", "2017-07-27 15:49:31.844173"], ["updated_at", "2017-07-27 15:49:31.844173"]]
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "wagon_types" SET "id" = ? WHERE "wagon_types"."id" = ?[0m  [["id", 2], ["id", 1]]
+  [1m[35m (8.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["train_id", 3], ["created_at", "2017-07-27 15:50:11.703452"], ["updated_at", "2017-07-27 15:50:11.703452"]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "wagon_types" SET "id" = ? WHERE "wagon_types"."id" = ?[0m  [["id", 2], ["id", 1]]
+  [1m[35m (8.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["train_id", 3], ["created_at", "2017-07-27 15:50:43.837709"], ["updated_at", "2017-07-27 15:50:43.837709"]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "wagons" ("id", "train_id", "up_seats", "down_seats", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["train_id", 1], ["up_seats", 10], ["down_seats", 15], ["created_at", "2017-07-27 15:55:50.175910"], ["updated_at", "2017-07-27 15:55:50.175910"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.5ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wagons" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-07-27 19:23:17.895793"], ["updated_at", "2017-07-27 19:23:17.895793"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "wagon_types" SET "id" = ? WHERE "wagon_types"."id" = ?[0m  [["id", 3], ["id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wagons" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-07-27 19:23:40.193790"], ["updated_at", "2017-07-27 19:23:40.193790"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "wagon_types" SET "id" = ? WHERE "wagon_types"."id" = ?[0m  [["id", 4], ["id", 2]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTrain Load (0.4ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.3ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["train_id", 3], ["created_at", "2017-07-27 19:25:56.043189"], ["updated_at", "2017-07-27 19:25:56.043189"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "wagon_types" SET "id" = ? WHERE "wagon_types"."id" = ?[0m  [["id", 5], ["id", 3]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["train_id", 3], ["created_at", "2017-07-27 19:29:44.236391"], ["updated_at", "2017-07-27 19:29:44.236391"]]
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWagonType Load (0.4ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."wagon_id" = ? LIMIT ?[0m  [["wagon_id", 6], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.5ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."wagon_id" = ? LIMIT ?[0m  [["wagon_id", 6], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["train_id", 3], ["created_at", "2017-07-27 19:32:04.398750"], ["updated_at", "2017-07-27 19:32:04.398750"]]
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWagonType Load (0.5ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."wagon_id" = ? LIMIT ?[0m  [["wagon_id", 7], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["train_id", 3], ["created_at", "2017-07-27 19:33:38.428539"], ["updated_at", "2017-07-27 19:33:38.428539"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWagonType Load (0.3ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."wagon_id" = ? LIMIT ?[0m  [["wagon_id", 8], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.4ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "wagon_type_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["train_id", 3], ["wagon_type_id", 5], ["created_at", "2017-07-27 19:35:39.151435"], ["updated_at", "2017-07-27 19:35:39.151435"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.4ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "wagon_type_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["train_id", 3], ["wagon_type_id", 2], ["created_at", "2017-07-27 19:39:57.640395"], ["updated_at", "2017-07-27 19:39:57.640395"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "wagon_type_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["train_id", 3], ["wagon_type_id", 2], ["created_at", "2017-07-27 19:41:00.991402"], ["updated_at", "2017-07-27 19:41:00.991402"]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "wagon_type_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["train_id", 3], ["wagon_type_id", 2], ["created_at", "2017-07-27 19:42:58.403554"], ["updated_at", "2017-07-27 19:42:58.403554"]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTrain Load (1.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "wagons"."id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 1], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 1], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 1], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 1], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.4ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+Started GET "/" for 127.0.0.1 at 2017-07-28 13:21:43 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/victor/.rvm/gems/ruby-2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/victor/.rvm/gems/ruby-2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (7.2ms)
+Completed 200 OK in 38ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-07-28 13:21:48 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.4ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/index.html.erb within layouts/application (17.9ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    12: 
+    13:   <tbody>
+    14:   <% @trains.each do |train| %>
+    15:       <%= render @train %>
+    16:   <% end %>
+    17:   </tbody>
+    18: </table>
+  
+app/views/trains/index.html.erb:15:in `block in _app_views_trains_index_html_erb___2136773095446845565_70274207786180'
+app/views/trains/index.html.erb:14:in `_app_views_trains_index_html_erb___2136773095446845565_70274207786180'
+Started GET "/trains" for 127.0.0.1 at 2017-07-28 13:26:40 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (1.1ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/index.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    12: 
+    13:   <tbody>
+    14:   <% @trains.each do |train| %>
+    15:       <%= render @train %>
+    16:   <% end %>
+    17:   </tbody>
+    18: </table>
+  
+app/views/trains/index.html.erb:15:in `block in _app_views_trains_index_html_erb___2136773095446845565_70274229437080'
+app/views/trains/index.html.erb:14:in `_app_views_trains_index_html_erb___2136773095446845565_70274229437080'
+Started GET "/trains" for 127.0.0.1 at 2017-07-28 13:27:26 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (2.7ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/_train.html.erb (0.8ms)
+  Rendered trains/index.html.erb within layouts/application (19.2ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 382ms (Views: 379.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/trains/1" for 127.0.0.1 at 2017-07-28 13:27:29 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrain Load (0.4ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 1], ["LIMIT", 1]]
+  Rendered trains/show.html.erb within layouts/application (55.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 108ms (Views: 86.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-28 13:27:32 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.4ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  Rendered trains/show.html.erb within layouts/application (226.8ms)
+Completed 500 Internal Server Error in 235ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `wagons' for #<#<Class:0x007fd3fa61d110>:0x007fd3fe799648>):
+    19:   <% if @train.wagons.empty? %>
+    20:       No wagons yet
+    21:   <% else %>
+    22:       Count of compartment wagons: <%= wagons.pluck(:wagon_type_id).delete_if {|i| i != 2}.size %>
+    23:       Count of second-class wagons: <%= wagons.pluck(:wagon_type_id).delete_if {|i| i != 1}.size %>
+    24:   <% end %>
+    25: </p>
+  
+app/views/trains/show.html.erb:22:in `_app_views_trains_show_html_erb___2789112300032440619_70274242105360'
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-28 13:28:09 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 2]]
+  Rendered trains/show.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-28 13:28:30 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  Rendered trains/show.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/trains/4" for 127.0.0.1 at 2017-07-28 13:28:35 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Train with 'id'=4):
+  
+app/controllers/trains_controller.rb:67:in `set_train'
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-28 13:28:37 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 2]]
+  Rendered trains/show.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 56ms (Views: 48.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-28 13:28:44 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  Rendered trains/show.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mTrain Load (1.4ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[36mTrain Load (0.7ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.3ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 11]]
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-28 13:30:54 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  Rendered trains/show.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.6ms)
+
+
