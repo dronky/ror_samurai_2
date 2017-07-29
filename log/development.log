@@ -6070,3 +6070,318 @@ Processing by TrainsController#show as HTML
 Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-28 13:33:34 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  Rendered trains/show.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 40ms (Views: 37.3ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" ORDER BY "wagons"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" ORDER BY "wagons"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" ORDER BY "wagons"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" ORDER BY "wagons"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" ORDER BY "wagons"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.3ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "wagon_type_id", "up_seats", "down_seats", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["train_id", 2], ["wagon_type_id", 1], ["up_seats", 10], ["down_seats", 10], ["created_at", "2017-07-29 14:04:53.658705"], ["updated_at", "2017-07-29 14:04:53.658705"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWagon Load (0.7ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" ORDER BY "wagons"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "wagon_type_id", "up_seats", "down_seats", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["train_id", 2], ["wagon_type_id", 1], ["up_seats", 10], ["down_seats", 10], ["created_at", "2017-07-29 14:07:27.946257"], ["updated_at", "2017-07-29 14:07:27.946257"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "wagon_type_id", "up_seats", "down_seats", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["train_id", 2], ["wagon_type_id", 1], ["up_seats", 10], ["down_seats", 10], ["created_at", "2017-07-29 14:11:33.548146"], ["updated_at", "2017-07-29 14:11:33.548146"]]
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" ORDER BY "wagon_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "wagon_type_id", "up_seats", "down_seats", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["train_id", 2], ["wagon_type_id", 1], ["up_seats", 10], ["down_seats", 10], ["created_at", "2017-07-29 14:11:47.520000"], ["updated_at", "2017-07-29 14:11:47.520000"]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-07-29 17:16:29 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/victor/.rvm/gems/ruby-2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/victor/.rvm/gems/ruby-2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (18.9ms)
+Completed 200 OK in 29ms (Views: 22.9ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-07-29 17:16:34 +0300
+  
+ActionController::RoutingError (undefined method `set_seat' for TrainsController:Class):
+  
+app/controllers/trains_controller.rb:83:in `<class:TrainsController>'
+app/controllers/trains_controller.rb:1:in `<top (required)>'
+Started POST "/__web_console/repl_sessions/e584705e7e327d99bbb04c6b663012f4/trace" for 127.0.0.1 at 2017-07-29 17:16:58 +0300
+Started POST "/__web_console/repl_sessions/e584705e7e327d99bbb04c6b663012f4/trace" for 127.0.0.1 at 2017-07-29 17:16:59 +0300
+Started POST "/__web_console/repl_sessions/e584705e7e327d99bbb04c6b663012f4/trace" for 127.0.0.1 at 2017-07-29 17:17:00 +0300
+Started POST "/__web_console/repl_sessions/e584705e7e327d99bbb04c6b663012f4/trace" for 127.0.0.1 at 2017-07-29 17:17:00 +0300
+Started GET "/trains" for 127.0.0.1 at 2017-07-29 17:17:15 +0300
+  
+ActionController::RoutingError (undefined method `set_seat' for TrainsController:Class):
+  
+app/controllers/trains_controller.rb:83:in `<class:TrainsController>'
+app/controllers/trains_controller.rb:1:in `<top (required)>'
+Started GET "/trains" for 127.0.0.1 at 2017-07-29 17:17:43 +0300
+  
+ActionController::RoutingError (undefined method `set_seat' for nil:NilClass):
+  
+app/controllers/trains_controller.rb:83:in `<class:TrainsController>'
+app/controllers/trains_controller.rb:1:in `<top (required)>'
+Started GET "/trains" for 127.0.0.1 at 2017-07-29 17:22:25 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (1.3ms)
+  Rendered trains/_train.html.erb (0.3ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/index.html.erb within layouts/application (16.0ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 75ms (Views: 63.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/trains/1" for 127.0.0.1 at 2017-07-29 17:22:29 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 1], ["LIMIT", 1]]
+  Rendered trains/show.html.erb within layouts/application (38.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 78ms (Views: 71.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-29 17:22:35 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  Rendered trains/show.html.erb within layouts/application (22.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 54ms (Views: 47.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-07-29 17:22:57 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (0.7ms)
+  Rendered trains/_train.html.erb (0.3ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/index.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-29 17:22:59 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  Rendered trains/show.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 50ms (Views: 45.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-29 17:23:19 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  Rendered trains/show.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 47ms (Views: 44.1ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 11]]
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-29 17:24:40 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  Rendered trains/show.html.erb within layouts/application (29.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 83ms (Views: 64.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-29 17:24:42 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  Rendered trains/show.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 42ms (Views: 38.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-29 17:24:42 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  Rendered trains/show.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-29 17:24:43 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  Rendered trains/show.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 86ms (Views: 82.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-29 17:24:43 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.6ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  Rendered trains/show.html.erb within layouts/application (24.0ms)
+  Rendered layouts/_footer.html.erb (2.7ms)
+Completed 200 OK in 98ms (Views: 94.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-29 17:24:44 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  Rendered trains/show.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 88ms (Views: 82.0ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY "routes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mRailwayStation Load (0.1ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" ORDER BY "railway_stations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trains" ("number", "created_at", "updated_at", "route_id", "current_station_id") VALUES (?, ?, ?, ?, ?)[0m  [["number", 383], ["created_at", "2017-07-29 14:28:05.680024"], ["updated_at", "2017-07-29 14:28:05.680024"], ["route_id", 6], ["current_station_id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-29 17:29:40 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "wagons"."wagon_type_id" FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  Rendered trains/show.html.erb within layouts/application (43.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 98ms (Views: 78.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-07-29 17:29:47 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (3.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (2.1ms)
+  Rendered trains/_train.html.erb (0.8ms)
+  Rendered trains/_train.html.erb (2.2ms)
+  Rendered trains/_train.html.erb (0.7ms)
+  Rendered trains/index.html.erb within layouts/application (28.7ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 89ms (Views: 83.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/trains/4" for 127.0.0.1 at 2017-07-29 17:29:49 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 4], ["LIMIT", 1]]
+  Rendered trains/show.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 58ms (Views: 54.0ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 4], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."id" = ? LIMIT ?[0m  [["train_id", 3], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."id" = ? LIMIT ?[0m  [["train_id", 3], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."id" = ? LIMIT ?[0m  [["train_id", 3], ["id", 2], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."id" = ? LIMIT ?[0m  [["train_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."id" = ? LIMIT ?[0m  [["train_id", 3], ["id", 4], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.5ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.3ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."id" = ? LIMIT ?[0m  [["train_id", 3], ["id", 4], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."id" = ? LIMIT ?[0m  [["train_id", 3], ["id", 2], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."id" = ? LIMIT ?[0m  [["train_id", 3], ["id", 2], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mRailwayStation Load (0.1ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" ORDER BY "railway_stations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "trains" ("number", "created_at", "updated_at", "route_id", "current_station_id") VALUES (?, ?, ?, ?, ?)[0m  [["number", 383], ["created_at", "2017-07-29 14:33:58.190193"], ["updated_at", "2017-07-29 14:33:58.190193"], ["route_id", 6], ["current_station_id", 1]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" ORDER BY "railway_stations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "trains" ("number", "created_at", "updated_at", "route_id", "current_station_id") VALUES (?, ?, ?, ?, ?)[0m  [["number", 383], ["created_at", "2017-07-29 14:35:10.255055"], ["updated_at", "2017-07-29 14:35:10.255055"], ["route_id", 6], ["current_station_id", 1]]
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
