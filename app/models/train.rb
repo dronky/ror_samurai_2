@@ -11,6 +11,15 @@ class Train < ApplicationRecord
   @all_down_seats = 10
   @seats = {up: 0, down: 0}
 
+  def total_seats
+    total = 0
+    self.wagons.each do |wagon|
+      total+=wagon.up_seats
+      total+=wagon.down_seats
+    end
+    total
+  end
+
   def set_seat(up_seats_count = 0, down_seats_count = 0)
     raise "Up seats should more than 0" if @all_up_seats <= 0
     raise "Down seats should more than 0" if @all_down_seats <= 0
@@ -20,5 +29,5 @@ class Train < ApplicationRecord
       @seats[down] = down_seats_count
       @all_down_seats_seats -= down_seats_count
     end
-  end             
+  end
 end               

@@ -19,16 +19,18 @@
   <% if @train.wagons.empty? %>
       No wagons yet
   <% else %>
-      <ul>
-        <li>Count of compartment wagons: <%= @train.wagons.pluck(:wagon_type_id).delete_if {|i| i != 2}.size %>
-        <li>Count of second-class wagons: <%= @train.wagons.pluck(:wagon_type_id).delete_if {|i| i != 1}.size %>
-      </ul>
-  <% end %>
+    <ul>
+      <li>Count of compartment wagons: <%= @train.wagons.pluck(:wagon_type_id).delete_if {|i| i != 2}.size %>
+      <li>Count of second-class wagons: <%= @train.wagons.pluck(:wagon_type_id).delete_if {|i| i != 1}.size %>
+    </ul>
+<% end %>
 </p>
 
 <p>
   <strong>Seats:</strong>
-  <%= @train.seats %>
+  <%= @train.total_seats %>
 </p>
+
+
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>

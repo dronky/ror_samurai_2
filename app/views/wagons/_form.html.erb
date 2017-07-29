@@ -1,0 +1,37 @@
+<%= form_with(model: wagon, local: true) do |form| %>
+    <% if wagon.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(wagon.errors.count, "error") %> prohibited this wagon from being saved:</h2>
+
+          <ul>
+            <% wagon.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :train_id %>
+      <%= form.collection_select :train_id, Train.all, :id, :number %>
+    </div>
+
+    <div class="field">
+      <%= form.label :wagon_type %>
+      <%= form.collection_select :wagon_type_id, WagonType.all, :id, :title %>
+    </div>
+
+    <div class="field">
+      <%= form.label :up_seats %>
+      <%= form.number_field :up_seats, id: :wagon_id %>
+    </div>
+
+    <div class="field">
+      <%= form.label :down_seats %>
+      <%= form.number_field :down_seats, id: :wagon_id %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+<% end %>

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Wagons</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @wagons.each do |wagon| %>
+      <%= render wagon %>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wagon', new_wagon_path %>
