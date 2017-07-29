@@ -28,7 +28,14 @@
 
 <p>
   <strong>Seats:</strong>
-  <%= @train.total_seats %>
+  <% @train.wagons.each do |w| %>
+    <ul>
+      <li><i>Number of wagon: <%= w.id %> </i>
+      <li><i>Wagon type: <%= w.wagon_type.title %></i>
+      <li><i>Up seats: <%= w.up_seats %></i>
+      <li><i>Down seats: <%= w.down_seats %></i>
+    </ul>
+<% end %>
 </p>
 
 
