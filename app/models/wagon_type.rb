@@ -1,3 +1,3 @@
 class WagonType < ApplicationRecord
-  has_one :wagon
+  has_many :wagons
 end

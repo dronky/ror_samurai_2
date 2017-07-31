@@ -20,24 +20,19 @@
       No wagons yet
   <% else %>
     <ul>
-      <li>Count of compartment wagons: <%= @train.wagons.pluck(:wagon_type_id).delete_if {|i| i != 2}.size %>
-      <li>Count of second-class wagons: <%= @train.wagons.pluck(:wagon_type_id).delete_if {|i| i != 1}.size %>
+      <li>Count of compartment wagons: <%= @train.seats_count[:comp] %>
+        <ul>
+          <li>Up seats: <%= @train.wagons.where('wagon_type_id': 2).sum(:up_seats) %></li>
+          <li>Down seats: <%= @train.wagons.where('wagon_type_id': 2).sum(:down_seats) %></li>
+        </ul>
+      <li>Count of second-class wagons: <%= @train.seats_count[:second] %>
+        <ul>
+          <li>Up seats: <%= @train.wagons.where('wagon_type_id': 1).sum(:up_seats) %></li>
+          <li>Down seats: <%= @train.wagons.where('wagon_type_id': 1).sum(:down_seats) %></li>
+        </ul>
     </ul>
 <% end %>
 </p>
-
-<p>
-  <strong>Seats:</strong>
-  <% @train.wagons.each do |w| %>
-    <ul>
-      <li><i>Number of wagon: <%= w.id %> </i>
-      <li><i>Wagon type: <%= w.wagon_type.title %></i>
-      <li><i>Up seats: <%= w.up_seats %></i>
-      <li><i>Down seats: <%= w.down_seats %></i>
-    </ul>
-<% end %>
-</p>
-
 
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>

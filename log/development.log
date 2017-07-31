@@ -8740,3 +8740,549 @@ Processing by TrainsController#show as HTML
 Completed 200 OK in 61ms (Views: 57.3ms | ActiveRecord: 1.5ms)
 
 
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" ORDER BY "trains"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 1], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+Started GET "/" for 127.0.0.1 at 2017-07-31 18:04:53 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/victor/.rvm/gems/ruby-2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/victor/.rvm/gems/ruby-2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (7.7ms)
+Completed 200 OK in 25ms (Views: 17.1ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-07-31 18:04:57 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (1.6ms)
+  Rendered trains/_train.html.erb (0.3ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/index.html.erb within layouts/application (19.2ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 78ms (Views: 65.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 18:04:58 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[36mWagon Load (0.1ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 2]]
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE WagonType Load (0.0ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE WagonType Load (0.0ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered trains/show.html.erb within layouts/application (90.8ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 129ms (Views: 119.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/trains/3" for 127.0.0.1 at 2017-07-31 18:05:08 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 3], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.8ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 3]]
+  Rendered trains/show.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 53ms (Views: 44.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/trains/4" for 127.0.0.1 at 2017-07-31 18:05:10 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 4], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.3ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 4]]
+  Rendered trains/show.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 52ms (Views: 42.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 18:05:12 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[36mWagon Load (1.0ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 2]]
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE WagonType Load (0.0ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE WagonType Load (0.0ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered trains/show.html.erb within layouts/application (41.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 75ms (Views: 69.0ms | ActiveRecord: 2.9ms)
+
+
+  [1m[36mTrain Load (1.7ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 2]]
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? AND (up_seats) LIMIT ?[0m  [["train_id", 2], ["LIMIT", 11]]
+  [1m[36mTrain Load (0.4ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ?[0m  [["train_id", 2]]
+Started GET "/trains" for 127.0.0.1 at 2017-07-31 18:38:44 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (2.0ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (3.6ms)
+  Rendered trains/_train.html.erb (0.6ms)
+  Rendered trains/_train.html.erb (0.7ms)
+  Rendered trains/_train.html.erb (0.3ms)
+  Rendered trains/index.html.erb within layouts/application (26.4ms)
+  Rendered layouts/_footer.html.erb (1.7ms)
+Completed 200 OK in 109ms (Views: 93.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 18:38:46 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.8ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  Rendered trains/show.html.erb within layouts/application (46.3ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Train:0x007f80e6e36b38>):
+    21:   <% else %>
+    22:     <ul>
+    23:       <li>Count of compartment wagons: <%= @train.seats_count[:comp] %>
+    24:         <% @train.each do |train| %>
+    25:             <ul>
+    26:               <li><%= train.wagons.sum(:up_seats) %></li>
+    27:             </ul>
+  
+app/views/trains/show.html.erb:24:in `_app_views_trains_show_html_erb___161446398863579283_70095803085120'
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 18:39:15 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.4ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  Rendered trains/show.html.erb within layouts/application (19.1ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    21:   <% else %>
+    22:     <ul>
+    23:       <li>Count of compartment wagons: <%= @train.seats_count[:comp] %>
+    24:         <% @trains.each do |train| %>
+    25:             <ul>
+    26:               <li><%= train.wagons.sum(:up_seats) %></li>
+    27:             </ul>
+  
+app/views/trains/show.html.erb:24:in `_app_views_trains_show_html_erb___161446398863579283_70095820915660'
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 18:59:32 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (1.5ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  Rendered trains/show.html.erb within layouts/application (50.4ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Train:0x007f80e7ced168>):
+    36: 
+    37: <p>
+    38:   <strong>Seats:</strong>
+    39:   <% @train.each do |w| %>
+    40:     <ul>
+    41:       <li><i>Number of wagon: <%= w.id %> </i>
+    42:       <li><i>Wagon type: <%= w.wagon_type.title %></i>
+  
+app/views/trains/show.html.erb:39:in `_app_views_trains_show_html_erb___161446398863579283_70095810801400'
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 19:00:00 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  Rendered trains/show.html.erb within layouts/application (25.1ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    36: 
+    37: <p>
+    38:   <strong>Seats:</strong>
+    39:   <% @trains.each do |w| %>
+    40:     <ul>
+    41:       <li><i>Number of wagon: <%= w.id %> </i>
+    42:       <li><i>Wagon type: <%= w.wagon_type.title %></i>
+  
+app/views/trains/show.html.erb:39:in `_app_views_trains_show_html_erb___161446398863579283_70095809882700'
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 19:01:57 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  Rendered trains/show.html.erb within layouts/application (20.3ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    36: 
+    37: <!--<p>-->
+    38:   <!--<strong>Seats:</strong>-->
+    39:   <!--<% @trains.each do |w| %>-->
+    40:     <!--<ul>-->
+    41:       <!--<li><i>Number of wagon: <%= w.id %> </i>-->
+    42:       <!--<li><i>Wagon type: <%= w.wagon_type.title %></i>-->
+  
+app/views/trains/show.html.erb:39:in `_app_views_trains_show_html_erb___161446398863579283_70095801209520'
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 19:02:37 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  Rendered trains/show.html.erb within layouts/application (13.3ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    36: 
+    37: <p>
+    38:   <strong>Seats:</strong>
+    39:   <% @trains.each do |w| %>
+    40:     <ul>
+    41:       <li><i>Number of wagon: <%= w.id %> </i>
+    42:       <li><i>Wagon type: <%= w.wagon_type.title %></i>
+  
+app/views/trains/show.html.erb:39:in `_app_views_trains_show_html_erb___161446398863579283_70095829849900'
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 19:02:52 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  Rendered trains/show.html.erb within layouts/application (11.6ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 63ms (Views: 59.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 19:04:00 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  Rendered trains/show.html.erb within layouts/application (16.6ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 82ms (Views: 78.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 19:04:13 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  Rendered trains/show.html.erb within layouts/application (19.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 78ms (Views: 73.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-07-31 19:04:31 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (1.1ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (2.7ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/_train.html.erb (0.6ms)
+  Rendered trains/index.html.erb within layouts/application (20.3ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 77ms (Views: 64.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-07-31 19:05:44 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (0.7ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 19:05:45 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  Rendered trains/show.html.erb within layouts/application (31.3ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    34: <% end %>
+    35: </p>
+    36: 
+    37: <% @trains.each do |train| %>
+    38:     <%= render train %>
+    39: <% end %>
+    40: 
+  
+app/views/trains/show.html.erb:37:in `_app_views_trains_show_html_erb___161446398863579283_70095788349440'
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 19:06:46 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (1.2ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/_train.html.erb (0.3ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/show.html.erb within layouts/application (58.5ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 103ms (Views: 80.9ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 19:06:55 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  Rendered trains/show.html.erb within layouts/application (38.6ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 4.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    34: <% end %>
+    35: </p>
+    36: 
+    37: <% @trains.each do |train| %>
+    38:     <%= render train %>
+    39: <% end %>
+    40: 
+  
+app/views/trains/show.html.erb:37:in `_app_views_trains_show_html_erb___161446398863579283_70095832684000'
+Started GET "/trains/" for 127.0.0.1 at 2017-07-31 19:06:58 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (1.0ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/index.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 19:06:59 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  Rendered trains/show.html.erb within layouts/application (19.5ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    34: <% end %>
+    35: </p>
+    36: 
+    37: <% @trains.each do |train| %>
+    38:     <%= render train %>
+    39: <% end %>
+    40: 
+  
+app/views/trains/show.html.erb:37:in `_app_views_trains_show_html_erb___161446398863579283_70095830399220'
+Started GET "/trains/2" for 127.0.0.1 at 2017-07-31 19:07:11 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "second_class_car"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" INNER JOIN "wagon_types" ON "wagon_types"."id" = "wagons"."wagon_type_id" WHERE "wagons"."train_id" = ? AND "wagon_types"."title" = ?[0m  [["train_id", 2], ["title", "compartment_car"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."wagon_type_id" = ?[0m  [["train_id", 2], ["wagon_type_id", 1]]
+  Rendered trains/show.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 34ms (Views: 30.4ms | ActiveRecord: 1.2ms)
+
+
