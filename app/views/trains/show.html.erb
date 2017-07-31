@@ -19,6 +19,11 @@
   <% if @train.wagons.empty? %>
       No wagons yet
   <% else %>
+    <%# NOTE: вычисление мест выглядит довольно странно. Вообще, это должен быть метод поезда, что-то вроде: `train.seats_count(:coupe, :up_seats)` %>
+
+    <%# NOTE: следующий момент, стоит вычислять количество с помощью метода `count` из ActiveRecord %>
+    <%# NOTE: также, магические числа `1` и `2` читаются очень плохо %>
+    <%# NOTE: поскольку у тебя тип вагона хранится в отдельной модели, может потребоваться соединение чтобы получить вагоны конкретного типа: `@train.wagons.joins(:wagon_type).where('wagon_types.title': :coupe).count` %>
     <ul>
       <li>Count of compartment wagons: <%= @train.wagons.pluck(:wagon_type_id).delete_if {|i| i != 2}.size %>
       <li>Count of second-class wagons: <%= @train.wagons.pluck(:wagon_type_id).delete_if {|i| i != 1}.size %>
@@ -27,6 +32,7 @@
 </p>
 
 <p>
+  <%# NOTE: необходимо выводить общее количество мест каждого типа для каждого из типов вагонов для всего поезда. Подробней смотри в комментарии к PR %>
   <strong>Seats:</strong>
   <% @train.wagons.each do |w| %>
     <ul>
