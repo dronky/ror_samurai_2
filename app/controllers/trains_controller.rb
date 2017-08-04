@@ -15,7 +15,6 @@ class TrainsController < ApplicationController
   # GET /trains/new
   def new
     @train = Train.new
-    @train.set_seat(1,2)
   end
 
   # GET /trains/1/edit

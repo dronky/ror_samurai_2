@@ -10481,3 +10481,1231 @@ Completed 200 OK in 295ms (Views: 209.1ms | ActiveRecord: 7.5ms)
 
   [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRailwayStations (20170703210149)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "railway_stations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170703210149"]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTrains (20170703210317)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "trains" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170703210317"]]
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRoutes (20170708122113)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "routes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170708122113"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRailwayStationsAndRoutes (20170717200937)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "railway_stations_routes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "route_id" integer, "railway_station_id" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_railway_stations_routes_on_route_id" ON "railway_stations_routes" ("route_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_railway_stations_routes_on_railway_station_id" ON "railway_stations_routes" ("railway_station_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170717200937"]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRouteIdToTrains (20170717205052)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "trains" ADD "route_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170717205052"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTickets (20170718192909)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170718192909"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20170719134514)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ticket_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170719134514"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddCurrentStationIdToTrain (20170719194836)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "trains" ADD "current_station_id" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_trains_on_current_station_id" ON "trains" ("current_station_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170719194836"]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveStartStationAndEndStationFromTickets (20170726213201)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "atickets" ("id","train_id","user_id","created_at","updated_at")
+                     SELECT "id","train_id","user_id","created_at","updated_at" FROM "tickets"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "tickets"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("id","train_id","user_id","created_at","updated_at")
+                     SELECT "id","train_id","user_id","created_at","updated_at" FROM "atickets"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "atickets"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "atickets" ("id","train_id","user_id","created_at","updated_at")
+                     SELECT "id","train_id","user_id","created_at","updated_at" FROM "tickets"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "tickets"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("id","train_id","user_id","created_at","updated_at")
+                     SELECT "id","train_id","user_id","created_at","updated_at" FROM "atickets"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "atickets"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170726213201"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddStartStationAndEndStationToTickets (20170726213248)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "tickets" ADD "start_station_id" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "tickets" ADD "end_station_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170726213248"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateWagons (20170727133138)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "wagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "traind_id" integer, "wagon_type" integer, "up_seats" integer, "down_seats" integer, "side_up_seats" integer, "side_down_seats" integer, "sit_seats" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727133138"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateWagonType (20170727133702)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "wagon_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "wagon_type" varchar)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727133702"]]
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameWagonTypeToWagonTypeIdAtWagons (20170727135403)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "traind_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT NULL, "down_seats" integer DEFAULT NULL, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "awagons" ("id","traind_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at")
+                     SELECT "id","traind_id","wagon_type","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at" FROM "wagons"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "wagons"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "wagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "traind_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT NULL, "down_seats" integer DEFAULT NULL, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "wagons" ("id","traind_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at")
+                     SELECT "id","traind_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at" FROM "awagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "awagons"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727135403"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameTraindIdToTrainId (20170727144850)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT NULL, "down_seats" integer DEFAULT NULL, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "awagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at")
+                     SELECT "id","traind_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at" FROM "wagons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "wagons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "wagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT NULL, "down_seats" integer DEFAULT NULL, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "wagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at")
+                     SELECT "id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at" FROM "awagons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "awagons"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727144850"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameWagonTypeAtWagonTypes (20170727150448)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awagon_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "awagon_types" ("id","title")
+                     SELECT "id","wagon_type" FROM "wagon_types"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "wagon_types"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "wagon_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "wagon_types" ("id","title")
+                     SELECT "id","title" FROM "awagon_types"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "awagon_types"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727150448"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDefaultValues (20170731204536)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT NULL, "down_seats" integer DEFAULT NULL, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "awagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at")
+                     SELECT "id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at" FROM "wagons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "wagons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "wagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT 0, "down_seats" integer DEFAULT NULL, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "wagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at")
+                     SELECT "id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at" FROM "awagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "awagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT 0, "down_seats" integer DEFAULT NULL, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "awagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at")
+                     SELECT "id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at" FROM "wagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "wagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "wagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT 0, "down_seats" integer DEFAULT 0, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "wagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at")
+                     SELECT "id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at" FROM "awagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "awagons"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170731204536"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNullValidation (20170731210105)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT 0, "down_seats" integer DEFAULT 0, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "awagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at")
+                     SELECT "id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at" FROM "wagons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "wagons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "wagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer NOT NULL, "up_seats" integer DEFAULT 0, "down_seats" integer DEFAULT 0, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "wagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at")
+                     SELECT "id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","created_at","updated_at" FROM "awagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "awagons"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170731210105"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddStationNumberToRoutes (20170803152050)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "routes" ADD "station_number" integer DEFAULT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170803152050"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddStationNumberToRailwayStation (20170804125002)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "railway_stations_routes" ADD "station_number" integer[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170804125002"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-08-04 21:04:17.889473"], ["updated_at", "2017-08-04 21:04:17.889473"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+Started GET "/wagons/new" for 127.0.0.1 at 2017-08-04 14:19:07 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WagonsController#new as HTML
+  Rendering wagons/new.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT "wagon_types".* FROM "wagon_types"[0m
+  Rendered wagons/_form.html.erb (75.2ms)
+  Rendered wagons/new.html.erb within layouts/application (85.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 503ms (Views: 431.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-08-04 14:19:15 -0700
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 46ms (Views: 31.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/trains/new" for 127.0.0.1 at 2017-08-04 14:19:17 -0700
+Processing by TrainsController#new as HTML
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `set_seat' for #<Train:0x00000003bc1148>):
+  
+app/controllers/trains_controller.rb:18:in `new'
+Started GET "/trains/new" for 127.0.0.1 at 2017-08-04 14:20:07 -0700
+Processing by TrainsController#new as HTML
+  Rendering trains/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered trains/_form.html.erb (46.9ms)
+  Rendered trains/new.html.erb within layouts/application (53.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 136ms (Views: 91.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/trains" for 127.0.0.1 at 2017-08-04 14:20:15 -0700
+Processing by TrainsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/7eswttypBLl7qZ3zYyDT5ZVghNIIPGPdP6mck9TC+kvH++JQn3yogFQT2n+mmn/h0ooIObVh6ZayQksbslRHw==", "train"=>{"number"=>"228"}, "commit"=>"Create Train"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering trains/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.6ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered trains/_form.html.erb (4.4ms)
+  Rendered trains/new.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 96ms (Views: 50.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-08-04 14:20:18 -0700
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/trains/new" for 127.0.0.1 at 2017-08-04 14:20:20 -0700
+Processing by TrainsController#new as HTML
+  Rendering trains/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered trains/_form.html.erb (5.7ms)
+  Rendered trains/new.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes" for 127.0.0.1 at 2017-08-04 14:20:24 -0700
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered routes/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/new" for 127.0.0.1 at 2017-08-04 14:20:26 -0700
+Processing by RoutesController#new as HTML
+  Rendering routes/new.html.erb within layouts/application
+  Rendered routes/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 35ms (Views: 27.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/routes" for 127.0.0.1 at 2017-08-04 14:20:35 -0700
+Processing by RoutesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ushS23ucQB1qyO2g7qI/nsDnoxXUWprkYrB70JOK3EWS2ZKQnr+L3AZr2IHIfxnCA2D1GxTYAqab81DooWptXw==", "route"=>{"name"=>"Moscow - Kaluga"}, "commit"=>"Создать"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.0ms)[0m  [1m[32mINSERT INTO "routes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Moscow - Kaluga"], ["created_at", "2017-08-04 21:20:35.670177"], ["updated_at", "2017-08-04 21:20:35.670177"]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/routes/1
+Completed 302 Found in 22ms (ActiveRecord: 16.6ms)
+
+
+Started GET "/routes/1" for 127.0.0.1 at 2017-08-04 14:20:35 -0700
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/application
+  [1m[36mRailwayStation Exists (11.2ms)[0m  [1m[34mSELECT  1 AS one FROM "railway_stations" INNER JOIN "railway_stations_routes" ON "railway_stations"."id" = "railway_stations_routes"."railway_station_id" WHERE "railway_stations_routes"."route_id" = ? LIMIT ?[0m  [["route_id", 1], ["LIMIT", 1]]
+  [1m[36mTrain Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "trains" WHERE "trains"."route_id" = ? LIMIT ?[0m  [["route_id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/application (57.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 94ms (Views: 74.5ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/routes" for 127.0.0.1 at 2017-08-04 14:20:37 -0700
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered routes/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/railway_stations" for 127.0.0.1 at 2017-08-04 14:20:42 -0700
+Processing by RailwayStationsController#index as HTML
+  Rendering railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered railway_stations/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/railway_stations/new" for 127.0.0.1 at 2017-08-04 14:20:44 -0700
+Processing by RailwayStationsController#new as HTML
+  Rendering railway_stations/new.html.erb within layouts/application
+  Rendered railway_stations/_form.html.erb (3.5ms)
+  Rendered railway_stations/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 44ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/railway_stations" for 127.0.0.1 at 2017-08-04 14:20:47 -0700
+Processing by RailwayStationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GhycqRdt9H06mZIaAztmGeU3BtSZUQLt19R9gwANQ9rFuCKAxU31yWIdIAX8meL1aaCMsgjq2JRiElbMmI+kDA==", "railway_station"=>{"title"=>"Moscow"}, "commit"=>"Create Railway station"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "railway_stations" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Moscow"], ["created_at", "2017-08-04 21:20:47.399093"], ["updated_at", "2017-08-04 21:20:47.399093"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/railway_stations/1
+Completed 302 Found in 8ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/railway_stations/1" for 127.0.0.1 at 2017-08-04 14:20:47 -0700
+Processing by RailwayStationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering railway_stations/show.html.erb within layouts/application
+  Rendered railway_stations/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/railway_stations" for 127.0.0.1 at 2017-08-04 14:20:49 -0700
+Processing by RailwayStationsController#index as HTML
+  Rendering railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered railway_stations/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    12: 
+    13:   <tbody>
+    14:   <% @railway_stations.each do |railway_station| %>
+    15:       <%= render @railway_station %>
+    16:   <% end %>
+    17:   </tbody>
+    18: </table>
+  
+app/views/railway_stations/index.html.erb:15:in `block in _app_views_railway_stations_index_html_erb___4478994211266355586_70011088889540'
+app/views/railway_stations/index.html.erb:14:in `_app_views_railway_stations_index_html_erb___4478994211266355586_70011088889540'
+Started GET "/railway_stations" for 127.0.0.1 at 2017-08-04 14:21:40 -0700
+Processing by RailwayStationsController#index as HTML
+  Rendering railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.4ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered railway_stations/_railway_station.html.erb (7.1ms)
+  Rendered railway_stations/index.html.erb within layouts/application (28.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 61ms (Views: 56.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/railway_stations/new" for 127.0.0.1 at 2017-08-04 14:21:45 -0700
+Processing by RailwayStationsController#new as HTML
+  Rendering railway_stations/new.html.erb within layouts/application
+  Rendered railway_stations/_form.html.erb (1.5ms)
+  Rendered railway_stations/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/railway_stations" for 127.0.0.1 at 2017-08-04 14:21:55 -0700
+Processing by RailwayStationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mNxdbruy1K+bNFQhVkezVzSKGgahbHfMkc67PtOIujFHeONHaZLVG8Ow5j6p5Te7uB2QYDDXrbUkCJBxSwpd5w==", "railway_station"=>{"title"=>"Erdenievo"}, "commit"=>"Create Railway station"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "railway_stations" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Erdenievo"], ["created_at", "2017-08-04 21:21:55.239886"], ["updated_at", "2017-08-04 21:21:55.239886"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/railway_stations/2
+Completed 302 Found in 9ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/railway_stations/2" for 127.0.0.1 at 2017-08-04 14:21:55 -0700
+Processing by RailwayStationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRailwayStation Load (0.3ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering railway_stations/show.html.erb within layouts/application
+  Rendered railway_stations/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/railway_stations" for 127.0.0.1 at 2017-08-04 14:21:57 -0700
+Processing by RailwayStationsController#index as HTML
+  Rendering railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered railway_stations/_railway_station.html.erb (0.7ms)
+  Rendered railway_stations/_railway_station.html.erb (2.7ms)
+  Rendered railway_stations/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/railway_stations/new" for 127.0.0.1 at 2017-08-04 14:21:58 -0700
+Processing by RailwayStationsController#new as HTML
+  Rendering railway_stations/new.html.erb within layouts/application
+  Rendered railway_stations/_form.html.erb (1.6ms)
+  Rendered railway_stations/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/railway_stations" for 127.0.0.1 at 2017-08-04 14:22:02 -0700
+Processing by RailwayStationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IJZDl4rfxhdZBui9Hq4jXTe/6OIn9bAG4xJxfkFgly//Mv2+WP/HowGCWqLhDKexuyhihLZOan9W1Fox2eJw+Q==", "railway_station"=>{"title"=>"Kaluga"}, "commit"=>"Create Railway station"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "railway_stations" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Kaluga"], ["created_at", "2017-08-04 21:22:02.593194"], ["updated_at", "2017-08-04 21:22:02.593194"]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/railway_stations/3
+Completed 302 Found in 8ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/railway_stations/3" for 127.0.0.1 at 2017-08-04 14:22:02 -0700
+Processing by RailwayStationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering railway_stations/show.html.erb within layouts/application
+  Rendered railway_stations/show.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 31ms (Views: 25.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/railway_stations" for 127.0.0.1 at 2017-08-04 14:22:36 -0700
+Processing by RailwayStationsController#index as HTML
+  Rendering railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered railway_stations/_railway_station.html.erb (1.0ms)
+  Rendered railway_stations/_railway_station.html.erb (0.4ms)
+  Rendered railway_stations/_railway_station.html.erb (0.2ms)
+  Rendered railway_stations/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/railway_stations/new" for 127.0.0.1 at 2017-08-04 14:22:38 -0700
+Processing by RailwayStationsController#new as HTML
+  Rendering railway_stations/new.html.erb within layouts/application
+  Rendered railway_stations/_form.html.erb (1.5ms)
+  Rendered railway_stations/new.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/railway_stations" for 127.0.0.1 at 2017-08-04 14:22:43 -0700
+Processing by RailwayStationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TNYEmPhm19jHuEafM3mnovNEMgWqsBdNnmptwQXozVKTcrqxKkbWbJ889IDM2yNOf9O4YzsLzTQrrEaOnWoqhA==", "railway_station"=>{"title"=>"Voronezh"}, "commit"=>"Create Railway station"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "railway_stations" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Voronezh"], ["created_at", "2017-08-04 21:22:43.687077"], ["updated_at", "2017-08-04 21:22:43.687077"]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/railway_stations/4
+Completed 302 Found in 8ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/railway_stations/4" for 127.0.0.1 at 2017-08-04 14:22:43 -0700
+Processing by RailwayStationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRailwayStation Load (0.1ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering railway_stations/show.html.erb within layouts/application
+  Rendered railway_stations/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/railway_stations" for 127.0.0.1 at 2017-08-04 14:22:45 -0700
+Processing by RailwayStationsController#index as HTML
+  Rendering railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered railway_stations/_railway_station.html.erb (0.6ms)
+  Rendered railway_stations/_railway_station.html.erb (0.2ms)
+  Rendered railway_stations/_railway_station.html.erb (0.3ms)
+  Rendered railway_stations/_railway_station.html.erb (0.2ms)
+  Rendered railway_stations/index.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-08-04 14:22:54 -0700
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes" for 127.0.0.1 at 2017-08-04 14:22:58 -0700
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered routes/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/1/edit" for 127.0.0.1 at 2017-08-04 14:23:00 -0700
+Processing by RoutesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/edit.html.erb within layouts/application
+  Rendered routes/edit.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 42ms (Views: 26.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/routes" for 127.0.0.1 at 2017-08-04 14:23:02 -0700
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered routes/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes/1" for 127.0.0.1 at 2017-08-04 14:23:06 -0700
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/application
+  [1m[36mRailwayStation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "railway_stations" INNER JOIN "railway_stations_routes" ON "railway_stations"."id" = "railway_stations_routes"."railway_station_id" WHERE "railway_stations_routes"."route_id" = ? LIMIT ?[0m  [["route_id", 1], ["LIMIT", 1]]
+  [1m[36mTrain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "trains" WHERE "trains"."route_id" = ? LIMIT ?[0m  [["route_id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/routes/new" for 127.0.0.1 at 2017-08-04 14:23:18 -0700
+Processing by RoutesController#new as HTML
+  Rendering routes/new.html.erb within layouts/application
+  Rendered routes/new.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/routes" for 127.0.0.1 at 2017-08-04 14:23:19 -0700
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered routes/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/railway_stations" for 127.0.0.1 at 2017-08-04 14:23:25 -0700
+Processing by RailwayStationsController#index as HTML
+  Rendering railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered railway_stations/_railway_station.html.erb (0.8ms)
+  Rendered railway_stations/_railway_station.html.erb (0.3ms)
+  Rendered railway_stations/_railway_station.html.erb (0.3ms)
+  Rendered railway_stations/_railway_station.html.erb (0.2ms)
+  Rendered railway_stations/index.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/railway_stations/1/edit" for 127.0.0.1 at 2017-08-04 14:23:27 -0700
+Processing by RailwayStationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRailwayStation Load (0.1ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering railway_stations/edit.html.erb within layouts/application
+  Rendered railway_stations/_form.html.erb (2.2ms)
+  Rendered railway_stations/edit.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 34ms (Views: 22.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/railway_stations" for 127.0.0.1 at 2017-08-04 14:23:29 -0700
+Processing by RailwayStationsController#index as HTML
+  Rendering railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.3ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered railway_stations/_railway_station.html.erb (0.8ms)
+  Rendered railway_stations/_railway_station.html.erb (0.3ms)
+  Rendered railway_stations/_railway_station.html.erb (0.2ms)
+  Rendered railway_stations/_railway_station.html.erb (0.3ms)
+  Rendered railway_stations/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-08-04 14:23:35 -0700
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/trains/new" for 127.0.0.1 at 2017-08-04 14:23:36 -0700
+Processing by TrainsController#new as HTML
+  Rendering trains/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered trains/_form.html.erb (5.1ms)
+  Rendered trains/new.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/trains" for 127.0.0.1 at 2017-08-04 14:23:39 -0700
+Processing by TrainsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D9s/6LXjNkTRL8ZBPlqhG4ck/MxX0oNzISDRB2LPJ4Fkp/qWKCZDXj1owDAuIvRsy/IT3Id91l8ydCFaEjTX1g==", "train"=>{"number"=>"228", "route_id"=>"1"}, "commit"=>"Create Train"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering trains/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered trains/_form.html.erb (4.5ms)
+  Rendered trains/new.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 34ms (Views: 29.0ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRailwayStations (20170703210149)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "railway_stations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170703210149"]]
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTrains (20170703210317)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "trains" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170703210317"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRoutes (20170708122113)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "routes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170708122113"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRailwayStationsAndRoutes (20170717200937)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "railway_stations_routes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "route_id" integer, "railway_station_id" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_railway_stations_routes_on_route_id" ON "railway_stations_routes" ("route_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_railway_stations_routes_on_railway_station_id" ON "railway_stations_routes" ("railway_station_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170717200937"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRouteIdToTrains (20170717205052)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "trains" ADD "route_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170717205052"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTickets (20170718192909)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170718192909"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20170719134514)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ticket_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170719134514"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddCurrentStationIdToTrain (20170719194836)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "trains" ADD "current_station_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_trains_on_current_station_id" ON "trains" ("current_station_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170719194836"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveStartStationAndEndStationFromTickets (20170726213201)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (21.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "atickets" ("id","train_id","user_id","created_at","updated_at")
+                     SELECT "id","train_id","user_id","created_at","updated_at" FROM "tickets"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "tickets"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("id","train_id","user_id","created_at","updated_at")
+                     SELECT "id","train_id","user_id","created_at","updated_at" FROM "atickets"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "atickets"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "atickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "atickets" ("id","train_id","user_id","created_at","updated_at")
+                     SELECT "id","train_id","user_id","created_at","updated_at" FROM "tickets"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "tickets"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("id","train_id","user_id","created_at","updated_at")
+                     SELECT "id","train_id","user_id","created_at","updated_at" FROM "atickets"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "atickets"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170726213201"]]
+  [1m[35m (17.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddStartStationAndEndStationToTickets (20170726213248)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "tickets" ADD "start_station_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "tickets" ADD "end_station_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170726213248"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateWagons (20170727133138)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "wagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "traind_id" integer, "wagon_type" integer, "up_seats" integer, "down_seats" integer, "side_up_seats" integer, "side_down_seats" integer, "sit_seats" integer, "type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727133138"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateWagonType (20170727133702)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "wagon_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "wagon_type" varchar)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727133702"]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameWagonTypeToWagonTypeIdAtWagons (20170727135403)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "traind_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT NULL, "down_seats" integer DEFAULT NULL, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "type" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "awagons" ("id","traind_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at")
+                     SELECT "id","traind_id","wagon_type","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at" FROM "wagons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "wagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "wagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "traind_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT NULL, "down_seats" integer DEFAULT NULL, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "type" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "wagons" ("id","traind_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at")
+                     SELECT "id","traind_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at" FROM "awagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "awagons"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727135403"]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameTraindIdToTrainId (20170727144850)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT NULL, "down_seats" integer DEFAULT NULL, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "type" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "awagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at")
+                     SELECT "id","traind_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at" FROM "wagons"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "wagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "wagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT NULL, "down_seats" integer DEFAULT NULL, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "type" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "wagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at")
+                     SELECT "id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at" FROM "awagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "awagons"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727144850"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameWagonTypeAtWagonTypes (20170727150448)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awagon_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "awagon_types" ("id","title")
+                     SELECT "id","wagon_type" FROM "wagon_types"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "wagon_types"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "wagon_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "wagon_types" ("id","title")
+                     SELECT "id","title" FROM "awagon_types"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "awagon_types"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170727150448"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDefaultValues (20170731204536)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT NULL, "down_seats" integer DEFAULT NULL, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "type" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "awagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at")
+                     SELECT "id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at" FROM "wagons"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "wagons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "wagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT 0, "down_seats" integer DEFAULT NULL, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "type" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "wagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at")
+                     SELECT "id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at" FROM "awagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "awagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT 0, "down_seats" integer DEFAULT NULL, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "type" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "awagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at")
+                     SELECT "id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at" FROM "wagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "wagons"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "wagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT 0, "down_seats" integer DEFAULT 0, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "type" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "wagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at")
+                     SELECT "id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at" FROM "awagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "awagons"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170731204536"]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNullValidation (20170731210105)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer DEFAULT NULL, "up_seats" integer DEFAULT 0, "down_seats" integer DEFAULT 0, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "type" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "awagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at")
+                     SELECT "id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at" FROM "wagons"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "wagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "wagons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "train_id" integer DEFAULT NULL, "wagon_type_id" integer NOT NULL, "up_seats" integer DEFAULT 0, "down_seats" integer DEFAULT 0, "side_up_seats" integer DEFAULT NULL, "side_down_seats" integer DEFAULT NULL, "sit_seats" integer DEFAULT NULL, "type" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "wagons" ("id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at")
+                     SELECT "id","train_id","wagon_type_id","up_seats","down_seats","side_up_seats","side_down_seats","sit_seats","type","created_at","updated_at" FROM "awagons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "awagons"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170731210105"]]
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddStationNumberToRoutes (20170803152050)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "routes" ADD "station_number" integer DEFAULT 1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170803152050"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddStationNumberToRailwayStation (20170804125002)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "railway_stations_routes" ADD "station_number" integer[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170804125002"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-08-04 21:31:30.264934"], ["updated_at", "2017-08-04 21:31:30.264934"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+Started GET "/trains" for 127.0.0.1 at 2017-08-04 14:31:41 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/index.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 364ms (Views: 343.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/railway_stations" for 127.0.0.1 at 2017-08-04 14:31:45 -0700
+Processing by RailwayStationsController#index as HTML
+  Rendering railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered railway_stations/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 46ms (Views: 29.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/railway_stations/new" for 127.0.0.1 at 2017-08-04 14:31:47 -0700
+Processing by RailwayStationsController#new as HTML
+  Rendering railway_stations/new.html.erb within layouts/application
+  Rendered railway_stations/_form.html.erb (46.2ms)
+  Rendered railway_stations/new.html.erb within layouts/application (47.5ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 88ms (Views: 82.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/railway_stations" for 127.0.0.1 at 2017-08-04 14:31:49 -0700
+Processing by RailwayStationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"71av6wR99h/cjZV3DiojEQ/j0WRRZGeSClBSya0HBigw8hHC1l33q4QJJ2jxiKf9g3RbAsDfveu/lnmGNYXh/g==", "railway_station"=>{"title"=>"Moscow"}, "commit"=>"Create Railway station"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "railway_stations" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Moscow"], ["created_at", "2017-08-04 21:31:49.748051"], ["updated_at", "2017-08-04 21:31:49.748051"]]
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/railway_stations/1
+Completed 302 Found in 18ms (ActiveRecord: 12.6ms)
+
+
+Started GET "/railway_stations/1" for 127.0.0.1 at 2017-08-04 14:31:49 -0700
+Processing by RailwayStationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering railway_stations/show.html.erb within layouts/application
+  Rendered railway_stations/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 26ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/railway_stations" for 127.0.0.1 at 2017-08-04 14:31:52 -0700
+Processing by RailwayStationsController#index as HTML
+  Rendering railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered railway_stations/_railway_station.html.erb (0.8ms)
+  Rendered railway_stations/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 55ms (Views: 53.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/railway_stations/new" for 127.0.0.1 at 2017-08-04 14:31:52 -0700
+Processing by RailwayStationsController#new as HTML
+  Rendering railway_stations/new.html.erb within layouts/application
+  Rendered railway_stations/_form.html.erb (1.7ms)
+  Rendered railway_stations/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/railway_stations" for 127.0.0.1 at 2017-08-04 14:31:55 -0700
+Processing by RailwayStationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O9BwXG5GE2h/S8ZZZxp9GPZWdHw6URkGsMOhvpTy0DHkdM51vGYS3CfPdEaYuPn0esH+Gqvqw38FBYrxDHA35w==", "railway_station"=>{"title"=>"Kaluga"}, "commit"=>"Create Railway station"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "railway_stations" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Kaluga"], ["created_at", "2017-08-04 21:31:55.477788"], ["updated_at", "2017-08-04 21:31:55.477788"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/railway_stations/2
+Completed 302 Found in 8ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/railway_stations/2" for 127.0.0.1 at 2017-08-04 14:31:55 -0700
+Processing by RailwayStationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering railway_stations/show.html.erb within layouts/application
+  Rendered railway_stations/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/routes" for 127.0.0.1 at 2017-08-04 14:31:59 -0700
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered routes/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 61ms (Views: 41.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/routes/new" for 127.0.0.1 at 2017-08-04 14:32:00 -0700
+Processing by RoutesController#new as HTML
+  Rendering routes/new.html.erb within layouts/application
+  Rendered routes/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 56ms (Views: 40.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/routes" for 127.0.0.1 at 2017-08-04 14:32:04 -0700
+Processing by RoutesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EqJQjsNdAkrYzaBzFg3j9pxOLmkcvwMknTjF5TksOoc6s5DFJn7Ji7RulVIw0MWqX8l4Z9w9m2Zke+7dC8yLnQ==", "route"=>{"name"=>"Moscow - Kaluga"}, "commit"=>"Создать"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "routes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Moscow - Kaluga"], ["created_at", "2017-08-04 21:32:04.320551"], ["updated_at", "2017-08-04 21:32:04.320551"]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/routes/1
+Completed 302 Found in 11ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/routes/1" for 127.0.0.1 at 2017-08-04 14:32:04 -0700
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/application
+  [1m[36mRailwayStation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "railway_stations" INNER JOIN "railway_stations_routes" ON "railway_stations"."id" = "railway_stations_routes"."railway_station_id" WHERE "railway_stations_routes"."route_id" = ? LIMIT ?[0m  [["route_id", 1], ["LIMIT", 1]]
+  [1m[36mTrain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "trains" WHERE "trains"."route_id" = ? LIMIT ?[0m  [["route_id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/application (33.2ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 78ms (Views: 75.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/wagons/13" for 127.0.0.1 at 2017-08-04 14:32:09 -0700
+Processing by WagonsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 11ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Wagon with 'id'=13):
+  
+app/controllers/wagons_controller.rb:43:in `set_wagon'
+Started GET "/wagons" for 127.0.0.1 at 2017-08-04 14:32:12 -0700
+Processing by WagonsController#index as HTML
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.3ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered wagons/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 46ms (Views: 26.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wagons/new" for 127.0.0.1 at 2017-08-04 14:32:13 -0700
+Processing by WagonsController#new as HTML
+  Rendering wagons/new.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT "wagon_types".* FROM "wagon_types"[0m
+  Rendered wagons/_form.html.erb (12.5ms)
+  Rendered wagons/new.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 48ms (Views: 36.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-08-04 14:32:18 -0700
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wagons/new" for 127.0.0.1 at 2017-08-04 14:32:31 -0700
+Processing by WagonsController#new as HTML
+  Rendering wagons/new.html.erb within layouts/application
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  [1m[36mWagonType Load (0.3ms)[0m  [1m[34mSELECT "wagon_types".* FROM "wagon_types"[0m
+  Rendered wagons/_form.html.erb (8.9ms)
+  Rendered wagons/new.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/wagons/new" for 127.0.0.1 at 2017-08-04 14:33:11 -0700
+Processing by WagonsController#new as HTML
+  Rendering wagons/new.html.erb within layouts/application
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT "wagon_types".* FROM "wagon_types"[0m
+  Rendered wagons/_form.html.erb (13.8ms)
+  Rendered wagons/new.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 42ms (Views: 38.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wagons/new" for 127.0.0.1 at 2017-08-04 14:34:16 -0700
+Processing by WagonsController#new as HTML
+  Rendering wagons/new.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  [1m[36mWagonType Load (0.3ms)[0m  [1m[34mSELECT "wagon_types".* FROM "wagon_types"[0m
+  Rendered wagons/_form.html.erb (8.4ms)
+  Rendered wagons/new.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/wagons" for 127.0.0.1 at 2017-08-04 14:34:24 -0700
+Processing by WagonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LSVfT1U7/7ZkHQ5Q221mwsxE51XG8GyJ0iB43gAEZaT9jRwEzDSpBoCj507oe4xy3VtNZmgFGqD8F9eAIZ4/Ug==", "wagon"=>{"train_id"=>"1", "wagon_type_id"=>"1", "up_seats"=>"2", "down_seats"=>"3"}, "commit"=>"Create Wagon"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrain Load (0.7ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.1ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wagons" ("train_id", "wagon_type_id", "up_seats", "down_seats", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["train_id", 1], ["wagon_type_id", 1], ["up_seats", 2], ["down_seats", 3], ["created_at", "2017-08-04 21:34:24.272731"], ["updated_at", "2017-08-04 21:34:24.272731"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/wagons/1
+Completed 302 Found in 36ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/wagons/1" for 127.0.0.1 at 2017-08-04 14:34:24 -0700
+Processing by WagonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/show.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.2ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered wagons/show.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 29.8ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagonType Load (0.7ms)[0m  [1m[34mSELECT  "wagon_types".* FROM "wagon_types" WHERE "wagon_types"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
