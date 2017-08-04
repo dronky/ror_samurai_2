@@ -10448,3 +10448,34 @@ Completed 200 OK in 56ms (Views: 52.4ms | ActiveRecord: 0.9ms)
   [1m[36mRailwayStation Load (0.1ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mRailwayStationsRoute Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "railway_stations_routes" WHERE "railway_stations_routes"."station_number" = ? AND ("railway_stations_routes"."id" != ?) AND "railway_stations_routes"."route_id" = ? LIMIT ?[0m  [["station_number", 5], ["id", 9], ["route_id", 6], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mRailwayStationsRoute Load (0.2ms)[0m  [1m[34mSELECT  "railway_stations_routes".* FROM "railway_stations_routes" WHERE "railway_stations_routes"."route_id" = ? LIMIT ?[0m  [["route_id", 6], ["LIMIT", 11]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mRailwayStationsRoute Load (0.2ms)[0m  [1m[34mSELECT "railway_stations_routes".* FROM "railway_stations_routes" WHERE "railway_stations_routes"."route_id" = ? AND "railway_stations_routes"."railway_station_id" = ?[0m  [["route_id", 6], ["railway_station_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRailwayStationsRoute Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "railway_stations_routes" WHERE "railway_stations_routes"."station_number" = ? AND ("railway_stations_routes"."id" != ?) AND "railway_stations_routes"."route_id" = ? LIMIT ?[0m  [["station_number", 6], ["id", 1], ["route_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "railway_stations_routes" SET "station_number" = ? WHERE "railway_stations_routes"."id" = ?[0m  [["station_number", 6], ["id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-08-04 20:08:00 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/victor/.rvm/gems/ruby-2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/victor/.rvm/gems/ruby-2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (25.7ms)
+Completed 200 OK in 42ms (Views: 33.1ms)
+
+
+Started GET "/routes/6" for 127.0.0.1 at 2017-08-04 20:08:05 +0300
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/application
+  [1m[36mRailwayStation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "railway_stations" INNER JOIN "railway_stations_routes" ON "railway_stations"."id" = "railway_stations_routes"."railway_station_id" WHERE "railway_stations_routes"."route_id" = ? LIMIT ?[0m  [["route_id", 6], ["LIMIT", 1]]
+  [1m[36mRailwayStation Load (0.3ms)[0m  [1m[34mSELECT railway_stations.*, railway_stations_routes.station_number FROM "railway_stations" INNER JOIN "railway_stations_routes" "railway_stations_routes_railway_stations" ON "railway_stations_routes_railway_stations"."railway_station_id" = "railway_stations"."id" INNER JOIN "railway_stations_routes" ON "railway_stations"."id" = "railway_stations_routes"."railway_station_id" WHERE "railway_stations_routes"."route_id" = ? ORDER BY railway_stations_routes.station_number[0m  [["route_id", 6]]
+  [1m[36mTrain Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "trains" WHERE "trains"."route_id" = ? LIMIT ?[0m  [["route_id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "trains"."number" FROM "trains" WHERE "trains"."route_id" = ?[0m  [["route_id", 6]]
+  Rendered routes/show.html.erb within layouts/application (86.8ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 295ms (Views: 209.1ms | ActiveRecord: 7.5ms)
+
+
