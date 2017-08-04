@@ -10,7 +10,7 @@
   <% if @route.railway_stations.empty? %>
       No Stations yet
   <% else %>
-      <%= @route.railway_stations.collect(&:title).join(',') %>
+      <%= @route.railway_stations.ordered.collect(&:title).join(',') %>
   <% end %>
 </p>
 
