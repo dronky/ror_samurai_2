@@ -31,6 +31,12 @@
           <li>Down seats: <%= @train.wagons.where('wagon_type_id': 1).sum(:down_seats) %></li>
         </ul>
     </ul>
+    <strong>Links to wagons:</strong>
+    <% @train.wagons.order_from_head(@train).each do |wagon| %>
+        <ul>
+          <li>Wagon number: <%= link_to wagon.wagon_number, wagon %></li>
+        </ul>
+    <% end %>
 <% end %>
 </p>
 

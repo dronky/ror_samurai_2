@@ -10,9 +10,7 @@ class Train < ApplicationRecord
     seats = {second: second_class_count, comp: compartment_count}
   end
 
-  #ne rabotaet :(
-  def select_seats(wagon_type, seats)
-    self.wagons.where(type: wagon_type).seats
+  def select_seats(wagon_type, seats_type)
+    self.wagons.where(type: wagon_type).sum(seats_type.to_sym)
   end
-
 end

@@ -12,7 +12,7 @@
 
   <tbody>
   <% @wagons.each do |wagon| %>
-      <%= render wagon %>
+      <%= render partial: 'wagon', object: wagon %>
   <% end %>
   </tbody>
 </table>
