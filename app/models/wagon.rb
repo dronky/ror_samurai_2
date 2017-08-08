@@ -3,7 +3,6 @@ class Wagon < ApplicationRecord
   validates :type, inclusion: WAGON_TYPES
 
   belongs_to :train
-  belongs_to :wagon_type
 
   validates :train_id, :up_seats, :down_seats, presence: true
   validates :number, uniqueness: {scope: :train_id}
