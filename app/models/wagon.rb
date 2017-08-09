@@ -11,7 +11,7 @@ class Wagon < ApplicationRecord
   # scope :order_from_head,-> {train.head ? order(number: :asc) : order(number: :desc)}
   # почему этот метод не работает? Ведь 2.4.0 :013 > Wagon.first.train.head возвращает true. Или тут проблема в зонах видимости?
 
-  before_create :set_number
+  before_validation :set_number
 
   private
 
