@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170809193903) do
+ActiveRecord::Schema.define(version: 20170810170708) do
 
   create_table "railway_stations", force: :cascade do |t|
     t.string "title"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20170809193903) do
     t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "number"
+    t.integer "number"
     t.index ["number", "train_id"], name: "index_wagons_on_number_and_train_id", unique: true
   end
 
