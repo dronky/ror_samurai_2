@@ -22,19 +22,19 @@
     <ul>
       <li>Count of compartment wagons: <%= @train.seats_count[:comp] %>
         <ul>
-          <li>Up seats: <%= @train.wagons.where(type: :CoupeWagon).sum(:up_seats) %></li>
-          <li>Down seats: <%= @train.wagons.where(type: :CoupeWagon).sum(:down_seats) %></li>
+          <li>Up seats: <%= @train.wagons.where(wagon_type: :CoupeWagon).sum(:up_seats) %></li>
+          <li>Down seats: <%= @train.wagons.where(wagon_type: :CoupeWagon).sum(:down_seats) %></li>
         </ul>
       <li>Count of second-class wagons: <%= @train.seats_count[:second] %>
         <ul>
-          <li>Up seats: <%= @train.wagons.where(type: :PlackartWagon).sum(:up_seats) %></li>
-          <li>Down seats: <%= @train.wagons.where(type: :PlackartWagon).sum(:down_seats) %></li>
+          <li>Up seats: <%= @train.wagons.where(wagon_type: :PlackartWagon).sum(:up_seats) %></li>
+          <li>Down seats: <%= @train.wagons.where(wagon_type: :PlackartWagon).sum(:down_seats) %></li>
         </ul>
     </ul>
     <strong>Links to wagons:</strong>
     <% @train.wagons.order_from_head(@train).each do |wagon| %>
         <ul>
-          <li>Wagon number: <%= link_to wagon.number, wagon %></li>
+          <li>Wagon number: <%= link_to wagon.number, [@train, wagon] %></li>
         </ul>
     <% end %>
 <% end %>

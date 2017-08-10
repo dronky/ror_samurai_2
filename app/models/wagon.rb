@@ -1,7 +1,7 @@
 class Wagon < ApplicationRecord
 
   WAGON_TYPES = ["CoupeWagon", 'PlackartWagon', 'SitWagon', 'SvWagon']
-  validates :type, inclusion: WAGON_TYPES
+  validates :wagon_type, inclusion: WAGON_TYPES
 
   belongs_to :train
 
