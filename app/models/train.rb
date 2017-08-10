@@ -5,8 +5,8 @@ class Train < ApplicationRecord
   has_many :wagons
 
   def seats_count
-    second_class_count = wagons.joins(:wagon_type).where('wagon_types.title': :second_class_car).count
-    compartment_count = wagons.joins(:wagon_type).where('wagon_types.title': :compartment_car).count
+    second_class_count = wagons.where(type: :PlackartWagon).count
+    compartment_count = wagons.where(type: :CoupeWagon).count
     seats = {second: second_class_count, comp: compartment_count}
   end
 

@@ -9,16 +9,18 @@ class WagonsController < ApplicationController
   end
 
   def new
+    @train = Train.find(params[:train_id])
     @wagon = Wagon.new
   end
 
   def create
     @wagon = Wagon.new(wagon_params)
-    if @wagon.save
-      redirect_to @wagon
-    else
-      render :new
-    end
+    # if @wagon.save
+    #   redirect_to @train
+    # else
+    #   render :new
+    # end
+    @wagon.save!
   end
 
   def edit
@@ -44,6 +46,6 @@ class WagonsController < ApplicationController
   end
 
   def wagon_params
-    params.require(:wagon).permit(:train_id, :wagon_type_id, :up_seats, :down_seats)
+    params.require(:wagon).permit(:train_id, :type, :up_seats, :down_seats, :number)
   end
 end
