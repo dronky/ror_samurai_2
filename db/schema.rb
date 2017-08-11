@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810193447) do
+ActiveRecord::Schema.define(version: 20170811133823) do
 
   create_table "railway_stations", force: :cascade do |t|
     t.string "title"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20170810193447) do
     t.integer "route_id"
     t.integer "railway_station_id"
     t.integer "station_number"
+    t.time "station_arrival"
+    t.time "station_departure"
     t.index ["railway_station_id"], name: "index_railway_stations_routes_on_railway_station_id"
     t.index ["route_id"], name: "index_railway_stations_routes_on_route_id"
   end
