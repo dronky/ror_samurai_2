@@ -2,7 +2,7 @@ class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
 
   def index
-    @routes = Route.all
+    @routes = Route.search(params[:station_first][:station_id], params[:station_last][:station_id])
   end
 
   def show
@@ -45,6 +45,6 @@ class RoutesController < ApplicationController
   end
 
   def route_params
-    params.require(:route).permit(:name)
+    params.require(:route).permit(:name, :station_id)
   end
 end

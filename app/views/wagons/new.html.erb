@@ -1,5 +1,26 @@
 <h1>New Wagon</h1>
 
-<%= render 'form', wagon: @wagon %>
+<%= form_for [@train, @wagon] do |f| %>
+    <div class="field">
+      <%= f.label :number %><br>
+      <%= f.text_field :number %>
+    </div>
 
-<%= link_to 'Back', wagons_path %>
+    <div class="field">
+      <%= f.label :up_seats %><br>
+      <%= f.number_field :up_seats %>
+    </div>
+
+    <div class="field">
+      <%= f.label :down_seats %><br>
+      <%= f.number_field :down_seats %>
+    </div>
+
+    <div class="field">
+      <%= f.select :wagon_type, @wagon.get_types %><br>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Create" %>
+    </div>
+<% end %>

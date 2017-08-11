@@ -16,7 +16,7 @@
 
 <p>
   <strong>Wagon type:</strong>
-  <%= @wagon.wagon_type.title %>
+  <%= @wagon.wagon_type %>
 </p>
 
 <p>
@@ -30,5 +30,4 @@
 </p>
 
 
-<%= link_to 'Edit', edit_wagon_path(@wagon) %> |
-<%= link_to 'Back', wagons_path %>
+<%= link_to 'Back', train_wagons_path %>

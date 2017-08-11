@@ -1,2 +1,6 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>Select stations</h1>
+<%= form_tag routes_path, method: :get do %>
+    <p>From: <%= collection_select :station_first, :station_id, RailwayStation.all, :id, :title %></p>
+    <p>To: <%= collection_select :station_last, :station_id, RailwayStation.all, :id, :title %></p>
+    <%= submit_tag "Search" %>
+<% end %>
