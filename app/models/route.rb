@@ -15,9 +15,8 @@ class Route < ActiveRecord::Base
 
   def self.search(first_station, last_station)
     if first_station && last_station
-      p first_station
-      # RailwayStationsRoute.select(:route_id).where("(railway_station_id = #{first_station} or railway_station_id = #{last_station})").first.route_id
-      @route = Route.find(2)
+      @routes = Route.joins(:railway_stations_routes).where(["railway_stations_routes.railway_station_id = #{first_station[:station_id]}"]) &&
+              Route.joins(:railway_stations_routes).where(["railway_stations_routes.railway_station_id = #{last_station[:station_id]}"])
     else
       all
     end
