@@ -2,7 +2,7 @@ class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tickets = Route.all
+    @tickets = Ticket.all
   end
 
   def show
@@ -45,6 +45,6 @@ class TicketsController < ApplicationController
   end
 
   def ticket_params
-    params.require(:ticket)
+    params.require(:ticket).permit!
   end
 end
