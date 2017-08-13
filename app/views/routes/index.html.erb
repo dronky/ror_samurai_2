@@ -33,10 +33,15 @@
   <tbody>
   <% @routes.each do |route| %>
       <% unless route.trains.empty? %>
-          <tr>
-            <td><%= route.trains.pluck(:number).join(',') %></td>
-            <td><%= link_to 'Buy tickets', new_ticket_path(ticket: {train_id: 1, user_id: 1, start_station_id: 1, end_station_id: 3 }) %></td>
-          </tr>
+          <% route.trains.each do |train| %>
+              <tr>
+                <td><%= train.number %></td>
+                <td><%= link_to 'Buy tickets', new_ticket_path(train_id: train.id,
+                                                               user_id: 1,
+                                                               start_station_id: @station_first,
+                                                               end_station_id: @station_last ) %></td>
+              </tr>
+          <% end %>
       <% else %>
           <tr>
             <td>No trains yet</td>

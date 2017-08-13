@@ -10,6 +10,10 @@ class TicketsController < ApplicationController
 
   def new
     @ticket = Ticket.new
+    @train_id = params[:train_id]
+    @user_id = params[:user_id]
+    @start_station_id = params[:start_station_id]
+    @end_station_id = params[:end_station_id]
   end
 
   def create

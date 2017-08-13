@@ -1,1 +1,21 @@
-<h1>Here will be your ticket</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ticket number:</strong>
+  <%= @ticket.id %>
+</p>
+
+<p>
+  <strong>Information(full name and passport):</strong>
+  <%= @ticket.full_name %>
+  <%= @ticket.passport %>
+</p>
+<p>
+  <strong>Start station:</strong>
+  <%= RailwayStation.find(@ticket.start_station_id).title %>
+</p>
+
+<p>
+  <strong>End station:</strong>
+  <%= RailwayStation.find(@ticket.end_station_id).title %>
+</p>
