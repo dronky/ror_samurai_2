@@ -22,34 +22,7 @@
   </tbody>
 </table>
 
-<table>
-  <thead>
-  <tr>
-    <th>Trains</th>
-    <th colspan="2"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @routes.each do |route| %>
-      <% unless route.trains.empty? %>
-          <% route.trains.each do |train| %>
-              <tr>
-                <td><%= train.number %></td>
-                <td><%= link_to 'Buy tickets', new_ticket_path(train_id: train.id,
-                                                               user_id: 1,
-                                                               start_station_id: @station_first,
-                                                               end_station_id: @station_last ) %></td>
-              </tr>
-          <% end %>
-      <% else %>
-          <tr>
-            <td>No trains yet</td>
-          </tr>
-      <% end %>
-  <% end %>
-  </tbody>
-</table>
+<%= render partial: 'trains' if @station_first %>
 
 <br>
 

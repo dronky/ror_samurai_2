@@ -1,0 +1,34 @@
+<table>
+  <thead>
+  <tr>
+    <th>Trains</th>
+    <th>Departure Time</th>
+    <th>Arrival Time</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @routes.each do |route| %>
+      <% unless route.trains.empty? %>
+          <% depature = route.get_station_departure(@station_first) %>
+          <% arrival = route.get_station_arrival(@station_last) %>
+          <% route.trains.each do |train| %>
+              <tr>
+                <td><%= train.number %></td>
+                <td><%= depature %></td>
+                <td><%= arrival %></td>
+                <td><%= link_to 'Buy tickets', new_ticket_path(train_id: train.id,
+                                                               user_id: 1,
+                                                               start_station_id: @station_first,
+                                                               end_station_id: @station_last ) %></td>
+              </tr>
+          <% end %>
+      <% else %>
+          <tr>
+            <td>No trains yet</td>
+          </tr>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>

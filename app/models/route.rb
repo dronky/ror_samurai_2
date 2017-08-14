@@ -7,6 +7,14 @@ class Route < ActiveRecord::Base
 
   before_validation :set_name
 
+  def get_station_arrival(station_id)
+    RailwayStationsRoute.find_by(railway_station_id: station_id).station_arrival
+  end
+
+  def get_station_departure(station_id)
+    RailwayStationsRoute.find_by(railway_station_id: station_id).station_departure
+  end
+
   private
 
   def set_name
@@ -21,4 +29,5 @@ class Route < ActiveRecord::Base
       all
     end
   end
+
 end
