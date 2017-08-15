@@ -4,6 +4,8 @@ class Train < ApplicationRecord
   belongs_to :current_station, class_name: 'RailwayStation'
   has_many :wagons
 
+  before_validation :set_station
+
   def seats_count
     second_class_count = wagons.where(wagon_type: :PlackartWagon).count
     compartment_count = wagons.where(wagon_type: :CoupeWagon).count
@@ -11,8 +13,8 @@ class Train < ApplicationRecord
   end
 
   def set_station
-    self.current_station = (RailwayStation.joins(:railway_stations_routes).where("route_id = ?", self.route_id) &&
-        RailwayStation.joins(:railway_stations_routes).where("station_number = 1")).first
+    self.current_station = RailwayStation.joins(:railway_stations_routes).where("route_id = ?", self.route_id) &&
+        RailwayStation.joins(:railway_stations_routes).where("station_number = 1").first
   end
 
   def select_seats(wagon_type, seats_type)

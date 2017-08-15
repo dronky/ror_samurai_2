@@ -28249,3 +28249,229 @@ Processing by TrainsController#index as HTML
 Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/trains" for 127.0.0.1 at 2017-08-15 18:35:50 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.6ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (1.9ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/_train.html.erb (0.6ms)
+  Rendered trains/index.html.erb within layouts/application (29.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 345ms (Views: 312.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/trains/new" for 127.0.0.1 at 2017-08-15 18:38:08 +0300
+Processing by TrainsController#new as HTML
+  Rendering trains/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.7ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered trains/_form.html.erb (183.6ms)
+  Rendered trains/new.html.erb within layouts/application (188.1ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 290ms (Views: 279.6ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/trains" for 127.0.0.1 at 2017-08-15 18:38:14 +0300
+Processing by TrainsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"US6sTz55Rqizqy5gz7axC+BSwJW30xaCSyGWZskcanHOKRU1hv7GVFsLc/SI54hgBw050xT2sfFBwfyBwUM44g==", "train"=>{"number"=>"38883", "route_id"=>"1"}, "commit"=>"Create Train"}
+  [1m[36mRailwayStation Load (0.7ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" INNER JOIN "railway_stations_routes" ON "railway_stations_routes"."railway_station_id" = "railway_stations"."id" WHERE (station_number = 1) ORDER BY "railway_stations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "trains" ("number", "created_at", "updated_at", "route_id", "current_station_id") VALUES (?, ?, ?, ?, ?)[0m  [["number", 38883], ["created_at", "2017-08-15 15:38:14.890936"], ["updated_at", "2017-08-15 15:38:14.890936"], ["route_id", 1], ["current_station_id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/trains/5
+Completed 302 Found in 81ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/trains/5" for 127.0.0.1 at 2017-08-15 18:38:14 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTrain Load (0.4ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.8ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 5], ["LIMIT", 1]]
+  Rendered trains/show.html.erb within layouts/application (34.6ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 92ms (Views: 82.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-08-15 18:38:59 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (1.0ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/_train.html.erb (0.6ms)
+  Rendered trains/_train.html.erb (3.2ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/index.html.erb within layouts/application (26.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 69ms (Views: 62.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-08-15 18:39:00 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (1.2ms)
+  Rendered trains/_train.html.erb (1.7ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/_train.html.erb (0.6ms)
+  Rendered trains/index.html.erb within layouts/application (16.8ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 72ms (Views: 67.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/trains/new" for 127.0.0.1 at 2017-08-15 18:39:02 +0300
+Processing by TrainsController#new as HTML
+  Rendering trains/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered trains/_form.html.erb (29.5ms)
+  Rendered trains/new.html.erb within layouts/application (33.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 77ms (Views: 65.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/trains" for 127.0.0.1 at 2017-08-15 18:39:05 +0300
+Processing by TrainsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KcpIApdQajLpU9pgxsP+Cm+ivgqm6a8nHj5Fj3e/Phm2zfF4L9fqzgHzh/SBksdhiP1HTAXMCFQU3i9of+Bsig==", "train"=>{"number"=>"123", "route_id"=>"1"}, "commit"=>"Create Train"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering trains/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered trains/_form.html.erb (3.8ms)
+  Rendered trains/new.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 81ms (Views: 46.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-08-15 18:42:29 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (1.4ms)
+  Rendered trains/_train.html.erb (0.3ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/_train.html.erb (1.3ms)
+  Rendered trains/index.html.erb within layouts/application (23.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 78ms (Views: 65.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-08-15 18:42:30 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.4ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (1.5ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/_train.html.erb (0.3ms)
+  Rendered trains/_train.html.erb (0.2ms)
+  Rendered trains/index.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 39ms (Views: 36.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/trains/new" for 127.0.0.1 at 2017-08-15 18:42:32 +0300
+Processing by TrainsController#new as HTML
+  Rendering trains/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered trains/_form.html.erb (42.8ms)
+  Rendered trains/new.html.erb within layouts/application (45.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 80ms (Views: 69.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/trains" for 127.0.0.1 at 2017-08-15 18:42:35 +0300
+Processing by TrainsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v+M5pV/LsMp1x+UuX9mQwVm9kZpLBnm/bCMO2VLTYbcg5IDf50wwNp1nuLoYiKmqvuJo3Ogj3sxmw2Q+WowzJA==", "train"=>{"number"=>"12312", "route_id"=>"1"}, "commit"=>"Create Train"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" INNER JOIN "railway_stations_routes" ON "railway_stations_routes"."railway_station_id" = "railway_stations"."id" WHERE (station_number = 1) ORDER BY "railway_stations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trains" ("number", "created_at", "updated_at", "route_id", "current_station_id") VALUES (?, ?, ?, ?, ?)[0m  [["number", 12312], ["created_at", "2017-08-15 15:42:35.939872"], ["updated_at", "2017-08-15 15:42:35.939872"], ["route_id", 1], ["current_station_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/trains/6
+Completed 302 Found in 41ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/trains/6" for 127.0.0.1 at 2017-08-15 18:42:35 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 6], ["LIMIT", 1]]
+  Rendered trains/show.html.erb within layouts/application (16.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 58ms (Views: 52.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-08-15 18:46:53 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (2.0ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/_train.html.erb (0.9ms)
+  Rendered trains/_train.html.erb (0.7ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/_train.html.erb (1.6ms)
+  Rendered trains/index.html.erb within layouts/application (43.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 98ms (Views: 91.6ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/trains" for 127.0.0.1 at 2017-08-15 18:46:54 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (0.7ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/_train.html.erb (0.3ms)
+  Rendered trains/_train.html.erb (0.3ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/index.html.erb within layouts/application (12.2ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 49ms (Views: 47.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/trains/new" for 127.0.0.1 at 2017-08-15 18:46:56 +0300
+Processing by TrainsController#new as HTML
+  Rendering trains/new.html.erb within layouts/application
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered trains/_form.html.erb (37.7ms)
+  Rendered trains/new.html.erb within layouts/application (40.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 88ms (Views: 75.9ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/trains" for 127.0.0.1 at 2017-08-15 18:47:00 +0300
+Processing by TrainsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hAMa1F3yOjGothQEV7+gOsp+g1+C3VrylTfTzjlMFU4bBKOu5XW6zUAWSZAQ7plRLSF6GSH4/YGf17kpMRNH3Q==", "train"=>{"number"=>"222", "route_id"=>"1"}, "commit"=>"Create Train"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRailwayStation Load (0.3ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" INNER JOIN "railway_stations_routes" ON "railway_stations_routes"."railway_station_id" = "railway_stations"."id" WHERE (station_number = 1) ORDER BY "railway_stations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trains" ("number", "created_at", "updated_at", "route_id", "current_station_id") VALUES (?, ?, ?, ?, ?)[0m  [["number", 222], ["created_at", "2017-08-15 15:47:00.157353"], ["updated_at", "2017-08-15 15:47:00.157353"], ["route_id", 1], ["current_station_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/trains/7
+Completed 302 Found in 42ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/trains/7" for 127.0.0.1 at 2017-08-15 18:47:00 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 7], ["LIMIT", 1]]
+  Rendered trains/show.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 48ms (Views: 44.1ms | ActiveRecord: 1.2ms)
+
+
