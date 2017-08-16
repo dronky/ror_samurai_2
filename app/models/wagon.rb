@@ -1,7 +1,7 @@
 class Wagon < ApplicationRecord
 
   WAGON_TYPES = ["CoupeWagon", 'PlackartWagon', 'SitWagon', 'SvWagon']
-  validates :wagon_type, inclusion: WAGON_TYPES
+  validates :type, inclusion: WAGON_TYPES
 
   belongs_to :train
 
@@ -21,6 +21,10 @@ class Wagon < ApplicationRecord
 
   def set_number
     current_max_number = self.train.wagons.pluck(:number).max
-    self.number = current_max_number + 1
+    if current_max_number
+      self.number = current_max_number + 1
+    else
+      self.number = 1
+    end
   end
 end

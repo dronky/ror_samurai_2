@@ -7,8 +7,8 @@ class Train < ApplicationRecord
   before_validation :set_station
 
   def seats_count
-    second_class_count = wagons.where(wagon_type: :PlackartWagon).count
-    compartment_count = wagons.where(wagon_type: :CoupeWagon).count
+    second_class_count = wagons.where(type: :PlackartWagon).count
+    compartment_count = wagons.where(type: :CoupeWagon).count
     seats = {second: second_class_count, comp: compartment_count}
   end
 
@@ -17,7 +17,7 @@ class Train < ApplicationRecord
         RailwayStation.joins(:railway_stations_routes).where("station_number = 1").first
   end
 
-  def select_seats(wagon_type, seats_type)
-    self.wagons.where(wagon_type: wagon_type).sum(seats_type.to_sym)
+  def select_seats(type, seats_type)
+    self.wagons.where(type: type).sum(seats_type.to_sym)
   end
 end

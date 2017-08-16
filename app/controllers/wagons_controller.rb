@@ -1,7 +1,7 @@
 class WagonsController < ApplicationController
   before_action :set_train
   def index
-    @wagons = Wagon.all
+    redirect_to @train
   end
 
   def new
@@ -28,6 +28,6 @@ class WagonsController < ApplicationController
   end
 
   def wagon_params
-    params.require(:wagon).permit(:train_id, :wagon_type, :up_seats, :down_seats, :number)
+    params.require(:wagon).permit(:train_id, :type, :up_seats, :down_seats, :number)
   end
 end
