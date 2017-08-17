@@ -1,4 +1,4 @@
-<%= form_with(model: wagon, local: true) do |form| %>
+  <%= form_with(model: wagon, local: true) do |form| %>
     <% if wagon.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(wagon.errors.count, "error") %> prohibited this wagon from being saved:</h2>
@@ -17,8 +17,12 @@
     </div>
 
     <div class="field">
-      <%= form.label :wagon_type %>
-      <%= form.collection_select :wagon_type_id, WagonType.all, :id, :title %>
+      <%= form.label :number %><br>
+      <%= form.text_field :number %>
+    </div>
+
+    <div class="field">
+      <%= form.select :type, Wagon.get_types %><br>
     </div>
 
     <div class="field">
@@ -29,6 +33,21 @@
     <div class="field">
       <%= form.label :down_seats %>
       <%= form.number_field :down_seats, id: :wagon_id %>
+    </div>
+
+    <div class="field">
+      <%= form.label :side_up_seats %><br>
+      <%= form.number_field :side_up_seats %>
+    </div>
+
+    <div class="field">
+      <%= form.label :side_down_seats %><br>
+      <%= form.number_field :side_down_seats %>
+    </div>
+
+    <div class="field">
+      <%= form.label :sit_seats %><br>
+      <%= form.number_field :sit_seats %>
     </div>
 
     <div class="actions">

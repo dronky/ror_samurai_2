@@ -13,7 +13,7 @@ class Wagon < ApplicationRecord
 
   before_validation :set_number
 
-  def get_types
+  def self.get_types
     WAGON_TYPES
   end
 

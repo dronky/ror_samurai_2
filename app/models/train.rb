@@ -4,8 +4,6 @@ class Train < ApplicationRecord
   belongs_to :current_station, class_name: 'RailwayStation'
   has_many :wagons
 
-  before_validation :set_station
-
   def seats_count
     second_class_count = wagons.where(type: :PlackartWagon).count
     compartment_count = wagons.where(type: :CoupeWagon).count
