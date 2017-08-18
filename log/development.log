@@ -31738,3 +31738,1044 @@ Processing by TrainsController#show as HTML
 Completed 200 OK in 74ms (Views: 70.5ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/wagons" for 127.0.0.1 at 2017-08-18 17:17:51 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/wagons"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/trains" for 127.0.0.1 at 2017-08-18 17:18:08 +0300
+Processing by TrainsController#index as HTML
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.5ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (1.1ms)
+  Rendered trains/_train.html.erb (0.3ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/_train.html.erb (2.0ms)
+  Rendered trains/_train.html.erb (0.7ms)
+  Rendered trains/_train.html.erb (0.9ms)
+  Rendered trains/index.html.erb within layouts/application (35.5ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 476ms (Views: 448.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/trains/5" for 127.0.0.1 at 2017-08-18 17:18:10 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagon Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "PlackartWagon"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "CoupeWagon"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "CoupeWagon"]]
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "CoupeWagon"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "PlackartWagon"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "CoupeWagon"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "PlackartWagon"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "PlackartWagon"]]
+  [1m[36mWagon Load (0.7ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? ORDER BY "wagons"."number" ASC[0m  [["train_id", 5]]
+  Rendered trains/show.html.erb within layouts/application (319.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 415ms (Views: 363.9ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/trains/5/wagons/5" for 127.0.0.1 at 2017-08-18 17:18:13 +0300
+Processing by WagonsController#show as HTML
+  Parameters: {"train_id"=>"5", "id"=>"5"}
+  [1m[36mTrain Load (1.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mWagon Load (1.0ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering wagons/show.html.erb within layouts/application
+  [1m[36mTrain Load (0.5ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.9ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered wagons/_form.html.erb (31.8ms)
+  Rendered wagons/show.html.erb within layouts/application (49.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 118ms (Views: 102.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/trains/5/wagons" for 127.0.0.1 at 2017-08-18 17:20:25 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"5"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to http://localhost:3000/trains/5
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/trains/5" for 127.0.0.1 at 2017-08-18 17:20:25 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "PlackartWagon"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "CoupeWagon"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "CoupeWagon"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "CoupeWagon"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "PlackartWagon"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "CoupeWagon"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "PlackartWagon"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "PlackartWagon"]]
+  [1m[36mWagon Load (1.7ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? ORDER BY "wagons"."number" ASC[0m  [["train_id", 5]]
+  Rendered trains/show.html.erb within layouts/application (20.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 79ms (Views: 72.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/trains/5/wagons" for 127.0.0.1 at 2017-08-18 17:20:30 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"5"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to http://localhost:3000/trains/5
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/trains/5" for 127.0.0.1 at 2017-08-18 17:20:30 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "PlackartWagon"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "CoupeWagon"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "CoupeWagon"]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "CoupeWagon"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "PlackartWagon"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "CoupeWagon"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "PlackartWagon"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 5], ["type", "PlackartWagon"]]
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? ORDER BY "wagons"."number" ASC[0m  [["train_id", 5]]
+  Rendered trains/show.html.erb within layouts/application (20.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 60ms (Views: 55.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/trains/1" for 127.0.0.1 at 2017-08-18 17:21:12 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "PlackartWagon"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "CoupeWagon"]]
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "CoupeWagon"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "CoupeWagon"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "PlackartWagon"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "CoupeWagon"]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "PlackartWagon"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "PlackartWagon"]]
+  [1m[36mWagon Load (0.6ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? ORDER BY "wagons"."number" DESC[0m  [["train_id", 1]]
+  Rendered trains/show.html.erb within layouts/application (96.4ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 154ms (Views: 142.2ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:21:19 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/trains/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/trains/1" for 127.0.0.1 at 2017-08-18 17:21:19 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "PlackartWagon"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "CoupeWagon"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "CoupeWagon"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "CoupeWagon"]]
+  [1m[35mCACHE  (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "PlackartWagon"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "CoupeWagon"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "PlackartWagon"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "PlackartWagon"]]
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? ORDER BY "wagons"."number" DESC[0m  [["train_id", 1]]
+  Rendered trains/show.html.erb within layouts/application (54.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 120ms (Views: 111.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/wagons" for 127.0.0.1 at 2017-08-18 17:23:19 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/wagons"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/trains/1" for 127.0.0.1 at 2017-08-18 17:23:35 +0300
+Processing by TrainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrain Load (0.8ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering trains/show.html.erb within layouts/application
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWagon Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "wagons" WHERE "wagons"."train_id" = ? LIMIT ?[0m  [["train_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "PlackartWagon"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "CoupeWagon"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "CoupeWagon"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "CoupeWagon"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "PlackartWagon"]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "CoupeWagon"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("wagons"."up_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "PlackartWagon"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("wagons"."down_seats") FROM "wagons" WHERE "wagons"."train_id" = ? AND "wagons"."type" = ?[0m  [["train_id", 1], ["type", "PlackartWagon"]]
+  [1m[36mWagon Load (0.4ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons" WHERE "wagons"."train_id" = ? ORDER BY "wagons"."number" DESC[0m  [["train_id", 1]]
+  Rendered trains/show.html.erb within layouts/application (182.7ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 292ms (Views: 232.8ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:23:40 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.6ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (2.7ms)
+  Rendered wagons/index.html.erb within layouts/application (24.4ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215250826320'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215250826320'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:28:40 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.6ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.5ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered wagons/index.html.erb within layouts/application (91.5ms)
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error ('#<SvWagon id: 1, train_id: 1, up_seats: 2, down_seats: 3, side_up_seats: 10, side_down_seats: 20, sit_seats: nil, type: "SvWagon", created_at: "2017-08-04 21:34:24", updated_at: "2017-08-04 21:34:24", number: 1>' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215235023640'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215235023640'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:30:54 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (1.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.5ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered wagons/index.html.erb within layouts/application (127.2ms)
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 13.6ms)
+
+
+  
+ActionView::Template::Error ('#<SvWagon id: 1, train_id: 1, up_seats: 2, down_seats: 3, side_up_seats: 10, side_down_seats: 20, sit_seats: nil, type: "SvWagon", created_at: "2017-08-04 21:34:24", updated_at: "2017-08-04 21:34:24", number: 1>' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215235286700'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215235286700'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:31:13 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (1.0ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered wagons/index.html.erb within layouts/application (99.5ms)
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error ('#<SvWagon id: 1, train_id: 1, up_seats: 2, down_seats: 3, side_up_seats: 10, side_down_seats: 20, sit_seats: nil, type: "SvWagon", created_at: "2017-08-04 21:34:24", updated_at: "2017-08-04 21:34:24", number: 1>' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215253520980'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215253520980'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:31:30 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 3.2ms)
+
+
+  
+NoMethodError (undefined method `to_partial_path' for #<Class:0x007fb8865c46a8>
+Did you mean?  _to_partial_path):
+  
+app/models/wagon.rb:31:in `<class:Wagon>'
+app/models/wagon.rb:1:in `<top (required)>'
+app/controllers/wagons_controller.rb:4:in `index'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:31:41 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.4ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.9ms)
+  Rendered wagons/index.html.erb within layouts/application (132.6ms)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 8.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215260933360'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215260933360'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:33:55 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (1.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.4ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.7ms)
+  Rendered wagons/index.html.erb within layouts/application (108.7ms)
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 4.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215250141520'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215250141520'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:38:03 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (1.8ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.4ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.5ms)
+  Rendered wagons/index.html.erb within layouts/application (103.2ms)
+Completed 500 Internal Server Error in 182ms (ActiveRecord: 6.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215272665920'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215272665920'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:38:17 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.1ms)
+  Rendered wagons/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215271806540'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215271806540'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:39:14 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.9ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.2ms)
+  Rendered wagons/index.html.erb within layouts/application (92.1ms)
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215229668200'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215229668200'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:39:27 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.2ms)
+  Rendered wagons/index.html.erb within layouts/application (79.3ms)
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215261325400'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215261325400'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:39:29 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.1ms)
+  Rendered wagons/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215253340960'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215253340960'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:39:30 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (1.1ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (3.9ms)
+  Rendered wagons/index.html.erb within layouts/application (22.8ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215236659620'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215236659620'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:39:30 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.2ms)
+  Rendered wagons/index.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215260005920'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215260005920'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:39:31 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.2ms)
+  Rendered wagons/index.html.erb within layouts/application (60.5ms)
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:39:31 +0300
+  
+Processing by WagonsController#index as HTML
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+  Parameters: {"train_id"=>"1"}
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215235927480'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215235927480'
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.3ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.2ms)
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:39:31 +0300
+  Rendered wagons/index.html.erb within layouts/application (6.3ms)
+Processing by WagonsController#index as HTML
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 0.4ms)
+
+
+  Parameters: {"train_id"=>"1"}
+  
+  [1m[36mTrain Load (1.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+  Rendering wagons/index.html.erb within layouts/application
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215230252640'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215230252640'
+  [1m[36mWagon Load (0.3ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.2ms)
+  Rendered wagons/index.html.erb within layouts/application (123.7ms)
+Completed 500 Internal Server Error in 163ms (ActiveRecord: 4.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:39:31 +0300
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+Processing by WagonsController#index as HTML
+  
+  Parameters: {"train_id"=>"1"}
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215231498460'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215231498460'
+  [1m[36mTrain Load (0.7ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.5ms)
+  Rendered wagons/index.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215229255200'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215229255200'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:43:21 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.6ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.9ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.0ms)
+  Rendered wagons/index.html.erb within layouts/application (78.2ms)
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 4.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215236729800'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215236729800'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:44:06 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (2.0ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered wagons/index.html.erb within layouts/application (21.5ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `type' for #<Wagon::ActiveRecord_Relation:0x007fb8877d0298>):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons.type %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215261901880'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215261901880'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:44:20 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.1ms)
+  Rendered wagons/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215234308840'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215234308840'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:44:30 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered wagons/index.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `sv_wagons' for #<Wagon::ActiveRecord_Relation:0x007fb8845ad310>):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons.sv_wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215235615320'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215235615320'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:44:37 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.3ms)
+  Rendered wagons/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215271819020'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215271819020'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:44:58 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.3ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered wagons/index.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagon %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215260906680'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215260906680'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:45:24 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.6ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.4ms)
+  Rendered wagons/index.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215236626620'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215236626620'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:50:25 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.5ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.7ms)
+  Rendered wagons/index.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215231273920'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215231273920'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:50:27 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.3ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.5ms)
+  Rendered wagons/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215279216560'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215279216560'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:50:28 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.1ms)
+  Rendered wagons/index.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215233285460'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215233285460'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:50:28 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.3ms)
+  Rendered wagons/index.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215234261500'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215234261500'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:50:28 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.3ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.3ms)
+  Rendered wagons/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215260761160'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215260761160'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:50:28 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.1ms)
+  Rendered wagons/index.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215261898100'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215261898100'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:50:29 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.1ms)
+  Rendered wagons/index.html.erb within layouts/application (58.1ms)
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215261588280'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215261588280'
+Started GET "/trains/1/wagons" for 127.0.0.1 at 2017-08-18 17:52:18 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"1"}
+  [1m[36mTrain Load (1.3ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.3ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.7ms)
+  Rendered wagons/index.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/victor/dev/tutu/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215259772820'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215259772820'

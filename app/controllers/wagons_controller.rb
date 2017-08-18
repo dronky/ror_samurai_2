@@ -1,7 +1,7 @@
 class WagonsController < ApplicationController
   before_action :set_train
   def index
-    redirect_to @train
+    @wagons = Wagon.all
   end
 
   def new
