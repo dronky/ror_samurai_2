@@ -19,16 +19,9 @@
   <%= @wagon.type %>
 </p>
 
-<p>
-  <strong>Up seats:</strong>
-  <%= @wagon.up_seats %>
-</p>
+<%= render @wagon.type.underscore %>
 
-<p>
-  <strong>Down seats:</strong>
-  <%= @wagon.down_seats %>
-</p>
+<%= link_to 'Edit', edit_train_wagon_path(@wagon) %> |
+<%= link_to 'Delete', @wagon, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', [@wagon.train] %>
 
-<%= render 'form', wagon: @wagon %>
-
-<%= link_to 'Back', train_wagons_path %>

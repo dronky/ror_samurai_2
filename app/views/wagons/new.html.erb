@@ -1,12 +1,7 @@
 <h1>New Wagon</h1>
 
-form_for @user, url: students_path, html: { method: :post } do |f|
-<%= form_for [@train, @wagon], url: Wagon.WAGON_TYPES  do |f| %>
+<%= render 'form', wagon: @wagon %>
 
-    <%= render 'form', wagon: @wagon %>
+<%= link_to 'Back', train_path(@train)  %>
 
-    <div class="actions">
-      <%= f.submit "Create" %>
-      <%= link_to 'Back', train_path(id: @train.id) %>
-    </div>
-<% end %>
+

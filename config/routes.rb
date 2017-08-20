@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :trains do
     resources :wagons
   end
+
   resources :railway_stations do
     patch :update_position, on: :member
   end
