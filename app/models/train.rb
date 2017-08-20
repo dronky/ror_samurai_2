@@ -4,6 +4,11 @@ class Train < ApplicationRecord
   belongs_to :current_station, class_name: 'RailwayStation'
   has_many :wagons
 
+  scope :coupe,     -> { where(type: 'CoupeWagon') }
+  scope :platsckard, -> { where(type: 'PlatsckardWagon') }
+  scope :sv,        -> { where(type: 'SvCarriageWagon') }
+  scope :sit, -> { where(type: 'Sit_wagon') }
+
   def seats_count
     second_class_count = wagons.where(type: :PlackartWagon).count
     compartment_count = wagons.where(type: :CoupeWagon).count

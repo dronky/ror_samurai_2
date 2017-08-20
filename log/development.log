@@ -32779,3 +32779,339 @@ ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>
   
 app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__3760199128209776403_70215259772820'
 app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__3760199128209776403_70215259772820'
+Started GET "/trains/9/wagons/" for 127.0.0.1 at 2017-08-20 16:20:30 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"9"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.3ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of templates [18 times] (1.6ms)
+  Rendered wagons/index.html.erb within layouts/application (67.2ms)
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (Missing partial sv_wagons/_sv_wagon with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/sinky/ruby/ror_samurai_2/app/views"
+):
+    13:   <tbody>
+    14:   <% @wagons.each do |wagon| %>
+    15:       <tr>
+    16:         <td><%= render @wagons %></td>
+    17:         <td><%= wagon.number %></td>
+    18:       </tr>
+    19:   <% end %>
+  
+app/views/wagons/index.html.erb:16:in `block in _app_views_wagons_index_html_erb__1829008280009405322_69910295069780'
+app/views/wagons/index.html.erb:14:in `_app_views_wagons_index_html_erb__1829008280009405322_69910295069780'
+Started GET "/trains/9/wagons/" for 127.0.0.1 at 2017-08-20 16:27:23 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"9"}
+  [1m[36mTrain Load (0.4ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.7ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of wagons/_wagon.html.erb [18 times] (40.6ms)
+  Rendered wagons/index.html.erb within layouts/application (45.6ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `top_seats' for #<SvWagon:0x007f2a84653c30>
+Did you mean?  up_seats
+               sit_seats
+               up_seats?
+               up_seats=):
+    2:   <td><%= wagon.type %></td>
+    3:   <td><%= wagon.train.number %></td>
+    4:   <td><%= wagon.number %></td>
+    5:   <td><%= wagon.top_seats %></td>
+    6:   <td><%= wagon.down_seats %></td>
+    7:   <td><%= wagon.side_top_seats %></td>
+    8:   <td><%= wagon.side_down_seats %></td>
+  
+app/views/wagons/_wagon.html.erb:5:in `_app_views_wagons__wagon_html_erb___1716269392889026481_69910293284220'
+app/views/wagons/index.html.erb:21:in `_app_views_wagons_index_html_erb__1829008280009405322_69910293348780'
+Started GET "/trains/9/wagons/44" for 127.0.0.1 at 2017-08-20 16:29:05 +0300
+Processing by WagonsController#show as HTML
+  Parameters: {"train_id"=>"9", "id"=>"44"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mWagon Load (0.3ms)[0m  [1m[34mSELECT  "wagons".* FROM "wagons" WHERE "wagons"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Wagon with 'id'=44):
+  
+app/controllers/wagons_controller.rb:21:in `show'
+Started GET "/trains/9/wagons/" for 127.0.0.1 at 2017-08-20 16:29:09 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"9"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.4ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  Rendered collection of wagons/_wagon.html.erb [18 times] (2.3ms)
+  Rendered wagons/index.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/home/sinky/ruby/ror_samurai_2/app/views/wagons/_wagon.html.erb:18: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^
+/home/sinky/ruby/ror_samurai_2/app/views/wagons/_wagon.html.erb:20: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/wagons/_wagon.html.erb:18: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/wagons/_wagon.html.erb:20: syntax error, unexpected end-of-input, expecting keyword_end
+app/views/wagons/index.html.erb:21:in `_app_views_wagons_index_html_erb__1829008280009405322_69910297921980'
+Started GET "/trains/9/wagons/" for 127.0.0.1 at 2017-08-20 16:29:31 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"9"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.4ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of wagons/_wagon.html.erb [18 times] (11.5ms)
+  Rendered wagons/index.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `top_seats' for #<SvWagon:0x007f2a84d202e8>
+Did you mean?  up_seats
+               sit_seats
+               up_seats?
+               up_seats=):
+    2:   <td><%= wagon.type %></td>
+    3:   <td><%= wagon.train.number %></td>
+    4:   <td><%= wagon.number %></td>
+    5:   <td><% if wagon.top_seats%>
+    6:     <%= wagon.top_seats %>
+    7:         <%end%></td>
+    8:   <td><%= wagon.down_seats %></td>
+  
+app/views/wagons/_wagon.html.erb:5:in `_app_views_wagons__wagon_html_erb___1716269392889026481_69910296831840'
+app/views/wagons/index.html.erb:21:in `_app_views_wagons_index_html_erb__1829008280009405322_69910296922480'
+Started GET "/trains/9/wagons/" for 127.0.0.1 at 2017-08-20 16:29:32 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"9"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.5ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of wagons/_wagon.html.erb [18 times] (19.3ms)
+  Rendered wagons/index.html.erb within layouts/application (23.6ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `top_seats' for #<SvWagon:0x007f2a84ce5788>
+Did you mean?  up_seats
+               sit_seats
+               up_seats?
+               up_seats=):
+    2:   <td><%= wagon.type %></td>
+    3:   <td><%= wagon.train.number %></td>
+    4:   <td><%= wagon.number %></td>
+    5:   <td><% if wagon.top_seats%>
+    6:     <%= wagon.top_seats %>
+    7:         <%end%></td>
+    8:   <td><%= wagon.down_seats %></td>
+  
+app/views/wagons/_wagon.html.erb:5:in `_app_views_wagons__wagon_html_erb___1716269392889026481_69910296689240'
+app/views/wagons/index.html.erb:21:in `_app_views_wagons_index_html_erb__1829008280009405322_69910296817680'
+Started GET "/trains/9/wagons/" for 127.0.0.1 at 2017-08-20 16:29:53 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"9"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.4ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of wagons/_wagon.html.erb [18 times] (114.1ms)
+  Rendered wagons/index.html.erb within layouts/application (117.8ms)
+Completed 500 Internal Server Error in 122ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_wagon_path' for #<#<Class:0x00000003dba300>:0x007f2a84c7bba8>
+Did you mean?  sit_wagon_path
+               edit_sv_wagon_path
+               edit_train_path
+               sit_wagons_path
+               edit_sit_wagon_path
+               sv_wagon_path):
+     8:   <td><%= wagon.side_down_seats %></td>
+     9:   <td><%= wagon.sit_seats %></td>
+    10:   <td><%= link_to 'Показать', wagon %></td>
+    11:   <td><%= link_to 'Изменить', edit_wagon_path(wagon) %></td>
+    12:   <td><%= link_to 'Удалить', wagon, method: :delete, data: { confirm: 'are you sure?' } %></td>
+    13: </tr>
+  
+app/views/wagons/_wagon.html.erb:11:in `_app_views_wagons__wagon_html_erb___1716269392889026481_69910296446360'
+app/views/wagons/index.html.erb:21:in `_app_views_wagons_index_html_erb__1829008280009405322_69910296536440'
+Started GET "/trains/9/wagons/" for 127.0.0.1 at 2017-08-20 16:36:26 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"9"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of wagons/_wagon.html.erb [18 times] (123.0ms)
+  Rendered wagons/index.html.erb within layouts/application (187.5ms)
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_wagon_' for #<#<Class:0x00000003390f50>:0x0000000333d0d0>
+Did you mean?  edit_sv_wagon_url):
+     8:   <td><%= wagon.side_down_seats %></td>
+     9:   <td><%= wagon.sit_seats %></td>
+    10:   <td><%= link_to 'Показать', wagon %></td>
+    11:   <td><%= link_to 'Изменить', edit_wagon_(wagon) %></td>
+    12:   <td><%= link_to 'Удалить', wagon, method: :delete, data: { confirm: 'are you sure?' } %></td>
+    13: </tr>
+  
+app/views/wagons/_wagon.html.erb:11:in `_app_views_wagons__wagon_html_erb___1716269392889026481_69910295860760'
+app/views/wagons/index.html.erb:21:in `_app_views_wagons_index_html_erb__1829008280009405322_27059360'
+Started GET "/trains/9/wagons/" for 127.0.0.1 at 2017-08-20 16:36:45 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"9"}
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.3ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of wagons/_wagon.html.erb [18 times] (108.5ms)
+  Rendered wagons/index.html.erb within layouts/application (111.0ms)
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_wagon_path' for #<#<Class:0x00000003390f50>:0x007f2a84db0d20>
+Did you mean?  sit_wagon_path
+               edit_sv_wagon_path
+               edit_train_path
+               sit_wagons_path
+               edit_sit_wagon_path
+               sv_wagon_path):
+     8:   <td><%= wagon.side_down_seats %></td>
+     9:   <td><%= wagon.sit_seats %></td>
+    10:   <td><%= link_to 'Показать', wagon %></td>
+    11:   <td><%= link_to 'Изменить', edit_wagon_path(wagon) %></td>
+    12:   <td><%= link_to 'Удалить', wagon, method: :delete, data: { confirm: 'are you sure?' } %></td>
+    13: </tr>
+  
+app/views/wagons/_wagon.html.erb:11:in `_app_views_wagons__wagon_html_erb___1716269392889026481_69910297052000'
+app/views/wagons/index.html.erb:21:in `_app_views_wagons_index_html_erb__1829008280009405322_69910297152540'
+Started GET "/trains/9/wagons/" for 127.0.0.1 at 2017-08-20 16:41:00 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"9"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.5ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of wagons/_wagon.html.erb [18 times] (25.8ms)
+  Rendered wagons/index.html.erb within layouts/application (29.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 712ms (Views: 708.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/sv_wagons/1" for 127.0.0.1 at 2017-08-20 16:41:15 +0300
+Processing by WagonsController#show as HTML
+  Parameters: {"type"=>"SvWagons", "id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Train with 'id'=):
+  
+app/controllers/wagons_controller.rb:27:in `set_train'
+Started GET "/trains/9/wagons/" for 127.0.0.1 at 2017-08-20 16:41:18 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"9"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.2ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of wagons/_wagon.html.erb [18 times] (23.7ms)
+  Rendered wagons/index.html.erb within layouts/application (25.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/sv_wagons/1/edit" for 127.0.0.1 at 2017-08-20 16:41:28 +0300
+Processing by WagonsController#edit as HTML
+  Parameters: {"type"=>"SvWagons", "id"=>"1"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Train with 'id'=):
+  
+app/controllers/wagons_controller.rb:27:in `set_train'
+Started GET "/trains/9/wagons/" for 127.0.0.1 at 2017-08-20 16:41:45 +0300
+Processing by WagonsController#index as HTML
+  Parameters: {"train_id"=>"9"}
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering wagons/index.html.erb within layouts/application
+  [1m[36mWagon Load (0.3ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Train Load (0.0ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTrain Load (0.1ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of wagons/_wagon.html.erb [18 times] (33.9ms)
+  Rendered wagons/index.html.erb within layouts/application (37.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 60ms (Views: 57.0ms | ActiveRecord: 1.3ms)
+
+

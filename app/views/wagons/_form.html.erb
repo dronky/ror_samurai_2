@@ -1,56 +1,41 @@
-  <%= form_with(model: wagon, local: true) do |form| %>
-    <% if wagon.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(wagon.errors.count, "error") %> prohibited this wagon from being saved:</h2>
+<%= form_for [@train, wagon.becomes(Wagon)] do |form| %>
 
-          <ul>
-            <% wagon.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
+    <%= render 'common/errors', resource: wagon %>
 
     <div class="field">
-      <%= form.label :train_id %>
-      <%= form.collection_select :train_id, Train.all, :id, :number %>
+      <%= form.label :type %>
+      <%= form.select :type, Wagon::WAGON_TYPES %>
     </div>
 
     <div class="field">
-      <%= form.label :number %><br>
-      <%= form.text_field :number %>
-    </div>
-
-    <div class="field">
-      <%= form.select :type, Wagon.get_types %><br>
-    </div>
-
-    <div class="field">
-      <%= form.label :up_seats %>
-      <%= form.number_field :up_seats, id: :wagon_id %>
+      <%= form.label :top_seats %>
+      <%= form.number_field :top_seats %>
     </div>
 
     <div class="field">
       <%= form.label :down_seats %>
-      <%= form.number_field :down_seats, id: :wagon_id %>
+      <%= form.number_field :down_seats %>
     </div>
 
     <div class="field">
-      <%= form.label :side_up_seats %><br>
-      <%= form.number_field :side_up_seats %>
+      <%= form.label :side_top_seats %>
+      <%= form.number_field :side_top_seats %>
     </div>
 
     <div class="field">
-      <%= form.label :side_down_seats %><br>
+      <%= form.label :side_down_seats %>
       <%= form.number_field :side_down_seats %>
     </div>
 
     <div class="field">
-      <%= form.label :sit_seats %><br>
+      <%= form.label :sit_seats %>
       <%= form.number_field :sit_seats %>
     </div>
 
+    <%= form.label :train, "Выбрать поезд" %>
+    <%= form.collection_select :train_id, Train.all, :id, :number %>
+
     <div class="actions">
-      <%= form.submit %>
+      <%= form.submit "#{ wagon.new_record? ? 'Create' : 'Edit' }" %>
     </div>
 <% end %>

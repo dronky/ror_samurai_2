@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   resources :sv_wagons,        :controller => "wagons", :type => "SvWagons"
   resources :sit_wagons,     :controller => "wagons", :type => "SitWagon"
 
+
+
+
   resource :search, only: [:new, :show, :edit]
 
   # root 'trains#index'
