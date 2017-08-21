@@ -1,6 +1,6 @@
 <h1>Select stations</h1>
 
-<%= form_tag searches_path, method: :get do %>
+<%= form_tag search_path(1), method: :get do %>
     <%= collection_select(:station_first, :id, RailwayStation.all, :id, :title) %>
     <%= collection_select(:station_last, :id, RailwayStation.all, :id, :title)  %>
     <%= submit_tag "Search" %>

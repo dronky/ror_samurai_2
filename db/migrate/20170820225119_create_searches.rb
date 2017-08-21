@@ -1,6 +1,6 @@
 class CreateSearches < ActiveRecord::Migration[5.1]
   def change
-    create_table :searches do |t|
+    create_table :search do |t|
 
       t.timestamps
     end

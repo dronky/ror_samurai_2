@@ -1,0 +1,19 @@
+<table>
+  <thead>
+  <tr>
+    <th>Number:</th>
+    <th>Tickets:</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @routes.each do |route| %>
+      <% route.trains.each do |train| %>
+          <tr>
+            <td><%= train.number %></td>
+            <td><%= link_to 'Buy tickets', new_ticket_path %></td>
+          </tr>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>

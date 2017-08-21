@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :sv_wagons,        :controller => "wagons", :type => "SvWagons"
   resources :sit_wagons,     :controller => "wagons", :type => "SitWagon"
 
-  resources :searches
+  resources :search
   # , only: [:index, :show]
   # root 'trains#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
