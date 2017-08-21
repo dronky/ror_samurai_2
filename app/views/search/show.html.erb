@@ -11,7 +11,12 @@
       <% route.trains.each do |train| %>
           <tr>
             <td><%= train.number %></td>
-            <td><%= link_to 'Buy tickets', new_ticket_path %></td>
+            <td><%= link_to 'Buy tickets', new_ticket_path(train_id: train.id,
+                                                           user_id: 1,
+                                                           start_station_id: @start_station,
+                                                           end_station_id: @end_station) %>
+            </td>
+
           </tr>
       <% end %>
   <% end %>

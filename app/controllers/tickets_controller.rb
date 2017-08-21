@@ -12,8 +12,8 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new
     @train_id = params[:train_id]
     @user_id = params[:user_id]
-    @start_station_id = params[:start_station_id]
-    @end_station_id = params[:end_station_id]
+    @station_first = params[:start_station_id]
+    @station_last = params[:end_station_id]
   end
 
   def create

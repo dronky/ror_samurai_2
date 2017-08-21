@@ -2,10 +2,11 @@ class SearchController < ApplicationController
   before_action :set_search, only: [:show]
 
   def index
-    @search = Search.all
   end
 
   def show
+    @start_station = params[:station_first]["id"]
+    @end_station = params[:station_last]["id"]
   end
 
   private
