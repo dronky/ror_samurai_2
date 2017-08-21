@@ -38079,3 +38079,1763 @@ Processing by TrainsController#show as HTML
 Completed 200 OK in 34ms (Views: 30.8ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/search" for 127.0.0.1 at 2017-08-21 01:56:29 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.2) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSearches (20170820225119)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "searches" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170820225119"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wagons_on_number_and_train_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wagons_on_number_and_train_id' AND type='index'
+[0m
+Started GET "/search" for 127.0.0.1 at 2017-08-21 01:56:46 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SearchesController#show as HTML
+  Rendering searches/show.html.erb within layouts/application
+  Rendered searches/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 354ms (Views: 343.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 01:57:09 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.3ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (30.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 56ms (Views: 52.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&station_first=1&station_last=1&commit=Search" for 127.0.0.1 at 2017-08-21 01:57:25 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "station_first"=>"1", "station_last"=>"1", "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2017-08-21 01:57:46 +0300
+Processing by SearchesController#show as HTML
+  Rendering searches/show.html.erb within layouts/application
+  Rendered searches/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 01:58:11 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:08:53 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.1ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered searches/index.html.erb within layouts/application (8.2ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<ActiveRecord::Relation []>
+Did you mean?  to_set
+               to_ary):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search do |f| %>
+    5:     f.collection_select(:station_first, RailwayStations.all, :id, :title)
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157569433280'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:10:26 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mSearch Load (0.2ms)[0m  [1m[34mSELECT  "searches".* FROM "searches" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered searches/index.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<ActiveRecord::Relation []>
+Did you mean?  to_set
+               to_ary):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for(@search) do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStations.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157550627860'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:13:12 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 11ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for(@search) do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157563300800'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:14:10 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 6ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157516338460'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:14:41 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 10ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157518234560'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:15:52 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 17ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157525466740'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:16:27 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 11ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157516502820'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:16:45 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 12ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157551349580'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:16:47 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 8ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157543851640'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:16:48 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 6ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157551642780'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:16:48 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 15ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157549088880'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:16:48 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (15.8ms)
+Completed 500 Internal Server Error in 59ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157552008240'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:16:48 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 43ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157550479980'
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at /Users/victor/dev/tutu/config/routes.rb:19)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at /Users/victor/dev/tutu/config/routes.rb:19)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at /Users/victor/dev/tutu/config/routes.rb:19)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at /Users/victor/dev/tutu/config/routes.rb:19)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at /Users/victor/dev/tutu/config/routes.rb:19)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at /Users/victor/dev/tutu/config/routes.rb:19)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at /Users/victor/dev/tutu/config/routes.rb:19)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at /Users/victor/dev/tutu/config/routes.rb:19)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at /Users/victor/dev/tutu/config/routes.rb:19)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at /Users/victor/dev/tutu/config/routes.rb:19)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at /Users/victor/dev/tutu/config/routes.rb:19)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at /Users/victor/dev/tutu/config/routes.rb:19)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at /Users/victor/dev/tutu/config/routes.rb:19)
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:23:25 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/searches"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:24:11 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/searches"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:24:32 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/searches"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:24:54 +0300
+Processing by SearchesController#show as HTML
+  Rendering searches/show.html.erb within layouts/application
+  Rendered searches/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 40ms (Views: 38.9ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:25:56 +0300
+Processing by SearchesController#show as HTML
+  Rendering searches/show.html.erb within layouts/application
+  Rendered searches/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 34ms (Views: 32.2ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:26:40 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 34ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157525639380'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:27:09 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 25ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157517225020'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:28:21 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 6ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157552234120'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:30:29 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 6ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157542919780'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:30:31 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 6ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157518495260'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:30:33 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 7ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157549040820'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:30:34 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 6ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157551395260'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:30:35 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 12ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157564706400'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:31:17 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 13ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157561826160'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "searches" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-20 23:31:45.585505"], ["updated_at", "2017-08-20 23:31:45.585505"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:31:51 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 6ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157551942800'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:34:04 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 11ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157543198500'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:34:13 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 13ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157524591720'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:34:15 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 7ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157518873160'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:34:15 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 6ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157524008080'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:35:33 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 27ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157516371820'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:35:40 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 21ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157562568320'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:36:19 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 7ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157524936760'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:36:33 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 7ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157518377460'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:36:35 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 6ms
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Select stations</h1>
+    2: 
+    3: 
+    4: <%= form_for @search, url: {action: 'search'} do |f| %>
+    5:     <%= f.collection_select(:station_first, RailwayStation.all, :id, :title) %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `_app_views_searches_index_html_erb___3696077007832974707_70157569579820'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:43:54 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 71ms (Views: 48.9ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:47:19 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 23ms
+
+
+  
+SyntaxError (/Users/victor/dev/tutu/app/views/searches/index.html.erb:3: syntax error, unexpected keyword_do, expecting ')'
+od: "get", id: "search-form"do );@output_buffer.safe_append=
+                              ^
+/Users/victor/dev/tutu/app/views/searches/index.html.erb:6: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+             ^
+/Users/victor/dev/tutu/app/views/searches/index.html.erb:8: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/victor/dev/tutu/app/views/searches/index.html.erb:10: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/searches/index.html.erb:3: syntax error, unexpected keyword_do, expecting ')'
+app/views/searches/index.html.erb:6: syntax error, unexpected keyword_end, expecting ')'
+app/views/searches/index.html.erb:8: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/searches/index.html.erb:10: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:47:34 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (58.7ms)
+Completed 500 Internal Server Error in 65ms
+
+
+  
+ActionView::Template::Error (undefined method `map' for :id:Symbol
+Did you mean?  tap):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(searches_path, method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, RailwayStation.all, :id, :title, promt: true)  %>
+    5:     <%= submit_tag "Search" %>
+    6: <% end %>
+  
+app/views/searches/index.html.erb:4:in `block in _app_views_searches_index_html_erb___3696077007832974707_70157525177440'
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157525177440'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:49:39 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (19.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 60ms (Views: 58.1ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:49:54 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:50:14 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bstation%5D=1&last_station%5Bstation%5D=3&commit=Search" for 127.0.0.1 at 2017-08-21 02:50:23 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"station"=>"1"}, "last_station"=>{"station"=>"3"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.9ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bstation%5D=1&last_station%5Bstation%5D=3&commit=Search" for 127.0.0.1 at 2017-08-21 02:51:31 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"station"=>"1"}, "last_station"=>{"station"=>"3"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 41ms (Views: 38.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bstation%5D=1&last_station%5Bstation%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 02:51:33 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"station"=>"1"}, "last_station"=>{"station"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (1.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bstation%5D=1&last_station%5Bstation%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 02:51:56 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"station"=>"1"}, "last_station"=>{"station"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bstation%5D=1&last_station%5Bstation%5D=3&commit=Search" for 127.0.0.1 at 2017-08-21 02:52:01 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"station"=>"1"}, "last_station"=>{"station"=>"3"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.3ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 53ms (Views: 50.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bstation%5D=1&last_station%5Bstation%5D=3&commit=Search" for 127.0.0.1 at 2017-08-21 02:52:33 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"station"=>"1"}, "last_station"=>{"station"=>"3"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 48ms (Views: 45.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bstation%5D=1&last_station%5Bstation%5D=3&commit=Search" for 127.0.0.1 at 2017-08-21 02:52:42 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"station"=>"1"}, "last_station"=>{"station"=>"3"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.6ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 62ms (Views: 59.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:52:47 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&test%5Bid%5D=1&last_station%5Bid%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 02:52:49 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "test"=>{"id"=>"1"}, "last_station"=>{"id"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:53:29 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.6ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 34ms (Views: 31.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=3&commit=Search" for 127.0.0.1 at 2017-08-21 02:53:32 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"3"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.3ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:57:40 +0300
+Processing by SearchesController#index as HTML
+Completed 500 Internal Server Error in 14ms
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  
+app/models/route.rb:24:in `search'
+app/controllers/searches_controller.rb:4:in `index'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 02:59:08 +0300
+Processing by SearchesController#index as HTML
+Completed 500 Internal Server Error in 34ms
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  
+app/models/route.rb:24:in `search'
+app/controllers/searches_controller.rb:4:in `index'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:00:18 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (21.6ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 87ms (Views: 77.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 03:02:01 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (39.2ms)
+  Rendered layouts/_footer.html.erb (3.0ms)
+Completed 200 OK in 128ms (Views: 124.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=2&commit=Search" for 127.0.0.1 at 2017-08-21 03:02:13 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"2"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 69ms (Views: 67.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=3&commit=Search" for 127.0.0.1 at 2017-08-21 03:03:18 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"3"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.4ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 48ms (Views: 45.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=3&commit=Search" for 127.0.0.1 at 2017-08-21 03:04:54 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"3"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (27.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 74ms (Views: 72.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=3&commit=Search" for 127.0.0.1 at 2017-08-21 03:05:04 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"3"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.5ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 03:05:25 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches"}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path, method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157524099820'
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 03:07:14 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 7ms
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches"}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path, method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157561159280'
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 03:08:24 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 11ms
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches", :id=>nil}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path(@routes), method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157518324760'
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 03:08:32 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 10ms
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches", :id=>nil}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path(@search), method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157525709960'
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 03:08:35 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 10ms
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches", :id=>nil}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path(@search), method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157562218180'
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 03:09:32 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 6ms
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches", :id=>nil}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path(@search), method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157550777820'
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 03:09:35 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 6ms
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches", :id=>nil}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path(@search), method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157564005500'
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 03:09:36 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 7ms
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches", :id=>nil}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path(@search), method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157542400620'
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 03:09:37 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 6ms
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches", :id=>nil}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path(@search), method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157550678560'
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 03:10:30 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (221.8ms)
+Completed 500 Internal Server Error in 226ms
+
+
+  
+ActionView::Template::Error (undefined local variable or method `search' for #<#<Class:0x007f9da7c8df60>:0x007f9da3f855c8>
+Did you mean?  search_url):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path(search), method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157518778500'
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 03:10:54 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 7ms
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches"}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path(search_url), method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157564090880'
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 03:11:04 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"1"}, "commit"=>"Search"}
+Completed 406 Not Acceptable in 38ms
+
+
+  
+ActionController::UnknownFormat (SearchesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []):
+  
+actionpack (5.1.2) lib/action_controller/metal/implicit_render.rb:40:in `default_render'
+actionpack (5.1.2) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.2) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.2) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.2) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.2) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.2) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:11:16 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 7ms
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches"}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path, method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157563874120'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:12:22 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches"}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path, method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157549757520'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:12:24 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches"}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path, method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157551909960'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:12:25 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches"}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path, method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157573850880'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:12:25 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches"}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path, method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157561711420'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:12:26 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches"}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path, method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157564300480'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:12:26 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches"}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path, method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157550088740'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:12:36 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 16ms
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches"}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag(search_path, method: "get", id: "search-form") do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157520166720'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:12:54 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (18.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 55ms (Views: 53.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:14:17 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searches" for 127.0.0.1 at 2017-08-21 03:14:20 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/searches"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/searches" for 127.0.0.1 at 2017-08-21 03:15:34 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/searches"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:15:43 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches", :id=>nil}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag search_path(@search), method: :get do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157561336420'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:16:03 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 8ms
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches", :id=>nil}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag search_path(@search), method: :get do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157562021000'
+Started GET "/searches/1" for 127.0.0.1 at 2017-08-21 03:16:06 +0300
+Processing by SearchesController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering searches/show.html.erb within layouts/application
+  Rendered searches/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 36ms (Views: 22.9ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:16:09 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 7ms
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches", :id=>nil}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag search_path(@search), method: :get do %>
+    4:     <%= collection_select(:first_station, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:last_station, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157524317720'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:18:07 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (18.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 66ms (Views: 52.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&first_station%5Bid%5D=1&last_station%5Bid%5D=3&commit=Search" for 127.0.0.1 at 2017-08-21 03:18:11 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "first_station"=>{"id"=>"1"}, "last_station"=>{"id"=>"3"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (2.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (16.9ms)
+  Rendered layouts/_footer.html.erb (2.6ms)
+Completed 200 OK in 150ms (Views: 143.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:19:21 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&station_first%5Bid%5D=1&station_last%5Bid%5D=3&commit=Search" for 127.0.0.1 at 2017-08-21 03:19:26 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "station_first"=>{"id"=>"1"}, "station_last"=>{"id"=>"3"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.7ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 38ms (Views: 35.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&station_first%5Bid%5D=1&station_last%5Bid%5D=3&commit=Search" for 127.0.0.1 at 2017-08-21 03:21:32 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "station_first"=>{"id"=>"1"}, "station_last"=>{"id"=>"3"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  Rendered searches/index.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"searches"}, missing required keys: [:id]):
+    1: <h1>Select stations</h1>
+    2: 
+    3: <%= form_tag search_path, method: :get do %>
+    4:     <%= collection_select(:station_first, :id, RailwayStation.all, :id, :title) %>
+    5:     <%= collection_select(:station_last, :id, RailwayStation.all, :id, :title)  %>
+    6:     <%= submit_tag "Search" %>
+  
+app/views/searches/index.html.erb:3:in `_app_views_searches_index_html_erb___3696077007832974707_70157524072540'
+Started GET "/searches?utf8=%E2%9C%93&station_first%5Bid%5D=1&station_last%5Bid%5D=3&commit=Search" for 127.0.0.1 at 2017-08-21 03:22:49 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "station_first"=>{"id"=>"1"}, "station_last"=>{"id"=>"3"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (26.2ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 68ms (Views: 54.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:23:39 +0300
+Processing by SearchesController#index as HTML
+Redirected to 
+Completed 500 Internal Server Error in 13ms
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+app/controllers/searches_controller.rb:5:in `index'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:23:59 +0300
+Processing by SearchesController#index as HTML
+Completed 500 Internal Server Error in 34ms
+
+
+  
+NoMethodError (undefined method `params' for Search (call 'Search.connection' to establish a connection):Class):
+  
+app/controllers/searches_controller.rb:9:in `show'
+app/controllers/searches_controller.rb:5:in `index'
+Started GET "/searches" for 127.0.0.1 at 2017-08-21 03:24:12 +0300
+Processing by SearchesController#index as HTML
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (37.5ms)
+  Rendered layouts/_footer.html.erb (1.9ms)
+Completed 200 OK in 100ms (Views: 98.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/searches?utf8=%E2%9C%93&station_first%5Bid%5D=1&station_last%5Bid%5D=1&commit=Search" for 127.0.0.1 at 2017-08-21 03:24:16 +0300
+Processing by SearchesController#index as HTML
+  Parameters: {"utf8"=>"✓", "station_first"=>{"id"=>"1"}, "station_last"=>{"id"=>"1"}, "commit"=>"Search"}
+  Rendering searches/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered searches/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 64ms (Views: 62.0ms | ActiveRecord: 0.2ms)
+
+

@@ -23,8 +23,8 @@ class Route < ActiveRecord::Base
 
   def self.search(first_station, last_station)
     if first_station && last_station
-      @route = Route.joins(:railway_stations_routes).where("railway_station_id = ?", first_station) &&
-              Route.joins(:railway_stations_routes).where("railway_station_id = ?", last_station)
+      @route = Route.joins(:railway_stations_routes).where("railway_station_id = ?", first_station[:id]) &&
+              Route.joins(:railway_stations_routes).where("railway_station_id = ?", last_station[:id])
     else
       all
     end
