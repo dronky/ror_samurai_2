@@ -9,6 +9,8 @@ class Train < ApplicationRecord
   scope :sv,        -> { where(type: 'SvCarriageWagon') }
   scope :sit, -> { where(type: 'Sit_wagon') }
 
+  before_validation :set_station
+
   def seats_count
     second_class_count = wagons.where(type: :PlackartWagon).count
     compartment_count = wagons.where(type: :CoupeWagon).count
@@ -16,8 +18,8 @@ class Train < ApplicationRecord
   end
 
   def set_station
-    self.current_station = RailwayStation.joins(:railway_stations_routes).where("route_id = ?", self.route_id) &&
-        RailwayStation.joins(:railway_stations_routes).where("station_number = 1").first
+    station_id = route.railway_stations_routes.minimum(:railway_station_id)
+    self.current_station = RailwayStation.find(station_id)
   end
 
   def select_seats(type, seats_type)

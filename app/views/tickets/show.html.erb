@@ -12,10 +12,10 @@
 </p>
 <p>
   <strong>Start station:</strong>
-  <%= RailwayStation.find(@ticket.start_station_id).title %>
+  <%= @ticket.start_station.title %>
 </p>
 
 <p>
   <strong>End station:</strong>
-  <%= RailwayStation.find(@ticket.end_station_id).title %>
+  <%= @ticket.end_station.title %>
 </p>

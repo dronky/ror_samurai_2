@@ -11,7 +11,7 @@ class WagonsController < ApplicationController
 
   def create
     @wagon = @train.wagons.new(wagon_params)
-    if @wagon.save!
+    if @wagon.save
       redirect_to @train
     else
       render :new

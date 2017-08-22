@@ -8,11 +8,11 @@ class Route < ActiveRecord::Base
   before_validation :set_name
 
   def get_station_arrival(station_id)
-    RailwayStationsRoute.find_by(railway_station_id: station_id).station_arrival
+    station_route(station_id, 'station_arrival').station_arrival
   end
 
   def get_station_departure(station_id)
-    RailwayStationsRoute.find_by(railway_station_id: station_id).station_departure
+    station_route(station_id, 'station_departure').station_departure
   end
 
   private
@@ -28,6 +28,12 @@ class Route < ActiveRecord::Base
     else
       all
     end
+  end
+
+  protected
+
+  def station_route(station_id, type)
+    railway_stations_routes.select(type.to_sym).where(route: self, railway_station_id: station_id).first
   end
 
 end

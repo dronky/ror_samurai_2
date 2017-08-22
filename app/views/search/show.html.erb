@@ -3,11 +3,15 @@
   <tr>
     <th>Number:</th>
     <th>Tickets:</th>
+    <th>Depature time:</th>
+    <th>Arrival time:</th>
   </tr>
   </thead>
 
   <tbody>
   <% @routes.each do |route| %>
+      <% departure = route.get_station_departure(@start_station) %>
+      <% arrival = route.get_station_arrival(@end_station) %>
       <% route.trains.each do |train| %>
           <tr>
             <td><%= train.number %></td>
@@ -16,7 +20,8 @@
                                                            start_station_id: @start_station,
                                                            end_station_id: @end_station) %>
             </td>
-
+            <td><%= departure %></td>
+            <td><%= arrival %></td>
           </tr>
       <% end %>
   <% end %>
