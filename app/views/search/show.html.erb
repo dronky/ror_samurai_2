@@ -10,6 +10,7 @@
 
   <tbody>
   <% @routes.each do |route| %>
+      <% a = route %>
       <% departure = route.get_station_departure(@start_station) %>
       <% arrival = route.get_station_arrival(@end_station) %>
       <% route.trains.each do |train| %>

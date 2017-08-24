@@ -22,18 +22,18 @@ class Route < ActiveRecord::Base
   end
 
   def self.search(first_station, last_station)
-    if first_station && last_station
-      @route = Route.joins(:railway_stations_routes).where("railway_station_id = ?", first_station[:id]) &&
-              Route.joins(:railway_stations_routes).where("railway_station_id = ?", last_station[:id])
-    else
-      all
-    end
+    @routes = Route.joins(:railway_stations_routes).where("railway_station_id = ?", Integer(first_station["id"])) &&
+        Route.joins(:railway_stations_routes).where("railway_station_id = ?", Integer(last_station["id"]))
   end
 
-  protected
+  private
 
   def station_route(station_id, type)
-    railway_stations_routes.select(type.to_sym).where(route: self, railway_station_id: station_id).first
+    @k = Integer(station_id)
+    @l = type.to_sym
+    @c = id
+    @b = railway_stations_routes.select(type.to_sym).where(route: self, railway_station_id: Integer(station_id)).first
+    # @a = 1
   end
 
 end

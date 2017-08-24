@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
-  before_action :set_search, only: [:show]
+  before_action :set_search_result, only: [:show]
 
   def index
   end
@@ -11,7 +11,7 @@ class SearchController < ApplicationController
 
   private
 
-  def set_search
+  def set_search_result
     @routes = Route.search(params[:station_first], params[:station_last])
   end
 
