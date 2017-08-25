@@ -11,7 +11,7 @@ class RailwayStation < ApplicationRecord
   end
 
   def position_in(route)
-    station_route(route).try(:station_number)
+    station_route(route)&.station_number
   end
 
   protected

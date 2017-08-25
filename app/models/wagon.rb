@@ -9,6 +9,10 @@ class Wagon < ApplicationRecord
   validates :number, uniqueness: {scope: :train_id}
 
   scope :order_from_head,->(train) {train.head ? order(number: :asc) : order(number: :desc)}
+  scope :coupe,     -> { where(type: 'CoupeWagon') }
+  scope :platsckard, -> { where(type: 'PlatsckardWagon') }
+  scope :sv,        -> { where(type: 'SvCarriageWagon') }
+  scope :sit, -> { where(type: 'SitWagon') }
 
 
   before_validation :set_number
@@ -20,11 +24,6 @@ class Wagon < ApplicationRecord
   private
 
   def set_number
-    current_max_number = self.train.wagons.pluck(:number).max
-    if current_max_number
-      self.number = current_max_number + 1
-    else
-      self.number = 1
-    end
+    self.number ||= train.wagons.maximum(:number).to_i + 1
   end
 end

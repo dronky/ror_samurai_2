@@ -15,11 +15,11 @@ class Route < ActiveRecord::Base
     station_route(station_id, 'station_departure').station_departure
   end
 
-  private
-
   def set_name
     self.name = "#{railway_stations.first.title} - #{railway_stations.last.title}"
   end
+
+  private
 
   def self.search(first_station, last_station)
     @routes = Route.joins(:railway_stations_routes).where("railway_station_id = ?", Integer(first_station["id"])) &&
@@ -29,11 +29,7 @@ class Route < ActiveRecord::Base
   private
 
   def station_route(station_id, type)
-    @k = Integer(station_id)
-    @l = type.to_sym
-    @c = id
-    @b = railway_stations_routes.select(type.to_sym).where(route: self, railway_station_id: Integer(station_id)).first
-    # @a = 1
+    railway_stations_routes.select(type.to_sym).where(route: self, railway_station_id: Integer(station_id)).first
   end
 
 end

@@ -1,7 +1,1 @@
-<h1>Select stations</h1>
-<%= form_tag routes_path, method: :get do %>
-
-    <p>From: <%= select_tag 'station_first', options_for_select(RailwayStation.all.collect {|u| [u.title, u.id]}) %></p>
-    <p>To: <%= select_tag 'station_last', options_for_select(RailwayStation.all.collect {|u| [u.title, u.id]}) %></p>
-    <%= submit_tag "Search" %>
-<% end %>
+<h1>List of users</h1>

@@ -26,10 +26,8 @@ class WagonsController < ApplicationController
     respond_to do |format|
       if @wagon.update(wagon_params)
         format.html { redirect_to @wagon, notice: 'Wagon was successfully updated.' }
-        format.json { render :show, status: :ok, location: @wagon }
       else
         format.html { render :edit }
-        format.json { render json: @wagon.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -38,7 +36,6 @@ class WagonsController < ApplicationController
     @wagon.destroy
     respond_to do |format|
       format.html { redirect_to train_path(@wagon.train), notice: 'Wagon was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
@@ -53,6 +50,6 @@ class WagonsController < ApplicationController
   end
 
   def wagon_params
-    params.require(:wagon).permit(:train_id, :type, :up_seats, :down_seats, :number)
+    params.require(:wagon).permit(:train_id, :type, :up_seats, :down_seats, :side_up_seats, :side_down_seats, :sit_seats, :number)
   end
 end
