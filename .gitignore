@@ -51,3 +51,4 @@ build-iPhoneSimulator/
 
 .idea
 .idea/workspace.xml
+.log
