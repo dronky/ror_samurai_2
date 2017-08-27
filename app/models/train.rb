@@ -1,15 +1,17 @@
 class Train < ApplicationRecord
+
+  before_validation :set_station, on: :create
+
   belongs_to :route
   has_many :tickets
   belongs_to :current_station, class_name: 'RailwayStation'
   has_many :wagons
 
-  before_validation :set_station
-
-  def seats_count
+  def wagons_seats_count
     second_class_count = wagons.where(type: :PlackartWagon).count
     compartment_count = wagons.where(type: :CoupeWagon).count
-    seats = {second: second_class_count, comp: compartment_count}
+    sit_count = wagons.where(type: :SitWagon).count
+    {second: second_class_count, comp: compartment_count, sit: sit_count}
   end
 
   def select_seats(type, seats_type)

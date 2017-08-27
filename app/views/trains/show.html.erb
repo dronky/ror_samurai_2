@@ -20,15 +20,19 @@
       No wagons yet
   <% else %>
     <ul>
-      <li>Count of compartment wagons: <%= @train.seats_count[:comp] %>
+      <li>Count of compartment wagons: <%= @train.wagons_seats_count[:comp] %>
         <ul>
           <li>Up seats: <%= @train.wagons.where(type: :CoupeWagon).sum(:up_seats) %></li>
           <li>Down seats: <%= @train.wagons.where(type: :CoupeWagon).sum(:down_seats) %></li>
         </ul>
-      <li>Count of second-class wagons: <%= @train.seats_count[:second] %>
+      <li>Count of second-class wagons: <%= @train.wagons_seats_count[:second] %>
         <ul>
           <li>Up seats: <%= @train.wagons.where(type: :PlackartWagon).sum(:up_seats) %></li>
           <li>Down seats: <%= @train.wagons.where(type: :PlackartWagon).sum(:down_seats) %></li>
+        </ul>
+      <li>Count of Sit wagons: <%= @train.wagons_seats_count[:sit] %>
+        <ul>
+          <li>Sit seats: <%= @train.wagons.where(type: :SitWagon).sum(:sit_seats) %></li>
         </ul>
     </ul>
     <strong>Links to wagons:</strong>

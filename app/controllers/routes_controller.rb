@@ -3,8 +3,8 @@ class RoutesController < ApplicationController
 
   def index
     @routes = Route.all
-    @station_first = params[:station_first]
-    @station_last = params[:station_last]
+    # @station_first = params[:station_first]
+    # @station_last = params[:station_last]
   end
 
   def show
