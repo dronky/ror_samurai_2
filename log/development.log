@@ -1,0 +1,817 @@
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAdminToUsers (20170828143606)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170828143606"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_route_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_railway_stations_routes_on_railway_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trains_on_current_station_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wagons_on_number_and_train_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wagons_on_number_and_train_id' AND type='index'
+[0m
+Started GET "/trains" for 127.0.0.1 at 2017-08-28 17:38:30 +0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TrainsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.5ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered trains/_train.html.erb (1.2ms)
+  Rendered trains/_train.html.erb (2.1ms)
+  Rendered trains/_train.html.erb (0.4ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/_train.html.erb (0.5ms)
+  Rendered trains/index.html.erb within layouts/application (25.1ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 373ms (Views: 308.2ms | ActiveRecord: 3.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-28 17:38:33 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"89KCNNhy2daxkBRR5VF/GbtY4Z/sFtuNvMS8VvoDTJRRU1vIF0tbrxPR6GTirNf7HIeG64lklVkqHR7JO3xZyA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 17:38:33 +0300
+Processing by TrainsController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-28 17:38:33 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-08-28 17:38:37 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-08-28 17:38:45 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1KKr/iM2yyZarxN9R3pKgt9VfUx1AWesVekyf1iaSRtDom5ojiaxblIu1XX8CDxu74SUrSGh9eHz84nYJpeKiw==", "user"=>{"email"=>"admin@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@test.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2017-08-28 14:38:45.454096"], ["updated_at", "2017-08-28 14:38:45.454096"], ["email", "admin@test.com"], ["encrypted_password", "$2a$11$Y7fby7PWRj9fcq18V.UDQ.rOqTtBwSuo/znA63lFlcC822bw7wQIq"], ["confirmation_token", "we8tWN8WBQMNz8ymkoW7"], ["confirmation_sent_at", "2017-08-28 14:38:45.454284"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (1.3ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 205.8ms
+Sent mail to admin@test.com (14.8ms)
+Date: Mon, 28 Aug 2017 17:38:45 +0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: admin@test.com
+Message-ID: <59a42af5d853f_9193fc200bbcc201342b@MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome admin@test.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=we8tWN8WBQMNz8ymkoW7">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 638ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 17:38:45 +0300
+Processing by TrainsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-28 17:38:45 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 51ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=we8tWN8WBQMNz8ymkoW7" for 127.0.0.1 at 2017-08-28 17:38:47 +0300
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"we8tWN8WBQMNz8ymkoW7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "we8tWN8WBQMNz8ymkoW7"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", "2017-08-28 14:38:47.376253"], ["updated_at", "2017-08-28 14:38:47.376942"], ["id", 4]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-28 17:38:47 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 49ms (Views: 47.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "admin" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2017-08-28 14:40:17.838511"], ["admin", "t"], ["id", 4]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/railway_stations" for 127.0.0.1 at 2017-08-28 18:09:42 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/railway_stations"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admin/railway_stations" for 127.0.0.1 at 2017-08-28 18:09:50 +0300
+  
+ActionController::RoutingError (undefined local variable or method `admin' for main:Object):
+  
+app/controllers/admin/railway_stations_controller.rb:1:in `<top (required)>'
+Started POST "/__web_console/repl_sessions/3cd4c27607096be85903e2a57e70e2ec/trace" for 127.0.0.1 at 2017-08-28 18:10:41 +0300
+Started GET "/admin/railway_stations" for 127.0.0.1 at 2017-08-28 18:11:12 +0300
+Processing by Admin::RailwayStationsController#index as HTML
+Completed 401 Unauthorized in 9ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-28 18:11:12 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 365ms (Views: 326.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-28 18:11:49 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yse24LYKAwHeJ9xNp3Hnip+FEKG0eFqueyh1hEXzLvprdWteXfkEG+omVMT6aof+JLHGJF60FOVBXy//u7TKQQ==", "user"=>{"email"=>"admin@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin/railway_stations
+Completed 302 Found in 210ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/admin/railway_stations" for 127.0.0.1 at 2017-08-28 18:11:50 +0300
+Processing by Admin::RailwayStationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.3ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered collection of admin/railway_stations/_railway_station.html.erb [2 times] (160.3ms)
+  Rendered admin/railway_stations/index.html.erb within layouts/application (167.0ms)
+Completed 500 Internal Server Error in 225ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_railway_station_path' for #<#<Class:0x007fc4c30ae418>:0x007fc4c30ac708>
+Did you mean?  admin_railway_station_path
+               edit_admin_railway_station_path
+               admin_railway_stations_path):
+    1: <tr>
+    2:   <td><%= railway_station.title %></td>
+    3:   <td><%= link_to 'Show', admin_railway_station_path(railway_station) %></td>
+    4:   <td><%= link_to 'Edit', edit_railway_station_path(railway_station) %></td>
+    5:   <td><%= link_to 'Destroy', admin_railway_station_path(railway_station), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    6: </tr>
+  
+app/views/admin/railway_stations/_railway_station.html.erb:4:in `_app_views_admin_railway_stations__railway_station_html_erb__2218986240488484518_70241527676780'
+app/views/admin/railway_stations/index.html.erb:14:in `_app_views_admin_railway_stations_index_html_erb___274476882235714020_70241531295320'
+Started GET "/admin/railway_stations" for 127.0.0.1 at 2017-08-28 18:12:13 +0300
+Processing by Admin::RailwayStationsController#index as HTML
+  [1m[36mUser Load (14.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (2.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered collection of admin/railway_stations/_railway_station.html.erb [2 times] (869.7ms)
+  Rendered admin/railway_stations/index.html.erb within layouts/application (921.1ms)
+Completed 500 Internal Server Error in 1065ms (ActiveRecord: 16.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `admin_edit_railway_station_path' for #<#<Class:0x007fc4c30ae418>:0x007fc4c0602318>
+Did you mean?  edit_admin_railway_station_path
+               admin_railway_station_path
+               admin_railway_stations_path):
+    1: <tr>
+    2:   <td><%= railway_station.title %></td>
+    3:   <td><%= link_to 'Show', admin_railway_station_path(railway_station) %></td>
+    4:   <td><%= link_to 'Edit', admin_edit_railway_station_path(railway_station) %></td>
+    5:   <td><%= link_to 'Destroy', admin_railway_station_path(railway_station), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    6: </tr>
+  
+app/views/admin/railway_stations/_railway_station.html.erb:4:in `_app_views_admin_railway_stations__railway_station_html_erb__2218986240488484518_70241508807760'
+app/views/admin/railway_stations/index.html.erb:14:in `_app_views_admin_railway_stations_index_html_erb___274476882235714020_70241508924860'
+Started GET "/admin/railway_stations" for 127.0.0.1 at 2017-08-28 18:12:48 +0300
+Processing by Admin::RailwayStationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered collection of admin/railway_stations/_railway_station.html.erb [2 times] (1.4ms)
+  Rendered admin/railway_stations/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 67ms (Views: 62.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/railway_stations" for 127.0.0.1 at 2017-08-28 18:15:17 +0300
+Processing by Admin::RailwayStationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered collection of admin/railway_stations/_railway_station.html.erb [2 times] (22.1ms)
+  Rendered admin/railway_stations/index.html.erb within layouts/application (24.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 56ms (Views: 52.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-28 18:15:19 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"muN/We3eD4bDw3QIQ+DZiRLhlCavCrvd/qG0JsLeeMwGcK5s6PRSHUTPpxj4837Lx0M9If4fqgrQ8txF+lGF0g=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:15:19 +0300
+  
+ActionController::RoutingError (uninitialized constant TrainsController):
+  
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.2) lib/action_dispatch/http/request.rb:82:in `controller_class'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:16:05 +0300
+  
+ActionController::RoutingError (uninitialized constant TrainsController):
+  
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.2) lib/action_dispatch/http/request.rb:82:in `controller_class'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:17:03 +0300
+  
+ActionController::RoutingError (uninitialized constant TrainsController):
+  
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.2) lib/action_dispatch/http/request.rb:82:in `controller_class'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:18:09 +0300
+Processing by Admin::TrainsController#index as HTML
+Completed 401 Unauthorized in 4ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-28 18:18:09 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_footer.html.erb (1.9ms)
+Completed 200 OK in 83ms (Views: 61.9ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-28 18:18:44 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U1GvBIFSfLQNvq8t87mP5Vh4rg+vemXNristXuvjX1oxTcsQZQ6RCv9meA5TaLlkg7jHjDwIoa1qov64OYx5Yw==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 161ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:18:44 +0300
+Processing by Admin::TrainsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering admin/trains/index.html.erb within layouts/application
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered admin/trains/_train.html.erb (0.8ms)
+  Rendered admin/trains/_train.html.erb (0.2ms)
+  Rendered admin/trains/_train.html.erb (0.2ms)
+  Rendered admin/trains/_train.html.erb (0.3ms)
+  Rendered admin/trains/_train.html.erb (0.3ms)
+  Rendered admin/trains/index.html.erb within layouts/application (25.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 70ms (Views: 50.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/railway_stations" for 127.0.0.1 at 2017-08-28 18:18:50 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/railway_stations"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admin/railway_stations" for 127.0.0.1 at 2017-08-28 18:18:54 +0300
+Processing by Admin::RailwayStationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering admin/railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered collection of admin/railway_stations/_railway_station.html.erb [2 times] (1.0ms)
+  Rendered admin/railway_stations/index.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 48ms (Views: 32.7ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-28 18:29:04 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"i+5LBf1TYHKyo6j3dUW6VaFeCntQnvYvo9TMrGhxiDosOCXKwzoELj4T/8I/wD+wOzhfBOJhEntdSgKZZnlxPw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:29:04 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.4ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (54.5ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 127ms (Views: 123.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/railway_stations" for 127.0.0.1 at 2017-08-28 18:29:14 +0300
+Processing by Admin::RailwayStationsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-28 18:29:14 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (7.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (24.2ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 101ms (Views: 94.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-28 18:29:16 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"182w3/WBDeShexjEJ5e+b5QE64ITTpCo5tBr0Lie4x8wvSz/DJvsevcKOSdXh9hgTS9YmfDABNPKtINdKgHXUg==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin/railway_stations
+Completed 302 Found in 173ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/railway_stations" for 127.0.0.1 at 2017-08-28 18:29:16 +0300
+Processing by Admin::RailwayStationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:29:16 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_footer.html.erb (1.8ms)
+Completed 200 OK in 76ms (Views: 74.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-28 18:30:15 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JLpUu3NENxQuVjgb4INcMByD4mFmZfyU1I3LfKs60TaoJqC+WdRU7oNkyB+iVLx2Cpoaeo9QtLwdEueuKYXWlg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:30:15 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.4ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-28 18:30:16 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 72ms (Views: 70.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-28 18:30:20 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+RlX1MHwPTrfJEJzJDYn3NxBNFqodlqy5rOi6FFFX45Bucmqrsm3UPC9Kw+kO75ttninueikHVFik4366Vw+YA==", "user"=>{"email"=>"admin@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 159ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:30:20 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/railway_stations" for 127.0.0.1 at 2017-08-28 18:30:24 +0300
+Processing by Admin::RailwayStationsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/railway_stations/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered collection of admin/railway_stations/_railway_station.html.erb [2 times] (2.0ms)
+  Rendered admin/railway_stations/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 50ms (Views: 43.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/railway_stations" for 127.0.0.1 at 2017-08-28 18:32:20 +0300
+Processing by Admin::RailwayStationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/railway_stations/index.html.erb within layouts/admin
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered collection of admin/railway_stations/_railway_station.html.erb [2 times] (0.9ms)
+  Rendered admin/railway_stations/index.html.erb within layouts/admin (7.3ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 97ms (Views: 40.8ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-28 18:32:24 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uFFRSB8IUNQy5h7pcvErECAtlID6k1ytd8+xBS64fX5pCyngnuB1LaLLZnNbSGDRhbAc62Dqqh2jRZ53LkmyBg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:32:24 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_footer.html.erb (2.6ms)
+Completed 200 OK in 59ms (Views: 55.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-28 18:32:26 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 98ms (Views: 94.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-28 18:32:28 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xgZd3BSSNjbxSkDHB5IL7zsCL+G4lB7T/awnSg06z3hkH3jIiM9lu1n9L/Hww/aU31gAPU2t7MuqoH5LCjORTg==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 156ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:32:28 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 42ms (Views: 40.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:33:05 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 57ms (Views: 52.6ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-28 18:33:08 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JVFHn4QrYnspVObQwbdXvsVf04HrFxMU050YrhnT8k5xAxT6lS20aGRpkWejM0z4j5+wSlgQZv9jnHDCUmKmrg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:33:08 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.7ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 54ms (Views: 51.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:33:09 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 63ms (Views: 59.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:33:10 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:33:10 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-28 18:33:11 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.1ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 62ms (Views: 58.5ms | ActiveRecord: 0.2ms)
+
+

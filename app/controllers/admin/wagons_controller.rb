@@ -1,4 +1,4 @@
-class WagonsController < ApplicationController
+class Admin::WagonsController < Admin::BaseController
   before_action :set_wagon, only: [:show, :edit, :update, :destroy, :update_position]
   before_action :set_train, only: [:new, :create]
   def index
