@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
 
+    root 'base#index'
+    resources :wagons
+
     resources :trains do
       resources :wagons
     end

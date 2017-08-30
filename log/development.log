@@ -3776,3 +3776,543 @@ Processing by SearchController#index as HTML
 Completed 200 OK in 65ms (Views: 45.3ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-31 00:32:32 +0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.6ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (67.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 402ms (Views: 383.4ms | ActiveRecord: 3.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-31 00:32:36 +0300
+Processing by MyDevise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GwGJqoHEQN9Qj2QS/8gfC2ULEsLHy9RfH+ialsEyezs757Rl/PTGlecsL+h31Qw5pnp5XjZQEcus8BrDgRpu+w=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-31 00:32:36 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-31 00:32:38 +0300
+Processing by MyDevise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 69ms (Views: 55.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-31 00:32:40 +0300
+Processing by MyDevise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sgptCoDaEtJ+xNyDl1SyhyluLQvuWH7Z6TawB4c0od/UlBP/kI10iVsVs6xzCgqt8rNTIyIdXIk2xCsG6juU7A==", "user"=>{"email"=>"admin@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 192ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-08-31 00:32:40 +0300
+Processing by Admin::BaseController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/base/index.html.erb within layouts/admin
+  Rendered admin/base/index.html.erb within layouts/admin (315.5ms)
+Completed 500 Internal Server Error in 323ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `admin_tickets_path_' for #<#<Class:0x007fda6140a310>:0x007fda613f9e20>
+Did you mean?  admin_tickets_path
+               admin_ticket_path
+               admin_tickets_url):
+    2: <ul>
+    3:   <li> <%= link_to "Railway Stations", admin_railway_stations_path%> </li>
+    4:   <li> <%= link_to "Routes", admin_routes_path%> </li>
+    5:   <li> <%= link_to "Tickets", admin_tickets_path_%> </li>
+    6:   <li> <%= link_to "Trains", admin_trains_path%> </li>
+    7:   <li> <%= link_to "Wagons", admin_wagons_path%> </li>
+    8: </ul>
+  
+app/views/admin/base/index.html.erb:5:in `_app_views_admin_base_index_html_erb__2005222752262341180_70287955614760'
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-31 00:33:00 +0300
+Processing by MyDevise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-31 00:33:04 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-31 00:33:06 +0300
+Processing by MyDevise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2P6xCVdx0/6VR33SRot2BY2tkiuLFVNPZwQkZhlMYwiX301VHnyRMQxBM9b22Qsrjh/zhM0VMZgPOnDKk5dLJA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-31 00:33:06 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-31 00:33:08 +0300
+Processing by MyDevise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 51ms (Views: 48.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-31 00:33:09 +0300
+Processing by MyDevise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"67v/K98tg2vOsjlLYNXt2UaEfJihDtHrxrz2gKmb1ZCf3voP6oy834TJ1Av5HKacAQT8zKEoX4tgVD71N9pPKA==", "user"=>{"email"=>"admin@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 156ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-08-31 00:33:10 +0300
+Processing by Admin::BaseController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/base/index.html.erb within layouts/admin
+  Rendered admin/base/index.html.erb within layouts/admin (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 25.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/tickets" for 127.0.0.1 at 2017-08-31 00:33:16 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/base/index.html.erb within layouts/admin
+  Rendered admin/base/index.html.erb within layouts/admin (0.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 50ms (Views: 31.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/tickets" for 127.0.0.1 at 2017-08-31 00:33:18 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/base/index.html.erb within layouts/admin
+  Rendered admin/base/index.html.erb within layouts/admin (1.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 39.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/tickets" for 127.0.0.1 at 2017-08-31 00:33:19 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/base/index.html.erb within layouts/admin
+  Rendered admin/base/index.html.erb within layouts/admin (1.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 61ms (Views: 52.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/trains" for 127.0.0.1 at 2017-08-31 00:33:20 +0300
+Processing by Admin::TrainsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/trains/index.html.erb within layouts/admin
+  [1m[36mTrain Load (0.6ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered admin/trains/_train.html.erb (0.8ms)
+  Rendered admin/trains/_train.html.erb (0.5ms)
+  Rendered admin/trains/_train.html.erb (0.2ms)
+  Rendered admin/trains/_train.html.erb (0.2ms)
+  Rendered admin/trains/_train.html.erb (0.2ms)
+  Rendered admin/trains/index.html.erb within layouts/admin (18.6ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 75ms (Views: 50.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/railway_stations" for 127.0.0.1 at 2017-08-31 00:33:30 +0300
+Processing by Admin::RailwayStationsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/railway_stations/index.html.erb within layouts/admin
+  [1m[36mRailwayStation Load (1.4ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered collection of admin/railway_stations/_railway_station.html.erb [2 times] (4.6ms)
+  Rendered admin/railway_stations/index.html.erb within layouts/admin (17.1ms)
+  Rendered layouts/_footer.html.erb (7.7ms)
+Completed 200 OK in 148ms (Views: 111.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/admin/wagons" for 127.0.0.1 at 2017-08-31 00:33:33 +0300
+Processing by Admin::WagonsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/wagons/index.html.erb within layouts/admin
+  [1m[36mWagon Load (0.7ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  [1m[36mTrain Load (0.6ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of admin/wagons/_wagon.html.erb [3 times] (199.9ms)
+  Rendered admin/wagons/index.html.erb within layouts/admin (255.0ms)
+Completed 500 Internal Server Error in 276ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `train_wagon_path' for #<#<Class:0x007fda64739c18>:0x007fda64730050>
+Did you mean?  admin_wagon_path
+               admin_wagons_path):
+     7:   <td><%= wagon.side_up_seats %></td>
+     8:   <td><%= wagon.side_down_seats %></td>
+     9:   <td><%= wagon.sit_seats %></td>
+    10:   <td><%= link_to 'Show', train_wagon_path(id: wagon.train.id) %></td>
+    11:   <td><%= link_to 'Edit', edit_polymorphic_path(wagon) %></td>
+    12:   <td><%= link_to 'Delete', wagon, method: :delete, data: { confirm: 'are you sure?' } %></td>
+    13: </tr>
+  
+app/views/admin/wagons/_wagon.html.erb:10:in `_app_views_admin_wagons__wagon_html_erb__70161108763563214_70287979663540'
+app/views/admin/wagons/index.html.erb:21:in `_app_views_admin_wagons_index_html_erb___2650836952841512120_70287982451520'
+Started GET "/admin/tickets" for 127.0.0.1 at 2017-08-31 00:34:08 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/base/index.html.erb within layouts/admin
+  Rendered admin/base/index.html.erb within layouts/admin (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 31ms (Views: 25.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/tickets" for 127.0.0.1 at 2017-08-31 00:34:10 +0300
+Processing by Admin::TicketsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/base/index.html.erb within layouts/admin
+  Rendered admin/base/index.html.erb within layouts/admin (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 24.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-31 00:34:16 +0300
+Processing by MyDevise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VAq+944DtDUqgC8+sAZAMoq6VhIRhyS6oEG0dVl2kcA3a/PDJzDStRNdCygDo/1Vfs7mD3WfHD/OEEvAuAdRcw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-31 00:34:16 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-31 00:34:17 +0300
+Processing by MyDevise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 61ms (Views: 59.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-31 00:34:20 +0300
+Processing by MyDevise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ng+k3X4zann3iDWHOPNehl79MjAVpBowuBDbO4wBjVwSHxF3STV2NXaT8kJHr4xs28p56kUT59e5nHX9cEAtTQ==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 153ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-31 00:34:20 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-31 00:34:23 +0300
+Processing by MyDevise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9/tzgP2AwYjG1fdSEgGGoGHUpgfbKBJTrcpxMmJvLLmshNGneonWYStHB2a9MKbF4bj52Ggp8S06fZ8/8i5bCA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-31 00:34:23 +0300
+Processing by SearchController#index as HTML
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered search/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-31 00:34:24 +0300
+Processing by MyDevise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 54ms (Views: 52.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-31 00:34:27 +0300
+Processing by MyDevise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"29HtNzsjOMXWKWzDmeRKJX/sySAS6AHIUUtabFjxYosXhXXvnNGTLaW/vVn/pu5HvHtGNrS0kF673Mv1IifKnw==", "user"=>{"email"=>"admin@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 158ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-08-31 00:34:27 +0300
+Processing by Admin::BaseController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/base/index.html.erb within layouts/admin
+  Rendered admin/base/index.html.erb within layouts/admin (0.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-08-31 00:35:07 +0300
+Processing by Admin::BaseController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/base/index.html.erb within layouts/admin
+  Rendered admin/base/index.html.erb within layouts/admin (0.6ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-08-31 00:35:29 +0300
+Processing by Admin::BaseController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/base/index.html.erb within layouts/admin
+  Rendered admin/base/index.html.erb within layouts/admin (0.7ms)
+  Rendered layouts/_footer.html.erb (2.8ms)
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/trains" for 127.0.0.1 at 2017-08-31 00:35:32 +0300
+Processing by Admin::TrainsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/trains/index.html.erb within layouts/admin
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered admin/trains/_train.html.erb (1.8ms)
+  Rendered admin/trains/_train.html.erb (0.4ms)
+  Rendered admin/trains/_train.html.erb (0.6ms)
+  Rendered admin/trains/_train.html.erb (0.3ms)
+  Rendered admin/trains/_train.html.erb (0.3ms)
+  Rendered admin/trains/index.html.erb within layouts/admin (15.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 57ms (Views: 45.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2017-08-31 00:35:35 +0300
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTicket Load (0.6ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRailwayStation Load (0.1ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered tickets/index.html.erb within layouts/application (28.5ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 76ms (Views: 70.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/admin/routes" for 127.0.0.1 at 2017-08-31 00:37:32 +0300
+Processing by Admin::RoutesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/routes/index.html.erb within layouts/admin
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered admin/routes/index.html.erb within layouts/admin (134.7ms)
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `route_path' for #<#<Class:0x007fda602db0f8>:0x007fda602d9348>
+Did you mean?  root_path):
+    14:   <% @routes.each do |route| %>
+    15:       <tr>
+    16:         <td><%= route.name %></td>
+    17:         <td><%= link_to 'Показать', route %></td>
+    18:         <td><%= link_to 'Изменить', edit_route_path(route) %></td>
+    19:         <td><%= link_to 'Удалить', route, method: :delete, data: {confirm: 'Вы уверены?'} %></td>
+    20:       </tr>
+  
+app/views/admin/routes/index.html.erb:17:in `block in _app_views_admin_routes_index_html_erb__2913623581765184447_70287946603760'
+app/views/admin/routes/index.html.erb:14:in `_app_views_admin_routes_index_html_erb__2913623581765184447_70287946603760'
+Started GET "/admin" for 127.0.0.1 at 2017-08-31 00:37:41 +0300
+Processing by Admin::BaseController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/base/index.html.erb within layouts/admin
+  Rendered admin/base/index.html.erb within layouts/admin (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 44ms (Views: 40.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/railway_stations" for 127.0.0.1 at 2017-08-31 00:37:43 +0300
+Processing by Admin::RailwayStationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/railway_stations/index.html.erb within layouts/admin
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT "railway_stations".* FROM "railway_stations"[0m
+  Rendered collection of admin/railway_stations/_railway_station.html.erb [2 times] (2.4ms)
+  Rendered admin/railway_stations/index.html.erb within layouts/admin (6.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 68ms (Views: 64.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/routes" for 127.0.0.1 at 2017-08-31 00:37:45 +0300
+Processing by Admin::RoutesController#index as HTML
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/routes/index.html.erb within layouts/admin
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendered admin/routes/index.html.erb within layouts/admin (142.3ms)
+Completed 500 Internal Server Error in 155ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `route_path' for #<#<Class:0x007fda602db0f8>:0x007fda66036310>
+Did you mean?  root_path):
+    14:   <% @routes.each do |route| %>
+    15:       <tr>
+    16:         <td><%= route.name %></td>
+    17:         <td><%= link_to 'Показать', route %></td>
+    18:         <td><%= link_to 'Изменить', edit_route_path(route) %></td>
+    19:         <td><%= link_to 'Удалить', route, method: :delete, data: {confirm: 'Вы уверены?'} %></td>
+    20:       </tr>
+  
+app/views/admin/routes/index.html.erb:17:in `block in _app_views_admin_routes_index_html_erb__2913623581765184447_70287995550180'
+app/views/admin/routes/index.html.erb:14:in `_app_views_admin_routes_index_html_erb__2913623581765184447_70287995550180'
+Started GET "/admin" for 127.0.0.1 at 2017-08-31 00:37:46 +0300
+Processing by Admin::BaseController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/base/index.html.erb within layouts/admin
+  Rendered admin/base/index.html.erb within layouts/admin (0.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2017-08-31 00:37:47 +0300
+Processing by TicketsController#index as HTML
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTicket Load (0.8ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.1ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.1ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.1ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.1ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE RailwayStation Load (0.0ms)[0m  [1m[34mSELECT  "railway_stations".* FROM "railway_stations" WHERE "railway_stations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered tickets/index.html.erb within layouts/application (33.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 81ms (Views: 74.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/admin/trains" for 127.0.0.1 at 2017-08-31 00:37:49 +0300
+Processing by Admin::TrainsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/trains/index.html.erb within layouts/admin
+  [1m[36mTrain Load (0.3ms)[0m  [1m[34mSELECT "trains".* FROM "trains"[0m
+  Rendered admin/trains/_train.html.erb (1.0ms)
+  Rendered admin/trains/_train.html.erb (0.5ms)
+  Rendered admin/trains/_train.html.erb (0.4ms)
+  Rendered admin/trains/_train.html.erb (0.8ms)
+  Rendered admin/trains/_train.html.erb (0.5ms)
+  Rendered admin/trains/index.html.erb within layouts/admin (17.9ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 56ms (Views: 50.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/wagons" for 127.0.0.1 at 2017-08-31 00:37:52 +0300
+Processing by Admin::WagonsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin/wagons/index.html.erb within layouts/admin
+  [1m[36mWagon Load (0.3ms)[0m  [1m[34mSELECT "wagons".* FROM "wagons"[0m
+  [1m[36mTrain Load (0.2ms)[0m  [1m[34mSELECT  "trains".* FROM "trains" WHERE "trains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of admin/wagons/_wagon.html.erb [3 times] (137.6ms)
+  Rendered admin/wagons/index.html.erb within layouts/admin (141.3ms)
+Completed 500 Internal Server Error in 152ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `train_wagon_path' for #<#<Class:0x007fda64739c18>:0x007fda5f6a4af0>
+Did you mean?  admin_wagon_path
+               admin_wagons_path):
+     7:   <td><%= wagon.side_up_seats %></td>
+     8:   <td><%= wagon.side_down_seats %></td>
+     9:   <td><%= wagon.sit_seats %></td>
+    10:   <td><%= link_to 'Show', train_wagon_path(id: wagon.train.id) %></td>
+    11:   <td><%= link_to 'Edit', edit_polymorphic_path(wagon) %></td>
+    12:   <td><%= link_to 'Delete', wagon, method: :delete, data: { confirm: 'are you sure?' } %></td>
+    13: </tr>
+  
+app/views/admin/wagons/_wagon.html.erb:10:in `_app_views_admin_wagons__wagon_html_erb__70161108763563214_70287938986240'
+app/views/admin/wagons/index.html.erb:21:in `_app_views_admin_wagons_index_html_erb___2650836952841512120_70287954003420'

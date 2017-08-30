@@ -4,6 +4,10 @@ class Admin::BaseController < ApplicationController
 
   layout 'admin'
 
+  def index
+
+  end
+
   protected
 
   def check_admin
