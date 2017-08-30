@@ -38,7 +38,7 @@ class TicketsController < ApplicationController
 
   def destroy
     @ticket.destroy
-    redirect_to ticket_path
+    redirect_to tickets_path
   end
 
   private
