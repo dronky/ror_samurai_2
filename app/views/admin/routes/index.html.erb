@@ -14,9 +14,9 @@
   <% @routes.each do |route| %>
       <tr>
         <td><%= route.name %></td>
-        <td><%= link_to 'Показать', route %></td>
-        <td><%= link_to 'Изменить', edit_route_path(route) %></td>
-        <td><%= link_to 'Удалить', route, method: :delete, data: {confirm: 'Вы уверены?'} %></td>
+        <td><%= link_to 'Show', admin_route_path(route) %></td>
+        <td><%= link_to 'Edit', edit_admin_route_path(route) %></td>
+        <td><%= link_to 'Destroy', admin_route_path(route), method: :delete, data: {confirm: 'Вы уверены?'} %></td>
       </tr>
   <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'Новый маршрут', new_route_path %>
+<%= link_to 'Новый маршрут', new_admin_route_path %>

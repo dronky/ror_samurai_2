@@ -42,7 +42,7 @@ class Admin::RailwayStationsController < Admin::BaseController
   def update
     respond_to do |format|
       if @railway_station.update(railway_station_params)
-        format.html { redirect_to @railway_station, notice: 'Railway station was successfully updated.' }
+        format.html { redirect_to admin_railway_station_path, notice: 'Railway station was successfully updated.' }
         format.json { render :show, status: :ok, location: @railway_station }
       else
         format.html { render :edit }
@@ -64,7 +64,7 @@ class Admin::RailwayStationsController < Admin::BaseController
   def update_position
     @route = Route.find(params[:route_id])
     @railway_station.update_position(@route, params[:position])
-    redirect_to @route
+    redirect_to admin_route_path
   end
 
   private
