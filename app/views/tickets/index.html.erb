@@ -1,5 +1,7 @@
 <h1>My Tickets:</h1>
 
+<%= link_to "Create new ticket", new_admin_ticket_path%>
+
 <% if current_user.admin? %>
     <% @tickets.each do |ticket| %>
         <p>Ticket number: <%= ticket.id %></p>

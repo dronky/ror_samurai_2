@@ -25,7 +25,7 @@ class Admin::WagonsController < Admin::BaseController
   def update
     respond_to do |format|
       if @wagon.update(wagon_params)
-        format.html { redirect_to @wagon, notice: 'Wagon was successfully updated.' }
+        format.html { redirect_to admin_wagon_path, notice: 'Wagon was successfully updated.' }
       else
         format.html { render :edit }
       end

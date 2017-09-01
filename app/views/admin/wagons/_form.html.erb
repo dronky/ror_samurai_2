@@ -1,4 +1,4 @@
-<%= form_for [:train, wagon.becomes(Wagon)] do |form| %>
+<%= form_for [:admin ,:train, wagon.becomes(Wagon)] do |form| %>
 
     <% if @wagon.errors.any? %>
         <div id="error_explanation">

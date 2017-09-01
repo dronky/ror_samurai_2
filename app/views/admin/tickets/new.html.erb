@@ -1,15 +1,14 @@
 <h1>Новый билет</h1>
 
-<%= form_for @ticket,method: :post, url: admin_tickets_path do |f| %>
-    <p>Full name</p>
-    <%= f.text_field :full_name %>
-    <p>Passport</p>
-    <%= f.text_field :passport %>
+<%= form_for @ticket, method: :post, url: admin_tickets_path do |f| %>
     <p>User</p>
     <%= f.collection_select(:user_id, User.all, :id, :name) %>
-    <%= f.hidden_field :train_id, value: @train_id %>
-    <%= f.hidden_field :start_station_id, value: @station_first %>
-    <%= f.hidden_field :end_station_id, value: @station_last %>
+    <p>Train</p>
+    <%= f.collection_select(:train_id, Train.all, :id, :number) %>
+    <p>First station</p>
+    <%= f.collection_select(:start_station_id, RailwayStation.all, :id, :title) %>
+    <p>End station</p>
+    <%= f.collection_select(:end_station_id, RailwayStation.all, :id, :title) %>
     <br>
     <br>
     <%= f.submit "Create" %>

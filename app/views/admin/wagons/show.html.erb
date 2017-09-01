@@ -21,7 +21,7 @@
 
 <%= render @wagon.type.underscore %>
 
-<%= link_to 'Edit', edit_train_wagon_path(@wagon) %> |
-<%= link_to 'Delete', @wagon, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Back', [@wagon.train] %>
+<%= link_to 'Edit', edit_admin_train_wagon_path(@wagon) %> |
+<%= link_to 'Delete', admin_wagon_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', admin_train_wagon_path(train_id: @wagon.train.id) %>
 

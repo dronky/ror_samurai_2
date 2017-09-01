@@ -7,8 +7,8 @@
   <td><%= wagon.side_up_seats %></td>
   <td><%= wagon.side_down_seats %></td>
   <td><%= wagon.sit_seats %></td>
-  <td><%= link_to 'Show', train_wagon_path(id: wagon.train.id) %></td>
-  <td><%= link_to 'Edit', edit_polymorphic_path(wagon) %></td>
-  <td><%= link_to 'Delete', wagon, method: :delete, data: { confirm: 'are you sure?' } %></td>
+  <td><%= link_to 'Show', admin_train_wagon_path(train_id: wagon.train.id, id: wagon.id) %></td>
+  <td><%= link_to 'Edit', edit_polymorphic_path([:admin, wagon]) %></td>
+  <td><%= link_to 'Delete', admin_train_wagon_path(train_id: wagon.train.id, id: wagon.id), method: :delete, data: { confirm: 'are you sure?' } %></td>
 </tr>
 

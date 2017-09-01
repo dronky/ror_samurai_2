@@ -38,15 +38,15 @@
     <strong>Links to wagons:</strong>
     <% @train.wagons.order_from_head(@train).each do |wagon| %>
         <ul>
-          <li>Wagon number: <%= link_to wagon.number, train_wagon_path(@train.id) %></li>
+          <li>Wagon number: <%= link_to wagon.number, admin_train_wagon_path(@train.id) %></li>
         </ul>
     <% end %>
 <% end %>
 </p>
 
 <p>
-  <%= link_to "Add wagon", new_train_wagon_path(@train) %>
+  <%= link_to "Add wagon", new_admin_train_wagon_path(@train) %>
 </p>
 
-<%= link_to 'Edit', edit_train_path(@train) %> |
-<%= link_to 'Back', trains_path %>
+<%= link_to 'Edit', edit_admin_train_path(@train) %> |
+<%= link_to 'Back', admin_train_path %>
