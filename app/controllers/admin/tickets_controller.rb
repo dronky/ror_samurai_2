@@ -15,8 +15,6 @@ class Admin::TicketsController < Admin::BaseController
 
   def create
     @ticket = Ticket.new(ticket_params)
-    @user_id = params[:ticket][:user_id]
-    @ticket.full_name = @ticket.get_user_name(@user_id.to_i)
     if @ticket.save!
       redirect_to @ticket
     else
@@ -48,6 +46,6 @@ class Admin::TicketsController < Admin::BaseController
   end
 
   def ticket_params
-    params.require(:ticket).permit(:train_id, :user_id, :start_station_id, :end_station_id)
+    params.require(:ticket).permit(:train_id, :user_id, :full_name, :start_station_id, :end_station_id)
   end
 end
