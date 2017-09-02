@@ -1,12 +1,13 @@
 class TicketsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :authenticate_user! #, only: [:create, :destroy]
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tickets = Ticket.all
+    @tickets = current_user.tickets.all
   end
 
   def show
+    current_user.tickets.find(@ticket.id)
   end
 
   def new
@@ -18,7 +19,7 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = current_user.tickets.new(ticket_params)
-    if @ticket.save!
+    if @ticket.save
       redirect_to @ticket
     else
       render :new
@@ -37,7 +38,7 @@ class TicketsController < ApplicationController
   end
 
   def destroy
-    @ticket.destroy
+    current_user.tickets.find(@ticket.id).destroy
     redirect_to tickets_path
   end
 

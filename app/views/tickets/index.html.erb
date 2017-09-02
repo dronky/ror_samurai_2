@@ -2,18 +2,9 @@
 
 <%= link_to "Create new ticket", new_admin_ticket_path%>
 
-<% if current_user.admin? %>
-    <% @tickets.each do |ticket| %>
-        <p>Ticket number: <%= ticket.id %></p>
-        <p>Start station: <%= RailwayStation.find(ticket.start_station_id).title %></p>
-        <p>End station: <%= RailwayStation.find(ticket.end_station_id).title %></p>
-        <%= link_to "Delete ticket", ticket, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-<% else %>
     <% current_user.tickets.each do |ticket| %>
         <p>Ticket number: <%= ticket.id %></p>
         <p>Start station: <%= RailwayStation.find(ticket.start_station_id).title %></p>
         <p>End station: <%= RailwayStation.find(ticket.end_station_id).title %></p>
         <%= link_to "Delete ticket", ticket, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
-<% end %>
