@@ -1,0 +1,14 @@
+ru:
+  activerecord:
+    errors:
+      messages:
+        blank: 'не может быть пустым'
+    attributes:
+      railway_station:
+        title: 'Название'
+      #    errors:
+      #      models:
+      #        railway_station:
+      #          attributes:
+      #            title:
+      #              blank: 'не может быть пустым'
