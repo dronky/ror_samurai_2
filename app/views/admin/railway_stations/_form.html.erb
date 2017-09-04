@@ -1,7 +1,7 @@
 <%= form_for [:admin, @railway_station] do |form| %>
     <% if @railway_station.errors.any? %>
         <div id="error_explanation">
-          <h2><%= t('common.errors')%>h2>
+          <h2><%= t('common.errors')%></h2>
 
           <ul>
             <% @railway_station.errors.full_messages.each do |message| %>

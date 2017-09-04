@@ -7,3 +7,6 @@ ru:
         title: 'Новая станция'
       form:
         submit: '%{action} станцию'
+    wagons:
+      form:
+        submit: '%{action} вагон'

@@ -2,7 +2,7 @@
 
     <% if @wagon.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@wagon.errors.count, "error") %> prohibited this wagon from being saved:</h2>
+          <h2><%= t('common.errors') %> </h2>
 
           <ul>
             <% @wagon.errors.full_messages.each do |message| %>
@@ -46,6 +46,6 @@
     <%= form.collection_select :train_id, Train.all, :id, :number %>
 
     <div class="actions">
-      <%= form.submit "#{ wagon.new_record? ? 'Create' : 'Edit' }" %>
+      <%= form.submit t('.submit', action: wagon.new_record? ? 'Создать' : 'Изменить') %>
     </div>
 <% end %>
