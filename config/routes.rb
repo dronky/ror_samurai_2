@@ -4,6 +4,15 @@ Rails.application.routes.draw do
       :sessions => 'my_devise/sessions'
   }
 
+  devise_scope :user do
+    authenticated :user do
+      root to: 'search#index'
+    end
+    unauthenticated :user do
+      root to: 'my_devise/sessions#new', as: :unauthenticated_root
+    end
+  end
+
   resources :tickets
   resources :search
 
@@ -30,6 +39,5 @@ Rails.application.routes.draw do
 
   end
 
-  root 'search#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
