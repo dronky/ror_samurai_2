@@ -7,6 +7,10 @@ class SearchController < ApplicationController
   def show
     @start_station = params[:station_first]["id"]
     @end_station = params[:station_last]["id"]
+    unless user_signed_in?
+      flash.now.notice ="Login before buying tickets"
+    end
+
   end
 
   private
