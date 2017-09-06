@@ -10,3 +10,17 @@ ru:
     wagons:
       form:
         submit: '%{action} вагон'
+    routes:
+      edit:
+        title: 'Название маршрута'
+        route_name: 'Введите новое название маршрута'
+      show:
+        title: 'Название станции'
+        list_stations: 'Список станций'
+        list_trains: 'Список поездов'
+        postition: 'Позиция'
+  helpers:
+    submit:
+      railway_station:
+        update: 'Обновить позицию'
+        create: 'Обновить позицию'
