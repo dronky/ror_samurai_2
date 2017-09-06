@@ -24,7 +24,7 @@
               <%= form_tag update_position_admin_railway_station_path(station), method: :patch do %>
                   <%= number_field_tag :position, station.position_in(@route) %>
                   <%= hidden_field_tag :route_id, @route.id %>
-                  <%= submit_tag %>
+                  <%= submit_tag t('.submit') %>
               <% end %>
             </td>
           </tr>

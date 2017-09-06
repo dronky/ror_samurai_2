@@ -14458,3 +14458,35 @@ Processing by Admin::RoutesController#edit as HTML
 Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/admin/routes/1" for 127.0.0.1 at 2017-09-07 00:07:40 +0300
+Processing by Admin::RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/routes/show.html.erb within layouts/admin
+  [1m[36mRailwayStation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "railway_stations" INNER JOIN "railway_stations_routes" ON "railway_stations"."id" = "railway_stations_routes"."railway_station_id" WHERE "railway_stations_routes"."route_id" = ? LIMIT ?[0m  [["route_id", 1], ["LIMIT", 1]]
+  [1m[36mRailwayStation Load (0.3ms)[0m  [1m[34mSELECT railway_stations.*, railway_stations_routes.station_number FROM "railway_stations" INNER JOIN "railway_stations_routes" "railway_stations_routes_railway_stations" ON "railway_stations_routes_railway_stations"."railway_station_id" = "railway_stations"."id" INNER JOIN "railway_stations_routes" ON "railway_stations"."id" = "railway_stations_routes"."railway_station_id" WHERE "railway_stations_routes"."route_id" = ? ORDER BY railway_stations_routes.station_number[0m  [["route_id", 1]]
+  [1m[36mRailwayStationsRoute Load (0.3ms)[0m  [1m[34mSELECT  "railway_stations_routes".* FROM "railway_stations_routes" WHERE "railway_stations_routes"."railway_station_id" = ? AND "railway_stations_routes"."route_id" = 1 ORDER BY "railway_stations_routes"."id" ASC LIMIT ?[0m  [["railway_station_id", 1], ["LIMIT", 1]]
+  [1m[36mRailwayStationsRoute Load (0.2ms)[0m  [1m[34mSELECT  "railway_stations_routes".* FROM "railway_stations_routes" WHERE "railway_stations_routes"."railway_station_id" = ? AND "railway_stations_routes"."route_id" = 1 ORDER BY "railway_stations_routes"."id" ASC LIMIT ?[0m  [["railway_station_id", 2], ["LIMIT", 1]]
+  [1m[36mTrain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "trains" WHERE "trains"."route_id" = ? LIMIT ?[0m  [["route_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "trains"."number" FROM "trains" WHERE "trains"."route_id" = ?[0m  [["route_id", 1]]
+  Rendered admin/routes/show.html.erb within layouts/admin (13.8ms)
+Completed 200 OK in 47ms (Views: 42.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/routes/1" for 127.0.0.1 at 2017-09-07 00:12:25 +0300
+Processing by Admin::RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/routes/show.html.erb within layouts/admin
+  [1m[36mRailwayStation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "railway_stations" INNER JOIN "railway_stations_routes" ON "railway_stations"."id" = "railway_stations_routes"."railway_station_id" WHERE "railway_stations_routes"."route_id" = ? LIMIT ?[0m  [["route_id", 1], ["LIMIT", 1]]
+  [1m[36mRailwayStation Load (0.2ms)[0m  [1m[34mSELECT railway_stations.*, railway_stations_routes.station_number FROM "railway_stations" INNER JOIN "railway_stations_routes" "railway_stations_routes_railway_stations" ON "railway_stations_routes_railway_stations"."railway_station_id" = "railway_stations"."id" INNER JOIN "railway_stations_routes" ON "railway_stations"."id" = "railway_stations_routes"."railway_station_id" WHERE "railway_stations_routes"."route_id" = ? ORDER BY railway_stations_routes.station_number[0m  [["route_id", 1]]
+  [1m[36mRailwayStationsRoute Load (0.1ms)[0m  [1m[34mSELECT  "railway_stations_routes".* FROM "railway_stations_routes" WHERE "railway_stations_routes"."railway_station_id" = ? AND "railway_stations_routes"."route_id" = 1 ORDER BY "railway_stations_routes"."id" ASC LIMIT ?[0m  [["railway_station_id", 1], ["LIMIT", 1]]
+  [1m[36mRailwayStationsRoute Load (0.2ms)[0m  [1m[34mSELECT  "railway_stations_routes".* FROM "railway_stations_routes" WHERE "railway_stations_routes"."railway_station_id" = ? AND "railway_stations_routes"."route_id" = 1 ORDER BY "railway_stations_routes"."id" ASC LIMIT ?[0m  [["railway_station_id", 2], ["LIMIT", 1]]
+  [1m[36mTrain Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "trains" WHERE "trains"."route_id" = ? LIMIT ?[0m  [["route_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "trains"."number" FROM "trains" WHERE "trains"."route_id" = ?[0m  [["route_id", 1]]
+  Rendered admin/routes/show.html.erb within layouts/admin (45.7ms)
+Completed 200 OK in 115ms (Views: 69.1ms | ActiveRecord: 4.0ms)
+
+
