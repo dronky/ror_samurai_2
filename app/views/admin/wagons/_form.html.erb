@@ -42,8 +42,10 @@
       <%= form.number_field :sit_seats %>
     </div>
 
-    <%= form.label :train, "Выбрать поезд" %>
-    <%= form.collection_select :train_id, Train.all, :id, :number %>
+    <div class="field">
+      <%= form.label :train%>
+      <%= form.collection_select :train_id, Train.all, :id, :number %>
+    </div>
 
     <div class="actions">
       <%= form.submit t('.submit', action: wagon.new_record? ? 'Создать' : 'Изменить') %>

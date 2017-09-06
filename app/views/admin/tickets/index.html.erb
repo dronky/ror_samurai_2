@@ -1,8 +1,16 @@
 <h1>All Tickets:</h1>
 
-<% @tickets.each do |ticket| %>
-    <p>Ticket number: <%= ticket.id %></p>
-    <p>Start station: <%= RailwayStation.find(ticket.start_station_id).title %></p>
-    <p>End station: <%= RailwayStation.find(ticket.end_station_id).title %></p>
-    <%= link_to "Delete ticket", ticket, method: :delete, data: {confirm: 'Are you sure?'} %>
-<% end %>
+<table>
+  <thead>
+  <tr>
+    <th>Ticket number</th>
+    <th>Start station</th>
+    <th>End station</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <%= render partial: "ticket", collection: @tickets, as: :ticket %>
+  </tbody>
+</table>

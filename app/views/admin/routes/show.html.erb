@@ -1,20 +1,19 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong><%= t('.title') %></strong>
+<h1>
+  <%= t('.title') %>
   <%= @route.name %>
-</p>
+</h1>
 
 <p>
-  <strong><%= t('.list_stations')%></strong>
+  <strong><%= t('.list_stations') %></strong>
   <% if @route.railway_stations.empty? %>
       No Stations yet
   <% else %>
     <table>
       <thead>
       <tr>
-        <td width="100px"><%= t('.title')%></td>
-        <td><%= t('.postition')%></td>
+        <td width="100px"><%= t('.title') %></td>
+        <td><%= t('.postition') %></td>
       </tr>
       </thead>
       <tbody>
@@ -34,7 +33,7 @@
     </table>
 <% end %>
 <p>
-  <strong><%= t('.list_trains')%></strong>
+  <strong><%= t('.list_trains') %></strong>
   <% if @route.trains.empty? %>
       No trains yet
   <% else %>

@@ -1,7 +1,7 @@
-<%= form_with(model: train, local: true) do |form| %>
+<%= form_with(model: [:admin, train], local: true) do |form| %>
     <% if train.errors.any? %>
         <div id="error_explanation">
-          <h2><%= t('common.errors')%> </h2>
+          <h2><%= t('common.errors') %> </h2>
 
           <ul>
             <% train.errors.full_messages.each do |message| %>
@@ -22,6 +22,6 @@
     </div>
 
     <div class="actions">
-      <%= form.submit "%{action} станцию" %>
+      <%= form.submit t('.submit', action: @train.new_record? ? 'Создать' : 'Изменить') %>
     </div>
 <% end %>

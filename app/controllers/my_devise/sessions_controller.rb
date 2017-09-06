@@ -1,6 +1,7 @@
 class MyDevise::SessionsController < Devise::SessionsController
   # set_flash_message :notice, :signed_in, :name => user.name
   # if is_navigational_format?
+
   def create
     self.resource = warden.authenticate!(auth_options)
     set_flash_message!(:notice, :signed_in, name: resource.name)

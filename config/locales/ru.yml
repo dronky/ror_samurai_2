@@ -1,4 +1,5 @@
 ru:
+  admin_cp_title: 'Панель управления'
   common:
     errors: 'При заполнении формы возникли ошибки'
   admin:
@@ -7,15 +8,25 @@ ru:
         title: 'Новая станция'
       form:
         submit: '%{action} станцию'
+    tickets:
+      new:
+        title: 'Новый билет'
+      form:
+        submit: '%{action} билет'
+    trains:
+      new:
+        title: 'Новый поезд'
+      form:
+        submit: '%{action} поезд'
     wagons:
       form:
         submit: '%{action} вагон'
     routes:
       edit:
-        title: 'Название маршрута'
+        title: 'Изменить маршрут'
         route_name: 'Введите новое название маршрута'
       show:
-        title: 'Название станции'
+        title: 'Маршрут'
         list_stations: 'Список станций'
         list_trains: 'Список поездов'
         postition: 'Позиция'
