@@ -3,6 +3,9 @@ ru:
   common:
     errors: 'При заполнении формы возникли ошибки'
   admin:
+    users:
+      form:
+        submit: '%{action} пользователя'
     railway_stations:
       new:
         title: 'Новая станция'

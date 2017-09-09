@@ -1,0 +1,17 @@
+<h1>All Users:</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>User id</th>
+    <th>User name</th>
+    <th>User email</th>
+    <th>Status</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <%= render partial: "user", collection: @users, as: :user %>
+  </tbody>
+</table>
