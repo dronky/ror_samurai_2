@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170908221404) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "railway_stations", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -19,8 +22,8 @@ ActiveRecord::Schema.define(version: 20170908221404) do
   end
 
   create_table "railway_stations_routes", force: :cascade do |t|
-    t.integer "route_id"
-    t.integer "railway_station_id"
+    t.bigint "route_id"
+    t.bigint "railway_station_id"
     t.integer "station_number"
     t.time "station_arrival"
     t.time "station_departure"
@@ -30,11 +33,6 @@ ActiveRecord::Schema.define(version: 20170908221404) do
 
   create_table "routes", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "searches", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,7 +55,7 @@ ActiveRecord::Schema.define(version: 20170908221404) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "route_id"
-    t.integer "current_station_id"
+    t.bigint "current_station_id"
     t.boolean "head", default: true
     t.index ["current_station_id"], name: "index_trains_on_current_station_id"
   end

@@ -6,6 +6,7 @@ class Ticket < ApplicationRecord
   before_save :set_user_name, on: :create
 
   after_create :send_new_ticket
+  after_destroy :send_remove_ticket
   def route_name
     "#{start_station.title} - #{end_station.title}"
   end
@@ -16,5 +17,9 @@ class Ticket < ApplicationRecord
 
   def send_new_ticket
     TicketMailer.buy_ticket(self.user,self).deliver_now
+  end
+
+  def send_remove_ticket
+    TicketMailer.remove_ticket(self.user, self).deliver_now
   end
 end
