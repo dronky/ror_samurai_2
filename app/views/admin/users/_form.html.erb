@@ -1,0 +1,32 @@
+<%= form_with(model: [:admin, user], local: true) do |form| %>
+    <% if user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= t('common.errors') %> </h2>
+
+          <ul>
+            <% user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= form.label :admin %>
+      <%= form.text_field :admin %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit t('.submit', action: @user.new_record? ? 'Создать' : 'Изменить')%>
+    </div>
+<% end %>

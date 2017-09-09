@@ -1,0 +1,30 @@
+<p>
+  <strong>User id:</strong>
+  <%= @user.id %>
+</p>
+
+<p>
+  <strong>User name:</strong>
+  <%= @user.name %>
+</p>
+<p>
+  <strong>User email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>User status:</strong>
+  <% if @user.admin %>
+      Admin
+  <% else %>
+      User
+  <% end %>
+</p>
+
+<p>
+  <strong>List of user's tickets:</strong>
+  <%== @user.tickets.empty? ? 'No tickets yet' : @user.tickets.map {|t| link_to t.id, admin_ticket_path(t.id)}.join(',') %>
+</p>
+
+<%= link_to 'Edit', edit_admin_user_path(@user) %> |
+<%= link_to 'Back', admin_users_path %>

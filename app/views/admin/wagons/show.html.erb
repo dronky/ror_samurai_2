@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @wagon.id %>
+</p>
+
+<p>
+  <strong>Train id:</strong>
+  <%= @wagon.train.id %>
+</p>
+<p>
+  <strong>Train number:</strong>
+  <%= @wagon.train.number %>
+</p>
+
+<p>
+  <strong>Wagon type:</strong>
+  <%= @wagon.type %>
+</p>
+
+<%= render @wagon.type.underscore %>
+
+<%= link_to 'Edit', edit_admin_train_wagon_path(@wagon) %> |
+<%= link_to 'Delete', admin_wagon_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', admin_train_wagon_path(train_id: @wagon.train.id) %>
+

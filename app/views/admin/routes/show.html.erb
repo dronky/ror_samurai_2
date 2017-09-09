@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+<h1>
+  <%= t('.title') %>
+  <%= @route.name %>
+</h1>
+
+<p>
+  <strong><%= t('.list_stations') %></strong>
+  <% if @route.railway_stations.empty? %>
+      No Stations yet
+  <% else %>
+    <table>
+      <thead>
+      <tr>
+        <td width="100px"><%= t('.title') %></td>
+        <td><%= t('.postition') %></td>
+      </tr>
+      </thead>
+      <tbody>
+      <% @route.railway_stations.ordered.each do |station| %>
+          <tr>
+            <td><%= station.title %></td>
+            <td>
+              <%= form_tag update_position_admin_railway_station_path(station), method: :patch do %>
+                  <%= number_field_tag :position, station.position_in(@route) %>
+                  <%= hidden_field_tag :route_id, @route.id %>
+                  <%= submit_tag t('.submit') %>
+              <% end %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% end %>
+<p>
+  <strong><%= t('.list_trains') %></strong>
+  <% if @route.trains.empty? %>
+      No trains yet
+  <% else %>
+      <%= @route.trains.pluck(:number).join(',') %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_admin_route_path(@route) %> |
+<%= link_to 'Back', admin_routes_path %>

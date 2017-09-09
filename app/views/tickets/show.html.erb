@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ticket number:</strong>
+  <%= @ticket.id %>
+</p>
+
+<p>
+  <strong>Information(full name, passport and email):</strong>
+  <%= @ticket.full_name %>
+  <%= @ticket.passport %>
+  <%= @ticket.user.email %>
+</p>
+<p>
+  <strong>Start station:</strong>
+  <%= @ticket.start_station.title %>
+</p>
+
+<p>
+  <strong>End station:</strong>
+  <%= @ticket.end_station.title %>
+</p>

@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @train.number %>
+</p>
+
+<p>
+  <strong>Route:</strong>
+  <% if @train.route %>
+      <%= @train.route.name %>
+  <% else %>
+      Not specified
+  <% end %>
+</p>
+
+<p>
+  <strong>Wagons:</strong>
+  <% if @train.wagons.empty? %>
+      No wagons yet
+  <% else %>
+    <ul>
+      <li>Count of compartment wagons: <%= @train.wagons_seats_count[:comp] %>
+        <ul>
+          <li>Up seats: <%= @train.wagons.where(type: :CoupeWagon).sum(:up_seats) %></li>
+          <li>Down seats: <%= @train.wagons.where(type: :CoupeWagon).sum(:down_seats) %></li>
+        </ul>
+      <li>Count of second-class wagons: <%= @train.wagons_seats_count[:second] %>
+        <ul>
+          <li>Up seats: <%= @train.wagons.where(type: :PlackartWagon).sum(:up_seats) %></li>
+          <li>Down seats: <%= @train.wagons.where(type: :PlackartWagon).sum(:down_seats) %></li>
+        </ul>
+      <li>Count of Sit wagons: <%= @train.wagons_seats_count[:sit] %>
+        <ul>
+          <li>Sit seats: <%= @train.wagons.where(type: :SitWagon).sum(:sit_seats) %></li>
+        </ul>
+    </ul>
+    <strong>Links to wagons:</strong>
+    <% @train.wagons.order_from_head(@train).each do |wagon| %>
+        <ul>
+          <li>Wagon number: <%= link_to wagon.number, admin_train_wagon_path(@train.id) %></li>
+        </ul>
+    <% end %>
+<% end %>
+</p>
+
+<p>
+  <%= link_to "Add wagon", new_admin_train_wagon_path(@train) %>
+</p>
+
+<%= link_to 'Edit', edit_admin_train_path(@train) %> |
+<%= link_to 'Back', admin_train_path %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Wagons</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Type</th>
+    <th>Train number</th>
+    <th>Wagon Number</th>
+    <th>Up seats</th>
+    <th>Down seats</th>
+    <th>Top side seats</th>
+    <th>Down side seats</th>
+    <th>Sit seats</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <%= render partial: "wagon", collection: @wagons, as: :wagon %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wagon', new_admin_train_wagon_path(train_id: 1) %>

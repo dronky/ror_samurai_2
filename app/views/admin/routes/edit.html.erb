@@ -1,0 +1,30 @@
+<h1>
+  <%= t('.title') %>
+  <%= @route.name %>
+</h1>
+
+<%= form_for [:admin, @route] do |form| %>
+    <% if @route.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@route.errors.count, "error") %> prohibited this route from being saved:</h2>
+
+          <ul>
+            <% @route.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Изменить' %>
+    </div>
+<% end %>
+
+
+<%= link_to 'Назад', admin_routes_path %>

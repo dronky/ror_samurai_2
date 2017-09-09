@@ -1,0 +1,42 @@
+<table>
+  <thead>
+  <tr>
+    <th>Number:</th>
+    <th>Tickets:</th>
+    <th>Depature time:</th>
+    <th>Arrival time:</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @routes.each do |route| %>
+      <% a = route %>
+      <% departure = route.get_station_departure(@start_station) %>
+      <% arrival = route.get_station_arrival(@end_station) %>
+      <% route.trains.each do |train| %>
+          <tr>
+            <td><%= train.number %></td>
+            <% if user_signed_in? %>
+                <% if current_user.admin? %>
+                    <td><%= link_to 'Buy tickets', new_admin_ticket_path(train_id: train.id,
+                                                                         start_station_id: @start_station,
+                                                                         end_station_id: @end_station) %>
+                    </td>
+                <% else %>
+                    <td><%= link_to 'Buy tickets', new_ticket_path(train_id: train.id,
+                                                                   start_station_id: @start_station,
+                                                                   end_station_id: @end_station) %>
+                    </td>
+                <% end %>
+            <% else %>
+                <td><%= link_to 'Buy tickets', new_user_session_path %>
+                </td>
+            <% end %>
+
+            <td><%= departure %></td>
+            <td><%= arrival %></td>
+          </tr>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>

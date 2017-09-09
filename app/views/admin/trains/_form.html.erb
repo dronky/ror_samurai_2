@@ -1,0 +1,27 @@
+<%= form_with(model: [:admin, train], local: true) do |form| %>
+    <% if train.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= t('common.errors') %> </h2>
+
+          <ul>
+            <% train.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :number %>
+      <%= form.number_field :number, id: :train_number %>
+    </div>
+
+    <div class="field">
+      <%= form.label :route, 'Route' %>
+      <%= form.collection_select :route_id, Route.all, :id, :name %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit t('.submit', action: @train.new_record? ? 'Создать' : 'Изменить') %>
+    </div>
+<% end %>

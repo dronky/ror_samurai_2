@@ -1,0 +1,9 @@
+<tr>
+  <td>Ticket number: <%= ticket.id %></td>
+  <td>Start station: <%= RailwayStation.find(ticket.start_station_id).title %></td>
+  <td>End station: <%= RailwayStation.find(ticket.end_station_id).title %></td>
+  <td><%= link_to 'Show', admin_ticket_path(ticket)%></td>
+  <td><%= link_to 'Edit', edit_polymorphic_path([:admin, ticket]) %></td>
+  <td><%= link_to 'Delete', ticket, method: :delete, data: { confirm: 'are you sure?' } %></td>
+</tr>
+

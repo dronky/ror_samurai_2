@@ -1,0 +1,14 @@
+<h1>New ticket</h1>
+
+<%= form_for @ticket, method: :post do |f| %>
+    <p>Full name</p>
+    <%= f.text_field :full_name%>
+    <p>Passport</p>
+    <%= f.text_field :passport %>
+    <%= f.hidden_field :train_id, value: @train_id %>
+    <%= f.hidden_field :start_station_id, value: @station_first %>
+    <%= f.hidden_field :end_station_id, value: @station_last %>
+    <br>
+    <br>
+    <%= f.submit "Create" %>
+<% end %>

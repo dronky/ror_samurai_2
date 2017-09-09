@@ -1,0 +1,16 @@
+<h1>All Tickets:</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Ticket number</th>
+    <th>Start station</th>
+    <th>End station</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <%= render partial: "ticket", collection: @tickets, as: :ticket %>
+  </tbody>
+</table>
