@@ -28,11 +28,9 @@ class Admin::RailwayStationsController < Admin::BaseController
 
     respond_to do |format|
       if @railway_station.save
-        format.html { redirect_to @railway_station, notice: 'Railway station was successfully created.' }
-        format.json { render :show, status: :created, location: @railway_station }
+        format.html { redirect_to [:admin, @railway_station], notice: 'Railway station was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @railway_station.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -46,7 +44,6 @@ class Admin::RailwayStationsController < Admin::BaseController
         format.json { render :show, status: :ok, location: @railway_station }
       else
         format.html { render :edit }
-        format.json { render json: @railway_station.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,8 +53,7 @@ class Admin::RailwayStationsController < Admin::BaseController
   def destroy
     @railway_station.destroy
     respond_to do |format|
-      format.html { redirect_to railway_stations_url, notice: 'Railway station was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to admin_railway_stations_path, notice: 'Railway station was successfully destroyed.' }
     end
   end
 
