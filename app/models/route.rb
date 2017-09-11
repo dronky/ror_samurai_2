@@ -5,7 +5,7 @@ class Route < ActiveRecord::Base
   has_many :trains
   has_many :railway_stations_routes
 
-  before_validation :set_name, on: :create
+  # before_validation :set_name, on: :create
 
   def get_station_arrival(station_id)
     station_route(station_id, 'station_arrival').station_arrival

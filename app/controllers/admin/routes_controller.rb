@@ -47,6 +47,6 @@ class Admin::RoutesController < Admin::BaseController
   end
 
   def route_params
-    params.require(:route).permit(:name, :station_id)
+    params.require(:route).permit(:name)
   end
 end
