@@ -39,7 +39,7 @@ gem 'devise'
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
 gem 'rails_12factor'
-# gem 'figaro'
+gem 'figaro'
 
 
 group :production do
