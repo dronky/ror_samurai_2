@@ -13,9 +13,12 @@
         </div>
     <% end %>
 
-    <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
+    <div>
+      <%= form.collection_select(:station_last, RailwayStation.all, :id, :title) %>
+    </div>
+
+    <div>
+      <%= form.collection_select(:station_first, RailwayStation.all, :id, :title) %>
     </div>
 
     <div class="actions">

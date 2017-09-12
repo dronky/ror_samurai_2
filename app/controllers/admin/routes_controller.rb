@@ -15,7 +15,10 @@ class Admin::RoutesController < Admin::BaseController
   end
 
   def create
-    @route = Route.new(route_params)
+    @route = Route.new
+    @start_station = params[:route][:station_first]
+    @end_station = params[:route][:station_last]
+    @route.add_stations(@start_station, @end_station)
     if @route.save
       redirect_to admin_route_path(@route)
     else
@@ -47,6 +50,6 @@ class Admin::RoutesController < Admin::BaseController
   end
 
   def route_params
-    params.require(:route).permit(:name)
+    params.require(:route).permit!
   end
 end
