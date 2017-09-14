@@ -16,17 +16,23 @@
       <% route.trains.each do |train| %>
           <tr>
             <td><%= train.number %></td>
-            <% if current_user.admin? %>
-                <td><%= link_to 'Buy tickets', new_admin_ticket_path(train_id: train.id,
-                                                               start_station_id: @start_station,
-                                                               end_station_id: @end_station) %>
-                </td>
+            <% if user_signed_in? %>
+                <% if current_user.admin? %>
+                    <td><%= link_to 'Buy tickets', new_admin_ticket_path(train_id: train.id,
+                                                                         start_station_id: @start_station,
+                                                                         end_station_id: @end_station) %>
+                    </td>
+                <% else %>
+                    <td><%= link_to 'Buy tickets', new_ticket_path(train_id: train.id,
+                                                                   start_station_id: @start_station,
+                                                                   end_station_id: @end_station) %>
+                    </td>
+                <% end %>
             <% else %>
-                <td><%= link_to 'Buy tickets', new_ticket_path(train_id: train.id,
-                                                               start_station_id: @start_station,
-                                                               end_station_id: @end_station) %>
+                <td><%= link_to 'Buy tickets', new_user_session_path %>
                 </td>
             <% end %>
+
             <td><%= departure %></td>
             <td><%= arrival %></td>
           </tr>

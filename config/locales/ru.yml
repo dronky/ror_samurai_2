@@ -1,0 +1,41 @@
+ru:
+  admin_cp_title: 'Панель управления'
+  common:
+    errors: 'При заполнении формы возникли ошибки'
+  admin:
+    users:
+      form:
+        submit: '%{action} пользователя'
+    railway_stations:
+      new:
+        title: 'Новая станция'
+      form:
+        submit: '%{action} станцию'
+    tickets:
+      new:
+        title: 'Новый билет'
+      form:
+        submit: '%{action} билет'
+    trains:
+      new:
+        title: 'Новый поезд'
+      form:
+        submit: '%{action} поезд'
+    wagons:
+      form:
+        submit: '%{action} вагон'
+    routes:
+      edit:
+        title: 'Изменить маршрут'
+        route_name: 'Введите новое название маршрута'
+      show:
+        submit: 'Обновить позицию'
+        title: 'Маршрут'
+        list_stations: 'Список станций'
+        list_trains: 'Список поездов'
+        postition: 'Позиция'
+  helpers:
+    submit:
+      railway_station:
+        update: 'Обновить позицию'
+        create: 'Обновить позицию'

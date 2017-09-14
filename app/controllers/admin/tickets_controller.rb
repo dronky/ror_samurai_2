@@ -16,7 +16,7 @@ class Admin::TicketsController < Admin::BaseController
   def create
     @ticket = Ticket.new(ticket_params)
     if @ticket.save!
-      redirect_to @ticket
+      redirect_to [:admin, @ticket], notice: 'Ticket created'
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::TicketsController < Admin::BaseController
 
   def update
     if @ticket.update(ticket_params)
-      redirect_to @ticket
+      redirect_to [:admin, @ticket], notice: 'Ticket changed'
     else
       render :edit
     end

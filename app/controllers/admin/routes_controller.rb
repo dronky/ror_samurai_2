@@ -15,9 +15,13 @@ class Admin::RoutesController < Admin::BaseController
   end
 
   def create
-    @route = Route.new(route_params)
-    if @route.save
-      redirect_to admin_route_path
+    @start_station = params[:route][:station_first].to_i
+    @end_station = params[:route][:station_last].to_i
+    @route = Route.new(station_first: RailwayStation.find(@start_station), station_last: RailwayStation.find(@end_station))
+    # @route.add_stations(@start_station, @end_station)
+    @route.railway_station_ids = [@start_station, @end_station]
+    if @route.save!
+      redirect_to admin_route_path(@route)
     else
       render :new
     end
@@ -36,7 +40,7 @@ class Admin::RoutesController < Admin::BaseController
 
   def destroy
     @route.destroy
-    redirect_to routes_path
+    redirect_to admin_routes_path
   end
 
   private
@@ -47,6 +51,6 @@ class Admin::RoutesController < Admin::BaseController
   end
 
   def route_params
-    params.require(:route).permit(:name, :station_id)
+    params.require(:route).permit!
   end
 end

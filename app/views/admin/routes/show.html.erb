@@ -1,20 +1,19 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
+<h1>
+  <%= t('.title') %>
   <%= @route.name %>
-</p>
+</h1>
 
 <p>
-  <strong>List of Stations:</strong>
+  <strong><%= t('.list_stations') %></strong>
   <% if @route.railway_stations.empty? %>
       No Stations yet
   <% else %>
     <table>
       <thead>
       <tr>
-        <td width="100px">Title</td>
-        <td>Position</td>
+        <td width="100px"><%= t('.title') %></td>
+        <td><%= t('.postition') %></td>
       </tr>
       </thead>
       <tbody>
@@ -25,7 +24,7 @@
               <%= form_tag update_position_admin_railway_station_path(station), method: :patch do %>
                   <%= number_field_tag :position, station.position_in(@route) %>
                   <%= hidden_field_tag :route_id, @route.id %>
-                  <%= submit_tag "Change" %>
+                  <%= submit_tag t('.submit') %>
               <% end %>
             </td>
           </tr>
@@ -34,7 +33,7 @@
     </table>
 <% end %>
 <p>
-  <strong>List of trains:</strong>
+  <strong><%= t('.list_trains') %></strong>
   <% if @route.trains.empty? %>
       No trains yet
   <% else %>

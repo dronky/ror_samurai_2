@@ -1,17 +1,5 @@
 <h1>Новый билет</h1>
 
-<%= form_for @ticket, method: :post, url: admin_tickets_path do |f| %>
-    <p>User</p>
-    <%= f.collection_select(:user_id, User.all, :id, :name) %>
-    <p>Train</p>
-    <%= f.collection_select(:train_id, Train.all, :id, :number) %>
-    <p>First station</p>
-    <%= f.collection_select(:start_station_id, RailwayStation.all, :id, :title) %>
-    <p>End station</p>
-    <%= f.collection_select(:end_station_id, RailwayStation.all, :id, :title) %>
-    <br>
-    <br>
-    <%= f.submit "Create" %>
-    <!--Почему редиректит на метод create не в админ контроллере, а в обычном? (нужно явно указывать admin_tickets_path)-->
+<%= render 'form', ticket: @ticket %>
 
-<% end %>
+<%= link_to 'Back', new_search_path %>

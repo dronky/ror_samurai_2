@@ -1,0 +1,16 @@
+<tr>
+  <td><%= user.id %></td>
+  <td><%= user.name %></td>
+  <td><%= user.email %></td>
+  <td>
+    <% if user.admin %>
+        Admin
+    <% else %>
+        User
+    <% end %>
+  </td>
+  <td><%= link_to 'Show', admin_user_path(user) %></td>
+  <td><%= link_to 'Edit', edit_polymorphic_path([:admin, user]) %></td>
+  <td><%= link_to 'Delete', admin_user_path(user), method: :delete, data: {confirm: 'are you sure?'} %></td>
+</tr>
+

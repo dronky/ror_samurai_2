@@ -1,4 +1,7 @@
-<h1>Изменить маршрут</h1>
+<h1>
+  <%= t('.title') %>
+  <%= @route.name %>
+</h1>
 
 <%= form_for [:admin, @route] do |form| %>
     <% if @route.errors.any? %>

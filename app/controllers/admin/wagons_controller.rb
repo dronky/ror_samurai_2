@@ -12,7 +12,7 @@ class Admin::WagonsController < Admin::BaseController
   def create
     @wagon = @train.wagons.new(wagon_params)
     if @wagon.save
-      redirect_to @train
+      redirect_to [:admin,@train]
     else
       render :new
     end
@@ -35,7 +35,7 @@ class Admin::WagonsController < Admin::BaseController
   def destroy
     @wagon.destroy
     respond_to do |format|
-      format.html { redirect_to train_path(@wagon.train), notice: 'Wagon was successfully destroyed.' }
+      format.html { redirect_to admin_train_path(@wagon.train), notice: 'Wagon was successfully destroyed.' }
     end
   end
 
