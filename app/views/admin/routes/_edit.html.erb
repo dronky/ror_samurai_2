@@ -1,7 +1,7 @@
-<%= form_for [:admin, @route] do |form| %>
-    <% if @route.errors.any? %>
+<%= form_for [:admin, route], html: {style: "display: #{hidden ? 'none' : 'block'}"} do |form| %>
+    <% if route.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@route.errors.count, "error") %> prohibited this route from being saved:</h2>
+          <h2><%= pluralize(route.errors.count, "error") %> prohibited this route from being saved:</h2>
 
           <ul>
             <% @route.errors.full_messages.each do |message| %>

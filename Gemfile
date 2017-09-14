@@ -39,6 +39,7 @@ gem 'devise'
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
 gem 'rails_12factor'
+gem 'jquery-rails'
 
 
 group :production do
