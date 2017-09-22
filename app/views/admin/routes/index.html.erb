@@ -13,10 +13,15 @@
   <tbody>
   <% @routes.each do |route| %>
       <tr>
-        <td><%= route.name %></td>
+        <td>
+          <div id="route_title_<%= route.id %>">
+            <%= route.name %>
+          </div>
+        </td>
         <td><%= link_to 'Show', admin_route_path(route) %></td>
-        <td><%= link_to 'Edit', edit_admin_route_path(route) %></td>
+        <td><%= link_to 'Edit', '', class: 'edit_route', data: {route_id: route.id} %></td>
         <td><%= link_to 'Destroy', admin_route_path(route), method: :delete, data: {confirm: 'Вы уверены?'} %></td>
+        <td><%= render 'edit', route: route, hidden: true %></td>
       </tr>
   <% end %>
   </tbody>

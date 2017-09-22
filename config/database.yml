@@ -10,14 +10,18 @@ default: &default
   timeout: 5000
   username: postgres
   password: root
+  database: pg
+
 
 development:
-  adapter: sqlite3
-  database: railways_ror_development
+#  adapter: sqlite3
+#  database: railways_ror_development
+  <<: *default
 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
 # Do not set this db to the same as development or production.
 test:
   <<: *default

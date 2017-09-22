@@ -15,11 +15,12 @@ class Admin::RoutesController < Admin::BaseController
   end
 
   def create
-    @route = Route.new
-    @start_station = params[:route][:station_first]
-    @end_station = params[:route][:station_last]
-    @route.add_stations(@start_station, @end_station)
-    if @route.save
+    @start_station = params[:route][:station_first].to_i
+    @end_station = params[:route][:station_last].to_i
+    @route = Route.new(station_first: RailwayStation.find(@start_station), station_last: RailwayStation.find(@end_station))
+    # @route.add_stations(@start_station, @end_station)
+    @route.railway_station_ids = [@start_station, @end_station]
+    if @route.save!
       redirect_to admin_route_path(@route)
     else
       render :new
@@ -31,7 +32,7 @@ class Admin::RoutesController < Admin::BaseController
 
   def update
     if @route.update(route_params)
-      redirect_to [:admin, @route]
+      redirect_to admin_routes_path
     else
       render :edit
     end

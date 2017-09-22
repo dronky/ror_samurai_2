@@ -1,11 +1,13 @@
 class Route < ActiveRecord::Base
+  # attr_accessor :station_first, :station_last
+
   validates :name, presence: true
 
   has_and_belongs_to_many :railway_stations
   has_many :trains
   has_many :railway_stations_routes
-  has_one :station_last, class_name: "RailwayStation"
-  has_one :station_first, class_name: "RailwayStation"
+  belongs_to :station_last, class_name: "RailwayStation", foreign_key: :id
+  belongs_to :station_first, class_name: "RailwayStation", foreign_key: :id
 
   before_validation :set_name, on: :create
 

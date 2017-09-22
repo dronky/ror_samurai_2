@@ -1,6 +1,6 @@
 class Admin::WagonsController < Admin::BaseController
   before_action :set_wagon, only: [:show, :edit, :update, :destroy, :update_position]
-  before_action :set_train, only: [:new, :create]
+  # before_action :set_train, only: [:new, :create]
   def index
     @wagons = Wagon.all
   end
@@ -10,9 +10,9 @@ class Admin::WagonsController < Admin::BaseController
   end
 
   def create
-    @wagon = @train.wagons.new(wagon_params)
+    @wagon = Wagon.new(wagon_params)
     if @wagon.save
-      redirect_to [:admin,@train]
+      redirect_to admin_wagons_path
     else
       render :new
     end
@@ -41,15 +41,15 @@ class Admin::WagonsController < Admin::BaseController
 
   private
 
-  def set_train
-    @train = Train.find(params[:train_id])
-  end
+  # def set_train
+  #   @train = Train.find(params[:train_id])
+  # end
 
   def set_wagon
     @wagon = Wagon.find(params[:id])
   end
 
   def wagon_params
-    params.require(:wagon).permit(:train_id, :type, :up_seats, :down_seats, :side_up_seats, :side_down_seats, :sit_seats, :number)
+    params.require(:wagon).permit(:type, :up_seats, :down_seats, :side_up_seats, :side_down_seats, :sit_seats, :number)
   end
 end

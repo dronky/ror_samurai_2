@@ -1,4 +1,4 @@
-<%= form_for [:admin ,:train, wagon.becomes(Wagon)] do |form| %>
+<%= form_for [:admin, wagon.becomes(Wagon)] do |form| %>
 
     <% if @wagon.errors.any? %>
         <div id="error_explanation">
@@ -12,39 +12,34 @@
         </div>
     <% end %>
 
-    <div class="field">
+    <div class="field type">
       <%= form.label :type %>
-      <%= form.select :type, Wagon::WAGON_TYPES %>
+      <%= form.select :type, Wagon::WAGON_TYPES, {:include_blank => 'Choose type of wagon'} %>
     </div>
 
-    <div class="field">
+    <div class="field up_seats" style="display: none">
       <%= form.label :up_seats %>
       <%= form.number_field :up_seats %>
     </div>
 
-    <div class="field">
-      <%=   form.label :down_seats %>
+    <div class="field down_seats" style="display: none;">
+      <%= form.label :down_seats %>
       <%= form.number_field :down_seats %>
     </div>
 
-    <div class="field">
+    <div class="field side_up_seats" style="display: none;">
       <%= form.label :side_up_seats %>
       <%= form.number_field :side_up_seats %>
     </div>
 
-    <div class="field">
+    <div class="field side_down_seats" style="display: none;">
       <%= form.label :side_down_seats %>
       <%= form.number_field :side_down_seats %>
     </div>
 
-    <div class="field">
+    <div class="field sit_seats" style="display: none;">
       <%= form.label :sit_seats %>
       <%= form.number_field :sit_seats %>
-    </div>
-
-    <div class="field">
-      <%= form.label :train%>
-      <%= form.collection_select :train_id, Train.all, :id, :number %>
     </div>
 
     <div class="actions">

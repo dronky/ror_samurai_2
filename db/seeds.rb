@@ -12,7 +12,7 @@ route.railway_stations << RailwayStation.first
 route.railway_stations << RailwayStation.last
 route.save
 Train.create(route: Route.first, number: 1)
-SitWagon.create(sit_seats: 10, train: Train.first, up_seats: 7, down_seats: 4)
-User.create(name:"admin", admin:true, password:"foobar", email:"testll@test.com")
-User.create(name:"ivan", password:"foobar", email:"ivan@test.com")
+SitWagon.create(sit_seats: 10, up_seats: 7, down_seats: 4)
+User.create(name:"admin", admin:true, password:"foobar", email:"admin@test.com")
+User.create(name:"ivan", password:"foobar", email:"user@test.com")
 

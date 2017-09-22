@@ -3,10 +3,10 @@ class Wagon < ApplicationRecord
   WAGON_TYPES = ["CoupeWagon", 'PlackartWagon', 'SitWagon', 'SvWagon']
   validates :type, inclusion: WAGON_TYPES
 
-  belongs_to :train
+  has_one :train
 
-  validates :train_id, :up_seats, :down_seats, presence: true
-  validates :number, uniqueness: {scope: :train_id}
+  validates :up_seats, :down_seats, presence: true
+  validates :number, uniqueness: true
 
   scope :order_from_head,->(train) {train.head ? order(number: :asc) : order(number: :desc)}
   scope :coupe,     -> { where(type: 'CoupeWagon') }
@@ -24,6 +24,6 @@ class Wagon < ApplicationRecord
   private
 
   def set_number
-    self.number ||= train.wagons.maximum(:number).to_i + 1
+    self.number ||= Wagon.last.number + 1
   end
 end
